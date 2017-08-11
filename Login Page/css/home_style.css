@@ -1,0 +1,262 @@
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+ul {
+	list-style: none;
+}
+.nav {
+    float: right;
+	margin-top: 0px;
+}
+.nav li {
+    float: left;
+	margin-left: 20px;
+}
+.nav a {
+	font-weight: bold;
+	font-size: 20px;
+    display: block;
+    line-height: 62px;
+    color: #000;
+}
+
+.nav a:hover {
+    color: #fff;
+}
+
+.logo {
+    float: left;
+    margin-top: 12px;
+}
+
+.slogan {
+    float: left;
+    margin-top: 22px;
+    font: italic 16px "Times New Roman", Times, Georgia, serif;
+    color: rgba(255, 255, 255, .35);
+}
+
+.header h2 {
+	padding: 0px;
+	margin: 0px;
+	font-size: 30px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.container {
+	width: 1140px;
+	margin: 0 auto;
+}
+
+.header {
+	background: lightgrey;
+	padding: 0px;
+	margin: 0px;
+	color: #000;
+	height: 60px;
+}
+
+.middle {
+	background: #fff;
+}
+
+.hero {
+	background-color: grey;
+	height: 500px;
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+}
+
+.hero-logo {
+	border-radius: 100px;
+	border: 1px solid #fff;
+	margin-left: 470px;
+	margin-top: 30px;
+	height: 200px;
+	width: 200px;
+}
+
+.hero h1 {
+	color: #fff;
+	text-align: center;
+	font-size: 40px;
+}
+
+.hero p {
+	color: #fff;
+	margin: 0 50px 0 50px;
+	text-align: center;
+}
+
+button {
+	color: #fff;
+	width: 200px;
+	height: 50px;
+	font-size: 15px;
+	font-weight: bold;
+	border-radius: 10px;
+	border: 2px solid #fff;
+	margin-left: 470px;
+	margin-top: 20px;
+}
+
+button:hover {
+	color: #000;
+	background-color: #fff;
+	border-color: #000;
+}
+
+.section1 {
+	background-color: #fff;
+	height: 400px;
+}
+
+.section1 h2 {
+	text-align: center;
+	padding-top: 20px;
+}
+
+.container:after,
+.boxes:after {
+	content: "";
+	display: tabel;
+	clear: both;
+}
+
+.boxes .box {
+	float: left;
+	margin-left: 95px;
+}
+
+.box {
+	margin-top: 10px;
+	height: 300px;
+	width: 250px;
+	background-color: lightgrey;
+}
+
+.box p {
+	margin: 30px 20px 0 20px;
+	text-align: center;
+	font-size: 20px;
+	color: #000;
+}
+
+.box .box-pic {
+	height: 150px;
+	width: 150px;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+
+.section2 {
+	background-color: grey;
+	height: 400px;
+}
+
+.section2 h2 {
+	text-align: center;
+	padding-top: 20px;
+}
+
+.top-box {
+	height: 175px;
+	background-color: #fff;
+}
+
+.bottom-box {
+	background-color: grey;
+}
+
+.box1-pic {
+	height: 175px;
+	width: 250px;
+}
+
+.box2-pic {
+	height: 175px;
+	width: 250px;
+}
+
+.box3-pic {
+	height: 175px;
+	width: 250px;
+}
+
+.footer {
+	background-color: lightgrey;
+}
+
+.footer h2 {
+	color: #000;
+}
+
+.footer .copyright {
+	color: #000;
+	margin-top: 10px;
+	padding-bottom: 20px;
+}
+
+.footer #logo {
+	font-size: 30px;
+	font-weight: bold;
+	color: #000;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.footer #copyright {
+	margin-top: 10px;
+	color: #000;
+	font-size: 20px;
+}
+
+.footer #follow-us {
+	margin-top: 15px;
+	margin-bottom: 0px;
+	font-size: 30px;
+	font-weight: bold;
+	color: #000;
+}
+
+#follow-us a {
+	color: #000;
+	font-weight: single;
+}
+
+#follow-us a:hover {
+	color: grey;
+}
+
+.footer .nav {
+	margin-top: 0px;
+}
+.footer .nav li {
+    float: left;
+	margin-left: 20px;
+}
+.footer .nav a {
+	font-weight: bold;
+	font-size: 20px;
+    display: inline-block;
+    line-height: 62px;
+    color: #000;
+}
+
+.footer .nav a:hover {
+    color: #fff;

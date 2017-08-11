@@ -1,0 +1,111 @@
+.main {
+	background-color: #fff;
+	height: 750px;
+	width: 100%;
+}
+
+.main p {
+	margin-left: 250px;
+	margin-bottom: 0px;
+}
+
+.main h1 {
+	text-align: center;
+	padding-top: 20px;
+	margin-bottom: 10px;
+}
+
+.sign-up {
+	margin-top: 20px;
+	font-weight: bold;
+	font-size: 20px;
+	color: grey;
+}
+
+form #fName, #lName{
+	display: block;
+}
+
+#fName {
+	margin-left: 250px;
+	width: 650px;
+	height: 30px;
+	border: 1px solid;
+	border-radius: 5px;
+}
+
+#lName {
+	margin-left: 250px;
+	width: 650px;
+	height: 30px;
+	border: 1px solid;
+	border-radius: 5px;
+}
+
+#email {
+	margin-left: 250px;
+	width: 650px;
+	height: 30px;
+	border: 1px solid;
+	border-radius: 5px;
+}
+
+#number {
+	margin-left: 250px;
+	width: 650px;
+	height: 30px;
+	border: 1px solid;
+	border-radius: 5px;
+}
+
+#uName {
+	margin-left: 250px;
+	width: 650px;
+	height: 30px;
+	border: 1px solid;
+	border-radius: 5px;
+}
+
+#pWord {
+	margin-left: 250px;
+	width: 650px;
+	height: 30px;
+	border: 1px solid;
+	border-radius: 5px;
+}
+
+#pWord2 {
+	margin-left: 250px;
+	width: 650px;
+	height: 30px;
+	border: 1px solid;
+	border-radius: 5px;
+}
+
+#town {
+	margin-left: 250px;
+	width: 650px;
+	height: 30px;
+	border: 1px solid;
+	border-radius: 5px;
+}
+
+.btn {
+	display: inline-block;
+	border-radius: 4px;
+	border: 1px solid black;
+	line-height: 50px;
+	color: #000;
+	font-weight: 600;
+	font-size: 18px;
+	padding: 0 55px;
+	margin: 50px 11px 0px 11px;
+}
+
+.btn:first-child {
+	margin-left: 390px;
+}
+
+.btn:hover {
+	background-color: grey;
+}
