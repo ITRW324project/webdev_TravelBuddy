@@ -233,10 +233,20 @@ a {
 	background-blend-mode: overlay;
 }
 
+.welcome-banner input {
+		width: 50vw;
+		margin: auto;
+}
+
 @media screen and (max-width: 600px) {
     .welcome-banner  {
         padding: 2rem;
     }
+
+		.welcome-banner input {
+				width: 90vw;
+				margin: auto;
+		}
 }
 
 .footer {
