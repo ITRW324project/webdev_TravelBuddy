@@ -36,12 +36,12 @@
 		<header class = "header">
 			<div class = "container">
 				<div class = "logo">
-				<h2 style = "font-size: 45px">Travel App</h2>
+				<h2>Travel App</h2>
 				</div>
 				<nav>
 					<ul class="nav">
-						<li class="sign-up"><a href="registration.html">Sign Up</a></li>
-						<li class="login"><a href="login.html">Login</a></li>
+						<li class="sign-up"><a href="Sign Up Page/registration.html">Sign Up</a></li>
+						<li class="login"><a href="Login Page/login.html">Login</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -59,7 +59,7 @@
 		
 		<div class = "section1">
 			<div class = "container">
-				<center><h2>How does it work?</h2></center>
+				<center><h2 class = "how">How does it work?</h2></center>
 					<div class = "boxes">
 						<div class = "box">
 								<img class = "box-pic1" src = "img/plane.png">					
@@ -79,30 +79,44 @@
 		
 		<div class = "section2">
 			<div class = "container">
-				<br /><br />
-				<h2>View and use preplanned tours</h2>
+				<br />
+				<center><h2 class = "view">View and use preplanned tours</h2></center>
 					<div class = "boxes">
-						<a class = "europe-tour" href = "#"><div class = "box">
+						<div class = "box-browse">
 							<div class = "top-box">
-								<img class = "box1-pic" src = "img/europe.png">
+								<a class = "europe-tour" href = "Europe Tour Page/europe tour.php"><img class = "box1-pic" src = "img/europe.png"></a>
 								<p class = "title">Europe Luxury Vacation</p>
 								<p id = "info">2 Weeks</p>
 							</div>
-						</div></a>
-						<a class = "south-african-tour" href = "#"><div class = "box">
+						</div>
+						<div class = "box-browse">
 							<div class = "top-box">
-								<img class = "box2-pic" src = "img/south africa.png">
+								<a class = "south-african-tour" href = "#"><img class = "box2-pic" src = "img/south africa.png"></a>
 								<p class = "title">Best of South Africa</p>
 								<p id = "info">1 Week</p>
 							</div>
-						</div></a>
-						<a class = "island-tour" href = "#"><div class = "box">
+						</div>
+						<div class = "box-browse">
 							<div class = "top-box">
-								<img class = "box3-pic" src = "img/island.png">
+								<a class = "island-tour" href = "#"><img class = "box3-pic" src = "img/island.png"></a>
 								<p class = "title">Dream Island Vacation</p>
 								<p id = "info">2-3 Weeks</p>
 							</div>
-						</div></a>
+						</div>
+						<div class = "box-special">
+							<div class = "top-box">
+								<a class = "more" href = "browse-preplanned-tours.php"><img class = "box4-pic" src = "img/more.png"></a>
+								<p class = "title"></p>
+								<p id = "info"></p>
+							</div>
+						</div>
+						<div class = "box-special">
+							<div class = "top-box">
+								<a class = "more" href = "browse-preplanned-tours.php"><img class = "box5-pic" src = "img/more.png"></a>
+								<p class = "title"></p>
+								<p id = "info"></p>
+							</div>
+						</div>
 					</div>
 			</div>
 		</div>
@@ -110,7 +124,7 @@
 		<div class = "section3">
 			<div class = "container">
 				<br /><br />
-				<center><h2>Top Destinations</h2></center>
+				<center><h2 class = "top">Top Destinations</h2></center>
 					<div class = "boxes">
 						<div class = "box">
 								<img class = "box-pic1" src = "img/switzerland.png">					

@@ -109,3 +109,14 @@ form #fName, #lName{
 .btn:hover {
 	background-color: grey;
 }
+
+.h1 {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 2%;
+	width: 20%;
+	text-align: center;
+	border: 2px solid #000;
+}
