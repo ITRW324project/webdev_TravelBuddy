@@ -130,6 +130,14 @@ a {
 		margin-bottom: 3rem;
 }
 
+.container-small {
+	padding: 0;
+}
+
+.container .form-group {
+		text-align: left;
+}
+
 .card {
 		margin-bottom: 30px;
 }
