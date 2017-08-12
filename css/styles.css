@@ -294,9 +294,23 @@ a {
 	font-family: 'Pacifico', cursive;
 }
 
-.logo-small-dark {
+.logo-small-dark, .logo-small-light {
 		font-size: 1.5rem;
 		color: #4116af;
 		margin: 0;
 		text-align: center;
+}
+
+.logo-small-dark {
+		color: #4116af;
+}
+
+.logo-small-light {
+		color: #f7f7f9;
+}
+
+.logo-large {
+		color: #f7f7f9;
+		font-size: 100px;
+		margin: 0;
 }
