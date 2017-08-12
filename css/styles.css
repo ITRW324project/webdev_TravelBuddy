@@ -394,3 +394,30 @@ a {
 		border-radius: 10px;
 		margin: 2rem;
 }
+
+.sidebar {
+	display: none;
+	background: linear-gradient(45deg, #4a90e2, #58df85);
+	position: absolute;
+	top: 0;
+	width: 50vw;
+	padding: .5rem;
+	box-shadow: 5px 5px 20px rgba(1,1,1,.8);
+	color: #f7f7f9;
+}
+
+@media screen and (max-width: 600px) {
+	.sidebar {
+		width: 90vw;
+	}
+}
+
+.sidebar .card {
+		padding: .5rem;
+}
+
+.sidebar-heading {
+		text-align: center;
+		color: #4116af;
+		font-weight: 500;
+}
