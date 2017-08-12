@@ -283,6 +283,12 @@ a {
 		width: 40vw;
 }
 
+@media screen and (max-width: 600px) {
+	.fullscreen-section  .card {
+			width: 90vw;
+	}
+}
+
 .logo {
 	font-family: 'Pacifico', cursive;
 }
