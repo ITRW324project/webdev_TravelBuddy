@@ -366,3 +366,12 @@ a {
 .summary p {
 	margin-bottom: .5rem;
 }
+
+/*Destination Heading Re-Center*/
+.heading-destination{
+	text-align: center;
+}
+
+h4{
+	margin-top: 2rem;
+}
