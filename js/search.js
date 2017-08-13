@@ -43,10 +43,12 @@ function initAutocomplete() {
           maxWidth: 640
       });
 
+      $('.photos-row').empty();
       place.photos.forEach(function(pic) {
         var pic = pic.getUrl({
             maxWidth: 640
         });
+
 
         $('.photos-row').append(`<div class="col-3 col-md-6 col-lg-3">
           <div class="card card-destination-image" style="background-image: url(`+ pic +`)">

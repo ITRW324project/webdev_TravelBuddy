@@ -34,10 +34,16 @@
 		<input id="pac-input" type="email" class="form-control form-control-lg " id="lgFormGroupInput" placeholder="I want to visit...">
 		<div class="map-container">
 			<div id="map"></div>
-
 		</div>
 
 		<!-- GOOGLE SEARCH END -->
+
+		<!-- BUTTONS -->
+		<div class="container container-small mt-3 clearfix">
+				<button class="btn btn-success ml-1 float-right js-new-travelbook">New Travelbook</button>
+				<button class="btn btn-primary ml-1 float-right js-existing-travelbook">Add to my existing travelbook</button>
+		</div>
+		<!-- BUTTONS END-->
 
 		<!-- MORE INFORMATION -->
 
@@ -46,9 +52,86 @@
 				<h3 class="container-heading">Gallery</h3>
 				<div class="row photos-row"></div>
 			</div>
+			<div class="background-grey">
+			<div class="container">
+				<h3 class="container-heading">Resources</h3>
+				<div class="row">
+					<div class="col-12 col-md-12 col-lg-4">
+						<div href="Tour Show/tour-show.html" class="card card-link">
+							<img class="card-img-top" src="https://static.pexels.com/photos/541517/pexels-photo-541517.jpeg" >
+							<div class="card-block">
+								<h4 class="card-title">Attractions</h4>
+								<p class="card-text">Search for things to do.</p>
+								<a class="btn btn-primary btn-sm" href="https://www.tripadvisor.co.za">View now</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-12 col-lg-4">
+						<div href="Tour Show/tour-show.html" class="card card-link">
+							<img class="card-img-top" src="https://static.pexels.com/photos/5317/food-salad-restaurant-person.jpg" >
+							<div class="card-block">
+								<h4 class="card-title">Restaurants</h4>
+								<p class="card-text">For the foodies.</p>
+								<a class="btn btn-primary btn-sm" href="https://www.zomato.com/">Lets go</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-4">
+						<div href="Tour Show/tour-show.html" class="card card-link">
+						<img class="card-img-top" src="https://static.pexels.com/photos/286744/pexels-photo-286744.jpeg" >
+						<div class="card-block">
+							<h4 class="card-title">Accomodation</h4>
+							<p class="card-text">Book accomodation.</p>
+							<a class="btn btn-primary btn-sm" href="https://www.airbnb.com/">Next</a>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		</div>
 
 		<!-- MORE INFORMATION END -->
+
+		<!-- REVIWES -->
+		<div class="container">
+			<h3 class="container-heading">Reviews</h3>
+			<div class="row">
+				<div class="comment">
+					<img src="https://static.pexels.com/photos/295821/pexels-photo-295821.jpeg" class="rounded-circle comment-image">
+					<div class="comment-text">
+							<h6 class="comment-heading">Best day evar!</h6>
+							<p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+							<p class="comment-author">Jane Doe</p>
+					</div>
+				</div>
+				<div class="comment">
+					<img src="https://static.pexels.com/photos/262226/pexels-photo-262226.jpeg" class="rounded-circle comment-image">
+					<div class="comment-text">
+							<h6 class="comment-heading">Best day evar!</h6>
+							<p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+							<p class="comment-author">Jane Doe</p>
+					</div>
+				</div>
+				<div class="comment">
+					<img src="https://static.pexels.com/photos/91227/pexels-photo-91227.jpeg" class="rounded-circle comment-image">
+					<div class="comment-text">
+							<h6 class="comment-heading">Best day evar!</h6>
+							<p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+							<p class="comment-author">Jane Doe</p>
+					</div>
+				</div>
+			</div>
+			<form>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Write your own review</label>
+					<input type="email" class="form-control" id="exampleInputEmail1">
+				</div>
+				<button type="submit" class="btn btn-primary float-right">Submit</button>
+			</form>
+		</div>
+		<!-- REVIWES -->
 
 
 		<!-- SIDEBAR -->
@@ -110,6 +193,62 @@
 				</div>
 		</nav>
 		<!-- FOOTER END -->
+		<!-- NEW TRAVELBOOK -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						...
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popover-modal js-new-travelbook-modal">
+				<div class="popover-modal-container">
+						<h4>Name your new travelbook</h4>
+						<form>
+							<div class="form-group">
+								<input type = "text" class="form-control"></input>
+							</div>
+							<a class="btn btn-primary" href="../Tour Show/tour-show.html">Okay</a>
+							<button type="button" class="btn btn-secondary js-new-travelbook">Cancel</button>
+						</form>
+				</div>
+		</div>
+		<div class="popover-modal js-new-existing-modal">
+			<div class="popover-modal-container">
+					<h4>Select travelbook</h4>
+					<form>
+						<div class="form-group">
+						<label class="custom-control custom-radio">
+							<input id="radio1" name="radio" type="radio" class="custom-control-input">
+							<span class="custom-control-indicator"></span>
+							<span class="custom-control-description">Travelbook 1</span>
+						</label>
+						</div>
+						<div>
+						<label class="custom-control custom-radio">
+							<input id="radio2" name="radio" type="radio" class="custom-control-input">
+							<span class="custom-control-indicator"></span>
+							<span class="custom-control-description">Travelbook 2</span>
+						</label>
+						</div>
+						<a class="btn btn-primary" href="../Tour Show/tour-show.html">Okay</a>
+						<button type="button" class="btn btn-secondary js-existing-travelbook">Cancel</button>
+					</form>
+			</div>
+		</div>
+		<!-- NEW TRAVELBOOK END -->
 		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -118,5 +257,14 @@
 		<script src="../js/search.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUBHxdSTihUNqqFxLVHAc0cYFKYIoR6FQ&libraries=places&callback=initAutocomplete"
          async defer></script>
+				 <script>
+		 			$(".js-new-travelbook").click( function() {
+		 			   $(".js-new-travelbook-modal").toggle();
+		 			});
+
+		 			$(".js-existing-travelbook").click( function() {
+		 			   $(".js-new-existing-modal").toggle();
+		 			});
+		 		</script>
 	</body>
 </html>
