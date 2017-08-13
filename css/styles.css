@@ -475,3 +475,7 @@ a {
 	 display: none;
 	 margin-bottom: 1rem;
  }
+
+.center-button {
+	margin: auto;
+}
