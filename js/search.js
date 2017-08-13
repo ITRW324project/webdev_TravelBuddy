@@ -38,6 +38,7 @@ function initAutocomplete() {
 
       $('.destination-name').html(place.formatted_address);
       $('.hint').html('Scroll down to see more');
+      $('.travel-book-buttons').show();
 
       var photo = place.photos[0].getUrl({
           maxWidth: 640

@@ -470,3 +470,8 @@ a {
  #googleMap {
 	 height: 40vh;
  }
+
+ .travel-book-buttons {
+	 display: none;
+	 margin-bottom: 1rem;
+ }
