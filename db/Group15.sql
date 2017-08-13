@@ -140,6 +140,8 @@ CREATE TABLE IF NOT EXISTS `Group15_Database_Travel`.`Reviews` (
   `Review_ID` INT NOT NULL,
   `Review` VARCHAR(45) NULL DEFAULT NULL,
   `Plan_ID` INT NOT NULL,
+  `Name` VARCHAR(45) NOT NULL,
+  `Heading` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`Review_ID`),
   INDEX `fk_Reviews_Plan1_idx` (`Plan_ID` ASC),
   CONSTRAINT `fk_Reviews_Plan1`
