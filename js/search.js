@@ -43,7 +43,39 @@ function initAutocomplete() {
           maxWidth: 640
       });
 
+      place.photos.forEach(function(pic) {
+        var pic = pic.getUrl({
+            maxWidth: 640
+        });
+
+        $('.photos-row').append(`<div class="col-3 col-md-6 col-lg-3">
+          <div class="card card-destination-image" style="background-image: url(`+ pic +`)">
+              </div>
+            </div>
+          </div>`);
+      });
+
       $('.welcome-banner').css('background-image', 'url("' + photo + '")');
+
+      $('.destination-info').show();
+
+      // APPEND IMAGES
+
+      //SHOW PHOTO GALLERY
+
+      // TODO LINK TO
+      //https://www.airbnb.com/s/vanderbijlpark/homes?checkin=2017-12-01&allow_override%5B%5D=&checkout=2017-12-16
+
+      //https://www.tripadvisor.co.za/Attractions
+
+      //https://www.zomato.com/
+
+      // TODO ADD ABILITY TO GO TO LOCATION
+      //window.location.href.indexOf("Search")
+      //window.location.href.length
+      //window.location.href.substring(56, 92)
+
+
 
 
       if (!place.geometry) {

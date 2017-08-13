@@ -449,3 +449,21 @@ a {
   .map-info .card {
 		padding: 2rem;
 	}
+
+
+.destination-info {
+	display: none;
+}
+
+.card-destination-image {
+	height: 10rem;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+@media screen and (max-width: 600px) {
+	.card-destination-image {
+		height: 5rem;
+	}
+}
