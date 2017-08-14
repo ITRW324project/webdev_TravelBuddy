@@ -22,7 +22,7 @@
 		<!-- BANNER -->
 		<div class="gradient-banner" >
         <h1>Luxury Europe Tour</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet congue velit quis gravida. Vivamus cursus arcu a tempor dictum.Quisque sapien nisl, porttitor ut ligula sed, commodo eleifend purus. Eget scelerisque erat condimentum at. Aenean consectetur magna tempus orci ullamcorper, ac faucibus.</p>
+        <p>Take a 4 week tour through Europe.  Explore all the luxuries that Europe has to offer.  The tour will depart from London.  This tour will provide you with all the exlusive attractions that Europe has to offer.  All travels will be done per flight, except for the departure from London to France; you will travel by train.  Information regarding the distance traveled and time traveled will be displayed below.</p>
     	</div>
 		</div>
 		<!-- BANNER END -->
@@ -70,32 +70,40 @@
 			    HOME
 			  </a>
 			  <div href="#" class="list-group-item list-group-item-action">
-					<p><b>Distance:</b> 1021k</p>
-					<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
+					<p><b>Distance:</b> 13 276.6km</p>
+					<p><b>Leg Travel Duration:</b> 11 Hrs 15 Mins</p>
 				</div>
-				<a href="../Destination Show/destination-show.html" class="list-group-item active">
+				<a href="../Show%20Destination/show-destination.html?location=London" class="list-group-item active">
 			    London
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
 				<div href="#" class="list-group-item list-group-item-action">
-					<p><b>Distance:</b> 1021k</p>
-					<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
+					<p><b>Distance:</b> 470.8km</p>
+					<p><b>Leg Travel Duration:</b> 2 Hrs 25 Mins</p>
 				</div>
-				<a href="../Destination Show/destination-show.html" class="list-group-item active">
+				<a href="../Show%20Destination/show-destination.html?location=Paris" class="list-group-item active">
 			    Paris
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
 				<div href="#" class="list-group-item list-group-item-action">
-					<p><b>Distance:</b> 1021k</p>
-					<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
+					<p><b>Distance:</b> 1 420.3km</p>
+					<p><b>Leg Travel Duration:</b> 2 Hrs 15 Mins</p>
 				</div>
-				<a href="../Destination Show/destination-show.html" class="list-group-item active">
+				<a href="../Show%20Destination/show-destination.html?location=Rome" class="list-group-item active">
 			    Rome
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
 				<div href="#" class="list-group-item list-group-item-action">
-					<p><b>Distance:</b> 1021k</p>
-					<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
+					<p><b>Distance:</b> 1 359.4km</p>
+					<p><b>Leg Travel Duration:</b> 1 Hrs 55 Mins</p>
+				</div>
+			    <a href="../Show%20Destination/show-destination.html?location=Barcelona" class="list-group-item active">
+			    Barcelona
+					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
+			  </a>
+				<div href="#" class="list-group-item list-group-item-action">
+					<p><b>Distance:</b> 11 793.6km</p>
+					<p><b>Leg Travel Duration:</b> 14 Hrs 15 Mins</p>
 				</div>
 				<a href="#" class="list-group-item home">
 			    HOME
@@ -103,8 +111,8 @@
 			</div>
 			<div class="summary">
 				<h6>Luxury Europe Tour Summary</h6>
-				<p><b>Total Distance:</b> 1021k</p>
-				<p><b>Total Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
+				<p><b>Total Distance:</b> 28 320.7km</p>
+				<p><b>Total Leg Travel Duration:</b> 32 Hrs 5 Mins</p>
 				<a class="btn btn-primary btn mt-1" href="../Landing Page/landing-page.html">Add more destinations</a>
 			</div>
 		</div>
@@ -123,24 +131,24 @@
 						HOME
 					</a>
 					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
+						<p><b>Distance:</b> 13 276.6km</p>
+						<p><b>Leg Travel Duration:</b> 11 Hrs 15 Mins</p>
 					</div>
 					<a href="#" class="list-group-item active">
 						London
 						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 					</a>
 					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
+						<p><b>Distance:</b> 470.8km</p>
+						<p><b>Leg Travel Duration:</b> 2 Hrs 25 Mins</p>
 					</div>
 					<a href="#" class="list-group-item active">
 						Paris
 						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 					</a>
 					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
+						<p><b>Distance:</b> 1 420.3km</p>
+						<p><b>Leg Travel Duration:</b> 2 Hrs 15 Mins</p>
 					</div>
 					<a href="#" class="list-group-item active">
 						Rome
@@ -149,6 +157,14 @@
 					<div href="#" class="list-group-item list-group-item-action">
 						<p><b>Distance:</b> 1021k</p>
 						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
+					</div>
+					<a href="../Destination Show/destination-show.html" class="list-group-item active">
+			    		Barcelona
+						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
+			 	    </a>
+					<div href="#" class="list-group-item list-group-item-action">
+						<p><b>Distance:</b> 11 793.6km</p>
+						<p><b>Leg Travel Duration:</b> 14 Hrs 15 Mins</p>
 					</div>
 					<a href="#" class="list-group-item home">
 						HOME
