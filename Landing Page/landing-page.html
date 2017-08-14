@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php 
+ $cookie_name = $_COOKIE['UserName'];
+ echo $cookie_name 
+?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">

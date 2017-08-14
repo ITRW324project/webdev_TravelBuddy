@@ -1,24 +1,7 @@
 <!DOCTYPE html>
-<?php
-	if($_SERVER["REQUEST_METHOD"] == "GET")
-	{
-		if($_GET['bool'] == "1")
-		{
-			$cookie_value = $_GET['name'];
-			setcookie("UserName", $cookie_value, time() + (7200), "/" ,"simeon.ddns.net");
-			echo $_COOKIE['UserName'];
-			header("Location: http://simeon.ddns.net:8085/travelappbuddy/Landing Page/landing-page.html");
-			}
-			}
-			if($_GET['bool'] == "0")
-			{
-				header("Location: http://simeon.ddns.net:8085/travelappbuddy/Login Page/relogin.html");
-			}
-		}
-	}
-?>
 <html lang="en">
 	<head>
+	
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Travel Buddy</title>
@@ -35,12 +18,13 @@
 					<a class="btn btn-outline-secondary btn-sm" href="../Sign Up Page/registration.html">Sign Up</a>
 				</div>
 		</nav>
+		
 		<!-- NAVBAR END -->
 		<div class="fullscreen-section">
 				<div class="card">
 				<a href = "../home.html" class="logo logo-small-dark">Travel Buddy</a>
 				<h2>Login</h2>
-				<p>Please enter your username and password.</p>
+				<p>Username or password is incorrect. Enter correct username and password.</p>
 				<form action = "http://simeon.ddns.net:8080/testConnect.php" method = "get">
 					<div class="form-group">
 						<label>Username:</label>
@@ -51,6 +35,7 @@
 						<input name = "password" type = "text" class="form-control"></input>
 					</div>
 					<input type="submit" value="Submit" class="btn btn-primary btn-submit float-right">
+					<!-- <a href = "../Landing Page/landing-page.html" class = "btn btn-primary btn-submit float-right">Submit</a> -->
 					<div class = "buttons">
 						<a href = "../home.html">Back</a>&emsp;
 						<a href = "#" class = "pass">
@@ -59,6 +44,7 @@
 				</form>
 			</div>
 		</div>
+			
 		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
