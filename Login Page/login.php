@@ -1,4 +1,4 @@
-<!DOCTYPE php>
+<!DOCTYPE html>
 <?php
 	if($_SERVER["REQUEST_METHOD"] == "GET")
 	{
@@ -7,12 +7,12 @@
 			$cookie_value = $_GET['name'];
 			setcookie("UserName", $cookie_value, time() + (7200), "/" ,"simeon.ddns.net");
 			echo $_COOKIE['UserName'];
-			header("Location: http://simeon.ddns.net:8085/travelappbuddy/Landing Page/landing-page.php");
+			header("Location: http://simeon.ddns.net:8085/travelappbuddy/Landing Page/landing-page.html");
 			}
 			}
 			if($_GET['bool'] == "0")
 			{
-				header("Location: http://simeon.ddns.net:8085/travelappbuddy/Login Page/relogin.php");
+				header("Location: http://simeon.ddns.net:8085/travelappbuddy/Login Page/relogin.html");
 			}
 		}
 	}
@@ -63,7 +63,7 @@
 				</form>
 			</div>
 		</div>
-			
+		
 		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
