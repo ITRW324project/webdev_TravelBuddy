@@ -57,10 +57,16 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Group15_Database_Travel`.`Locations` (
   `Loc_ID` INT NOT NULL,
   `Loc_name` VARCHAR(45) NOT NULL,
-  `Loc_Description` TEXT NOT NULL,
   `Lat` FLOAT NULL,
   `Long` FLOAT NULL,
-  PRIMARY KEY (`Loc_ID`))
+  `Plan_ID` INT NOT NULL,
+  PRIMARY KEY (`Loc_ID`),
+  INDEX `fk_Locations_Plan1_idx` (`Plan_ID` ASC),
+  CONSTRAINT `fk_Locations_Plan1`
+    FOREIGN KEY (`Plan_ID`)
+    REFERENCES `Group15_Database_Travel`.`Plan` (`Plan_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -83,29 +89,6 @@ CREATE TABLE IF NOT EXISTS `Group15_Database_Travel`.`Hotels` (
   `Hotel_Name` VARCHAR(45) NOT NULL,
   `Hotel_Description` TEXT NOT NULL,
   PRIMARY KEY (`Hotel_ID`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `Group15_Database_Travel`.`Plan_Locations`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Group15_Database_Travel`.`Plan_Locations` (
-  `Plan_ID` INT NOT NULL,
-  `Locations_ID` INT NOT NULL,
-  `Start_time` INT NULL,
-  `End_time` INT NULL,
-  PRIMARY KEY (`Plan_ID`, `Locations_ID`),
-  INDEX `fk_Plan_Locations_Locations1_idx` (`Locations_ID` ASC),
-  CONSTRAINT `fk_Plan_Locations_Plan`
-    FOREIGN KEY (`Plan_ID`)
-    REFERENCES `Group15_Database_Travel`.`Plan` (`Plan_ID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Plan_Locations_Locations1`
-    FOREIGN KEY (`Locations_ID`)
-    REFERENCES `Group15_Database_Travel`.`Locations` (`Loc_ID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
