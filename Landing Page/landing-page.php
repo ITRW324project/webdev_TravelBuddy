@@ -1,4 +1,4 @@
-<!DOCTYPE php>
+<!DOCTYPE html>
 <?php 
  $cookie_name = $_COOKIE['UserName'];
  echo $cookie_name 
@@ -16,21 +16,19 @@
 	<body>
 		<!-- NAVBAR -->
 		<nav class="navbar">
-				<a class="logo logo-small-light" href="../home.html">Travel Buddy</a>
+				<a class="logo logo-small-light" href="../home.php">Travel Buddy</a>
 				<div>
 					<button class="btn btn-success btn toggle-travelbook">My Travelbook</button>
-					<a class="btn btn-outline-secondary btn-sm" href="../home.html">Logout</a>
+					<a class="btn btn-outline-secondary btn-sm" href="../home.php">Logout</a>
 				</div>
 		</nav>
 		<!-- NAVBAR END -->
 		<!-- WELCOME BANNER -->
 		<div class="welcome-banner" style="background-image: url(https://static.pexels.com/photos/41949/earth-earth-at-night-night-lights-41949.jpeg);">
 				<h2>Welcome to </br><span class="logo">Travel Buddy!</span></h2>
-				<h4>Enter your dream destination</h4>
-				<div class="form-group row">
-		    <input type="email" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="I want to visit...">
-		    </div>
-				<a class="btn btn-primary btn-lg" href="../Search Results/search-results.html">Let's go!</a>
+				<h4>What do you want to do?</h4>
+				<button class="btn btn-success btn toggle-travelbook btn-lg">View my tavelbook</button>
+				<a class="btn btn-primary btn-lg" href="../Search Results/search-results.php">Search new destinations</a>
 		</div>
 		<!-- WELCOME BANNER END -->
 		<!-- PREVIOUS SEARCH -->
@@ -38,39 +36,38 @@
 		  <h3 class="container-heading">You previously looked at</h3>
 		  <div class="row">
 		    <div class="col-12 col-md-6 col-lg-3">
-		      <a class="card card-inverse card-link" href="../Destination Show/destination-show.html">
-				      <img class="card-img" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" alt="Card image">
+		      <a class="card card-inverse card-link" href="../Show%20Destination/show-destination.php?location=Paris">
+				      <img class="card-img" src="../img/France_Eiffel_Tower.jpeg" alt="Card image">
 				      <div class="card-img-overlay">
-				        <h4 class="card-title">Card title</h4>
-				        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+				        <h4 class="card-title">Paris</h4>
+				        <p class="card-text">A European city which is the capital of France.  Best known for the Eiffel Tower and the 12th-century, Gothic Notre-Dame Cathedral.</p>
+				      </div>
+				    </a>
+			</div>
+		    <div class="col-12 col-md-6 col-lg-3">
+					<a class="card card-inverse card-link" href="../Show%20Destination/show-destination.php?location=Barcelona">
+				      <img class="card-img" src="../img/Barcelona.jpg" alt="Card image">
+				      <div class="card-img-overlay">
+				        <h4 class="card-title">Barcelona</h4>
+				        <p class="card-text">Barcelona is the cosmopolitan capital of Spain.  Famed for its art and architecture.</p>
 				      </div>
 				    </a>
 					</div>
 		    <div class="col-12 col-md-6 col-lg-3">
-					<a class="card card-inverse card-link" href="../Destination Show/destination-show.html">
-				      <img class="card-img" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" alt="Card image">
+					<a class="card card-inverse card-link" href="../Show%20Destination/show-destination.php?location=Rome">
+				      <img class="card-img" src="../img/Rome_Theatre.jpeg" alt="Card image">
 				      <div class="card-img-overlay">
-				        <h4 class="card-title">Card title</h4>
-				        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-				      </div>
-				    </a>
-					</div>
-
-		    <div class="col-12 col-md-6 col-lg-3">
-					<a class="card card-inverse card-link" href="../Destination Show/destination-show.html">
-				      <img class="card-img" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" alt="Card image">
-				      <div class="card-img-overlay">
-				        <h4 class="card-title">Card title</h4>
-				        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+				        <h4 class="card-title">Rome</h4>
+				        <p class="card-text">Rome is situated in Italy.  Famous for its Ancient ruins, such as the Forum and the Colosseum.</p>
 				      </div>
 				    </a>
 					</div>
 		    <div class="col-12 col-md-6 col-lg-3">
-						<a class="card card-inverse card-link" href="../Destination Show/destination-show.html">
-				      <img class="card-img" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" alt="Card image">
+						<a class="card card-inverse card-link" href="../Show%20Destination/show-destination.php?location=Cape Town">
+				      <img class="card-img" src="../img/south africa.png" alt="Card image">
 				      <div class="card-img-overlay">
-				        <h4 class="card-title">Card title</h4>
-				        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+				        <h4 class="card-title">Cape Town</h4>
+				        <p class="card-text">Cape Town is one of South Africa's finest cities.  Tafelberg is one of Cape Town's most popular attractions.</p>
 				      </div>
 						</a>
 		    </div>
@@ -83,29 +80,29 @@
 				<h3 class="container-heading">View and use preplanned tours</h3>
 				<div class="row">
 					<div class="col-12 col-md-12 col-lg-4">
-						<a class="card card-link" href="../Tour Show/tour-show.html">
-							<img class="card-img-top" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" >
+						<a class="card card-link" href="../Tour Show/tour-show.php">
+							<img class="card-img-top" src="../img/London_Transport.jpg" >
 							<div class="card-block">
-								<h4 class="card-title">Card title</h4>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<h4 class="card-title">European Luxury Tour</h4>
+								<p class="card-text">Take a 4 week tour through Europe.  Explore all the luxuries that Europe has to offer.</p>
 							</div>
 						</a>
 					</div>
 					<div class="col-12 col-md-12 col-lg-4">
-						<a class="card card-link" href="../Tour Show/tour-show.html">
-							<img class="card-img-top" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" >
+						<a class="card card-link" href="../Tour Show/tour-show.php">
+							<img class="card-img-top" src="../img/CapeTown_TableMountain.jpeg" >
 							<div class="card-block">
-								<h4 class="card-title">Card title</h4>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<h4 class="card-title">Best of South Africa</h4>
+								<p class="card-text">Join us for a week of wonder in South Africa's most beautiful city and surrounding nature areas in Cape Town.</p>
 							</div>
 						</a>
 					</div>
 					<div class="col-12 col-md-12 col-lg-4">
-						<a class="card card-link" href="../Tour Show/tour-show.html">
-							<img class="card-img-top" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" >
+						<a class="card card-link" href="../Tour Show/tour-show.php">
+							<img class="card-img-top" src="../img/NewYork_Streets.jpeg" >
 							<div class="card-block">
-								<h4 class="card-title">Card title</h4>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<h4 class="card-title">City Life Tour</h4>
+								<p class="card-text">Take a week to experience the famous rushed streets of New York City.  Including tours to Manhattan and Brooklyn.</p>
 							</div>
 						</a>
 					</div>
@@ -118,32 +115,33 @@
 			<h3 class="container-heading">Top Destinations</h3>
 			<div class="row">
 				<div class="col-12 col-md-12 col-lg-4">
-					<a class="card card-link" href="../Destination Show/destination-show.html">
-						<img class="card-img-top card-img-round" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" >
-						<div class="card-block">
-							<h4 class="card-title">Card title</h4>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						</div>
-					</a>
+					<a class="card card-link" href="../Show%20Destination/show-destination.php?location=Paris">
+					<img class="card-img-top card-img-round" src="../img/France_Eiffel_Tower.jpeg" >
+					<div class="card-block">
+						<h4 class="card-title">Paris</h4>
+						<p class="card-text">Paris is the capital of France.  Widely known for  the Eiffel Tower and the 12th-century, Gothic Notre-Dame Cathedral.</p>
+					</div>
+				</a>
 				</div>
-				<div class="col-12 col-md-12 col-lg-4">
-					<a class="card card-link" href="../Destination Show/destination-show.html">
-						<img class="card-img-top card-img-round" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" >
-						<div class="card-block">
-							<h4 class="card-title">Card title</h4>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						</div>
-					</a>
+				<div class="col-12 col-md-6 col-lg-4">
+					<a class="card card-link" href="../Show%20Destination/show-destination.php?location=Barcelona">
+					<img class="card-img-top card-img-round" src="../img/Barcelona.jpg" >
+					<div class="card-block">
+						<h4 class="card-title">Barcelona</h4>
+						<p class="card-text">Barcelona is the cosmopolitan capital of Spain.  Famed for its art and architecture.</p>
+					</div>
+				</a>
 				</div>
-				<div class="col-12 col-md-12 col-lg-4">
-					<a class="card card-link" href="../Destination Show/destination-show.html">
-						<img class="card-img-top card-img-round" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" >
-						<div class="card-block">
-							<h4 class="card-title">Card title</h4>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						</div>
-					</a>
+				<div class="col-12 col-md-6 col-lg-4">
+					<a class="card card-link" href="../Show%20Destination/show-destination.php?location=Rome">
+					<img class="card-img-top card-img-round" src="../img/Rome_Theatre.jpeg" >
+					<div class="card-block">
+						<h4 class="card-title">Rome</h4>
+						<p class="card-text">Rome is situated in Italy.  Famous for its Ancient ruins, such as the Forum and the Colosseum.</p>
+					</div>
+				</a>
 				</div>
+				<a class="btn btn-primary center-button btn-lg" href="../DestinationIndex/destination-index.php">View All</a>
 			</div>
 		</div>
 		<!-- TOP DESTINATION END -->
@@ -158,40 +156,40 @@
 				<h6 class="sidebar-heading">Luxury Europe Tour</h6>
 				<div class="list-group">
 					<a href="#" class="list-group-item home">
-						HOME
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
-					</div>
-					<a href="#" class="list-group-item active">
-						London
-						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
-					</div>
-					<a href="#" class="list-group-item active">
-						Paris
-						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
-					</div>
-					<a href="#" class="list-group-item active">
-						Rome
-						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
-					</div>
-					<a href="#" class="list-group-item home">
-						HOME
-					</a>
+			    HOME
+			  </a>
+			  <div href="#" class="list-group-item list-group-item-action">
+					<p><b>Distance:</b> 16 723.6km</p>
+					<p><b>Leg Travel Duration:</b> 21 Hrs 14 Mins</p>
+				</div>
+				<a href="../Show%20Destination/show-destination.php?location=California" class="list-group-item active">
+			    California
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
+			  </a>
+				<div href="#" class="list-group-item list-group-item-action">
+					<p><b>Distance:</b> 4 747.8km</p>
+					<p><b>Leg Travel Duration:</b> 4 Hrs 41 Mins</p>
+				</div>
+				<a href="../Show%20Destination/show-destination.php?location=Miami" class="list-group-item active">
+			    Miami
+					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
+			  </a>
+				<div href="#" class="list-group-item list-group-item-action">
+					<p><b>Distance:</b> 2 053,1km</p>
+					<p><b>Leg Travel Duration:</b> 3Hrs 5 Mins</p>
+				</div>
+				<a href="../Show%20Destination/show-destination.php?location=NewYork" class="list-group-item active">
+			    New York
+					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
+			  </a>
+				<div href="#" class="list-group-item list-group-item-action">
+					<p><b>Distance:</b> 12 831km</p>
+					<p><b>Leg Travel Duration:</b> 14 Hrs 50 Mins</p>
+				</div>
+				<a href="#" class="list-group-item home">
+			    HOME
+			  </a>
+					<a class="btn btn-primary btn-lg" href="../Journal Destinations/journal_destinations.php">View Map</a>
 				</div>
 			</div>
 		</div>

@@ -12,10 +12,10 @@
 	<body>
 		<!-- NAVBAR -->
 		<nav class="navbar">
-				<a class="logo logo-small-light" href="../Landing Page/landing-page.html">Travel Buddy</a>
+				<a class="logo logo-small-light" href="../Landing Page/landing-page.php">Travel Buddy</a>
 				<div>
 					<button class="btn btn-success btn toggle-travelbook">My Travelbook</button>
-					<a class="btn btn-outline-secondary btn-sm" href="../home.html">Logout</a>
+					<a class="btn btn-outline-secondary btn-sm" href="../home.php">Logout</a>
 				</div>
 		</nav>
 		<!-- NAVBAR END -->
@@ -73,7 +73,7 @@
 					<p><b>Distance:</b> 13 276.6km</p>
 					<p><b>Leg Travel Duration:</b> 11 Hrs 15 Mins</p>
 				</div>
-				<a href="../Show%20Destination/show-destination.html?location=London" class="list-group-item active">
+				<a href="../Show%20Destination/show-destination.php?location=London" class="list-group-item active">
 			    London
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
@@ -81,7 +81,7 @@
 					<p><b>Distance:</b> 470.8km</p>
 					<p><b>Leg Travel Duration:</b> 2 Hrs 25 Mins</p>
 				</div>
-				<a href="../Show%20Destination/show-destination.html?location=Paris" class="list-group-item active">
+				<a href="../Show%20Destination/show-destination.php?location=Paris" class="list-group-item active">
 			    Paris
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
@@ -89,7 +89,7 @@
 					<p><b>Distance:</b> 1 420.3km</p>
 					<p><b>Leg Travel Duration:</b> 2 Hrs 15 Mins</p>
 				</div>
-				<a href="../Show%20Destination/show-destination.html?location=Rome" class="list-group-item active">
+				<a href="../Show%20Destination/show-destination.php?location=Rome" class="list-group-item active">
 			    Rome
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
@@ -97,7 +97,7 @@
 					<p><b>Distance:</b> 1 359.4km</p>
 					<p><b>Leg Travel Duration:</b> 1 Hrs 55 Mins</p>
 				</div>
-			    <a href="../Show%20Destination/show-destination.html?location=Barcelona" class="list-group-item active">
+			    <a href="../Show%20Destination/show-destination.php?location=Barcelona" class="list-group-item active">
 			    Barcelona
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
@@ -113,7 +113,7 @@
 				<h6>Luxury Europe Tour Summary</h6>
 				<p><b>Total Distance:</b> 28 320.7km</p>
 				<p><b>Total Leg Travel Duration:</b> 32 Hrs 5 Mins</p>
-				<a class="btn btn-primary btn mt-1" href="../Landing Page/landing-page.html">Add more destinations</a>
+				<a class="btn btn-primary btn mt-1" href="../Landing Page/landing-page.php">Add more destinations</a>
 			</div>
 		</div>
 		<!-- TOUR LIST END -->
@@ -155,10 +155,10 @@
 						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 					</a>
 					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
+						<p><b>Distance:</b>  1 359.4km</p>
+						<p><b>Leg Travel Duration:</b> 1 Hrs 55 Mins</p>
 					</div>
-					<a href="../Destination Show/destination-show.html" class="list-group-item active">
+					<a href="../Destination Show/destination-show.php" class="list-group-item active">
 			    		Barcelona
 						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			 	    </a>
