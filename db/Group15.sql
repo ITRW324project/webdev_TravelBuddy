@@ -30,6 +30,8 @@ CREATE TABLE IF NOT EXISTS `Group15_Database_Travel`.`Users` (
   `User_firstname` VARCHAR(45) NULL DEFAULT NULL,
   `User_email` VARCHAR(45) NOT NULL,
   `User_password` VARCHAR(45) NOT NULL,
+  `User_Contact` INT(10) NOT NULL,
+  `User_Town` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`User_ID`))
 ENGINE = InnoDB;
 
@@ -60,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `Group15_Database_Travel`.`Locations` (
   `Lat` FLOAT NULL,
   `Long` FLOAT NULL,
   `Plan_ID` INT NOT NULL,
-  PRIMARY KEY (`Loc_ID`),
+  PRIMARY KEY (`Loc_ID`, `Plan_ID`),
   INDEX `fk_Locations_Plan1_idx` (`Plan_ID` ASC),
   CONSTRAINT `fk_Locations_Plan1`
     FOREIGN KEY (`Plan_ID`)
