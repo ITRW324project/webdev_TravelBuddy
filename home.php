@@ -1,4 +1,4 @@
-﻿
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -14,8 +14,8 @@
 		<nav class="navbar">
 				<p class="logo logo-small-light">Travel Buddy</p>
 				<div>
-					<a class="btn btn-outline-secondary btn-sm" href="Sign Up Page/registration.html">Sign Up</a>
-					<a class="btn btn-outline-secondary btn-sm" href="Login Page/login.html">Login</a>
+					<a class="btn btn-outline-secondary btn-sm" href="Sign Up Page/registration.php">Sign Up</a>
+					<a class="btn btn-outline-secondary btn-sm" href="Login Page/login.php">Login</a>
 				</div>
 		</nav>
 		<!-- NAVBAR END -->
@@ -23,10 +23,10 @@
 		<div class="welcome-banner" style="background-image: url(https://static.pexels.com/photos/417344/pexels-photo-417344.jpeg);">
 				<p class="logo logo-large">Travel Buddy</p>
 				<h2>Let’s go on an adventure!</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet congue velit quis gravida. Vivamus cursus arcu a tempor dictum.Quisque sapien nisl, porttitor ut ligula sed, commodo eleifend purus. Fusce bibendum tristique nulla, eget scelerisque erat condimentum at. Aenean consectetur magna tempus orci ullamcorper, ac faucibus enim iaculis.</p>
-				<a class="btn btn-primary btn-lg" href="Login Page/login.html">Let's go!</a>
+				<p>Welcome to Travel Buddy! Here you can explore destinations and be provided with a gallery view, nearby attractions, restaurants and accomodation. A selection of preplanned tours will also be provided. Add tours and destinations to your travel journal and view travel time and distances.</p>
+				<a class="btn btn-primary btn-lg" href="Login Page/login.php">Let's go!</a>
 		</div>
-		<!-- WELCOME BANNER END -->
+		<!-- WELCOME BANNER END -->  
 		<!-- HOW DOES IT WORK -->
 		<div class="container">
 			<h3 class="container-heading">How does it work?</h3>
@@ -64,7 +64,7 @@
 				<h3 class="container-heading">View and use preplanned tours</h3>
 				<div class="row">
 					<div class="col-12 col-md-12 col-lg-4">
-						<a href="Tour Show/tour-show.html" class="card card-link">
+						<a href="Tour Show/tour-show.php" class="card card-link">
 							<img class="card-img-top" src="img/Brazil_Hill.jpeg" >
 							<div class="card-block">
 								<h4 class="card-title">Tropical Tour</h4>
@@ -73,7 +73,7 @@
 						</a>
 					</div>
 					<div class="col-12 col-md-12 col-lg-4">
-						<a href="Tour Show/tour-show.html" class="card card-link">
+						<a href="Tour Show/tour-show.php" class="card card-link">
 							<img class="card-img-top" src="img/Thailand_Festivals.jpeg" >
 							<div class="card-block">
 								<h4 class="card-title">Cultural Tour</h4>
@@ -82,7 +82,7 @@
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-4">
-						<a href="Tour Show/tour-show.html" class="card card-link">
+						<a href="Tour Show/tour-show.php" class="card card-link">
 						<img class="card-img-top" src="img/DC_Landmark.jpg" >
 						<div class="card-block">
 							<h4 class="card-title">American History Tour</h4>
@@ -91,6 +91,7 @@
 					</a>
 					</div>
 				</div>
+				<a class="btn btn-primary center-button btn-lg" href="Tour Index/Tour-Index.php">View All</a>
 			</div>
 		</div>
 		<!-- PREPLANNED END -->
@@ -99,7 +100,7 @@
 			<h3 class="container-heading">Top Destinations</h3>
 			<div class="row">
 				<div class="col-12 col-md-12 col-lg-4">
-					<a class="card card-link" href="Show%20Destination/show-destination.html?location=Paris">
+					<a class="card card-link" href="Show%20Destination/show-destination.php?location=Paris">
 					<img class="card-img-top card-img-round" src="img/France_Eiffel_Tower.jpeg" >
 					<div class="card-block">
 						<h4 class="card-title">Paris</h4>
@@ -108,7 +109,7 @@
 				</a>
 				</div>
   			<div class="col-12 col-md-6 col-lg-4">
-					<a class="card card-link" href="Show%20Destination/show-destination.html?location=Barcelona">
+					<a class="card card-link" href="Show%20Destination/show-destination.php?location=Barcelona">
 					<img class="card-img-top card-img-round" src="img/Barcelona.jpg" >
 					<div class="card-block">
 						<h4 class="card-title">Barcelona</h4>
@@ -117,16 +118,15 @@
 				</a>
 				</div>
 				<div class="col-12 col-md-6 col-lg-4">
-					<a class="card card-link" href="Show%20Destination/show-destination.html?location=Rome">
+					<a class="card card-link" href="Show%20Destination/show-destination.php?location=Rome">
 					<img class="card-img-top card-img-round" src="img/Rome_Theatre.jpeg" >
 					<div class="card-block">
 						<h4 class="card-title">Rome</h4>
 						<p class="card-text">Rome is situated in Italy.  Famous for its Ancient ruins, such as the Forum and the Colosseum.</p>
 					</div>
 				</a>
-
 				</div>
-				<a class="btn btn-primary center-button btn-lg" href="DestinationIndex/destination-index.html">View All</a>
+				<a class="btn btn-primary center-button btn-lg" href="DestinationIndex/destination-index.php">View All</a>
 			</div>
 		</div>
 		<!-- TOP DESTINATION END -->
