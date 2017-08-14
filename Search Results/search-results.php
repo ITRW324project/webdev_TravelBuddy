@@ -96,27 +96,27 @@
 			<h3 class="container-heading">Reviews</h3>
 			<div class="row">
 				<div class="comment">
-					<img src="https://static.pexels.com/photos/295821/pexels-photo-295821.jpeg" class="rounded-circle comment-image">
+					<img src="../img/Woman_3.jpeg" class="rounded-circle comment-image">
 					<div class="comment-text">
-							<h6 class="comment-heading">Best day evar!</h6>
-							<p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-							<p class="comment-author">Jane Doe</p>
+							<h6 class="comment-heading">Simply Amazing!</h6>
+							<p>I had the most amazing time exploring cultures throughout Asia.  My applause to the Cultural Tour.</p>
+							<p class="comment-author">Ellen Bane</p>
 					</div>
 				</div>
 				<div class="comment">
-					<img src="https://static.pexels.com/photos/262226/pexels-photo-262226.jpeg" class="rounded-circle comment-image">
+					<img src="../img/Man.jpeg" class="rounded-circle comment-image">
 					<div class="comment-text">
-							<h6 class="comment-heading">Best day evar!</h6>
-							<p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-							<p class="comment-author">Jane Doe</p>
+							<h6 class="comment-heading">Thanks to Travel Buddy</h6>
+							<p>Thanks to Travel Buddy, I could explore my surrounding before I went to Paris.</p>
+							<p class="comment-author">Markus Ladden</p>
 					</div>
 				</div>
 				<div class="comment">
-					<img src="https://static.pexels.com/photos/91227/pexels-photo-91227.jpeg" class="rounded-circle comment-image">
+					<img src="../img/Man_2.jpeg" class="rounded-circle comment-image">
 					<div class="comment-text">
-							<h6 class="comment-heading">Best day evar!</h6>
-							<p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-							<p class="comment-author">Jane Doe</p>
+							<h6 class="comment-heading">Best Day Ever!</h6>
+							<p>Exploring the streets of Barcelona was just breath-taking.  I thank Travel Buddy for providing me information regarding Barcelona!</p>
+							<p class="comment-author">Alex O'Malley</p>
 					</div>
 				</div>
 			</div>
