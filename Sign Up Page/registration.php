@@ -76,7 +76,7 @@
 					</div>
 					<div class="form-group">
 						<p>Where do you stay? </p>
-						<input id = "town" type = "text" class="form-control"></input>
+						<input name = "town" type = "text" class="form-control"></input>
 					</div>
 					<input type="submit" value="Submit" class="btn btn-primary btn-submit float-right">
 					<!--<a ="../Landing Page/landing-page.html" class = "btn btn-primary btn-submit float-right">Submit</a> -->
