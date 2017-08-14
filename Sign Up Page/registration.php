@@ -1,4 +1,23 @@
 <!DOCTYPE html>
+<?php
+	if($_SERVER["REQUEST_METHOD"] == "GET")
+	{
+		if($_GET['bool'] == "0")
+		{
+			$cookie_value = $_GET['name'];
+			setcookie("UserName", $cookie_value, time() + (7200), "/" ,"simeon.ddns.net");
+			echo $_COOKIE['UserName'];
+			header("Location: http://simeon.ddns.net:8085/travelappbuddy/Sign Up Page/registration.php");
+			}
+			}
+			if($_GET['bool'] == "1")
+			{
+				header("Location: http://simeon.ddns.net:8085/travelappbuddy/Sign Up Page/registration.php");
+				echo user
+			}
+		}
+	}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,40 +44,41 @@
 				<p class="logo logo-small-dark">Travel Buddy</p>
 				<h2>Sign up</h2>
 				<p>Please fill in the following details to start your adventure!</p>
-				<form>
+				<form action = "http://simeon.ddns.net:8080/signUptoets.php" method = "get">
 					<div class="form-group">
 						<p>First Name:</p>
-						<input id = "fName" type = "text" class="form-control"></input>
+						<input name = "fName" type = "text" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<p>Last Name:</p>
-						<input id = "lName" type = "text" class="form-control"></input>
+						<input name = "lName" type = "text" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<p>E-Mail: </p>
-						<input id = "email" type = "email" class="form-control"></input>
+						<input name = "email" type = "email" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<p>Contact Number: </p>
-						<input id = "number" type = "int" class="form-control"></input>
+						<input name = "number" type = "int" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<p>Username: </p>
-						<input id = "uName" type = "text" class="form-control"></input>
+						<input name = "uName" type = "text" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<p>Password: </p>
-						<input id = "pWord" type = "password" class="form-control"></input>
+						<input name = "pWord" type = "password" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<p>Re-enter Password: </p>
-						<input id = "pWord2" type = "password" class="form-control"></input>
+						<input name = "pWord2" type = "password" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<p>Where do you stay? </p>
 						<input id = "town" type = "text" class="form-control"></input>
 					</div>
-					<a href="../Landing Page/landing-page.html" class = "btn btn-primary btn-submit float-right">Submit</a>
+					<input type="submit" value="Submit" class="btn btn-primary btn-submit float-right">
+					<!--<a ="../Landing Page/landing-page.html" class = "btn btn-primary btn-submit float-right">Submit</a> -->
 					<div class = "buttons">
 						<a href = "../home.html">Back</a>&emsp;
 					</div>
