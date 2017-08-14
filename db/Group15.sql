@@ -157,6 +157,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Group15_Database_Travel`.`Plan_Loc` (
   `Plan_ID` INT NOT NULL,
   `Loc_ID` INT NOT NULL,
+  `Start_time` INT NULL,
+  `End_time` INT NULL,
   PRIMARY KEY (`Plan_ID`, `Loc_ID`),
   INDEX `fk_Plan_Loc_Locations1_idx` (`Loc_ID` ASC),
   CONSTRAINT `fk_Plan_Loc_Plan1`
