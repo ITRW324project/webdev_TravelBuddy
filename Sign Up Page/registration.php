@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+//helllo
 	if($_SERVER["REQUEST_METHOD"] == "GET")
 	{
 		if($_GET['bool'] == "0")
