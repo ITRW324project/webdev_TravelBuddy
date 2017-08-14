@@ -1,6 +1,5 @@
 <!DOCTYPE php>
 <?php
-
 	if($_SERVER["REQUEST_METHOD"] == "GET")
 	{
 		if($_GET['bool'] == "1")
