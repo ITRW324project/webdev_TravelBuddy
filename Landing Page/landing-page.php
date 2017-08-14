@@ -191,6 +191,7 @@
 					<a href="#" class="list-group-item home">
 						HOME
 					</a>
+					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 				</div>
 			</div>
 		</div>
