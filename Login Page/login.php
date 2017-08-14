@@ -1,4 +1,4 @@
-<!DOCTYPE php>
+<!DOCTYPE html>
 <?php
 	if($_SERVER["REQUEST_METHOD"] == "GET")
 	{
