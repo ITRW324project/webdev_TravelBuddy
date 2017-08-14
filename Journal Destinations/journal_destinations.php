@@ -71,7 +71,7 @@
 					<p><b>Distance:</b> 16 723.6km</p>
 					<p><b>Leg Travel Duration:</b> 21 Hrs 14 Mins</p>
 				</div>
-				<a href="../Show%20Destination/show-destination.php?location=California" class="list-group-item active">
+				<a href="../Show%20Destination/show-destination.html?location=California" class="list-group-item active">
 			    California
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
@@ -79,7 +79,7 @@
 					<p><b>Distance:</b> 4 747.8km</p>
 					<p><b>Leg Travel Duration:</b> 4 Hrs 41 Mins</p>
 				</div>
-				<a href="../Show%20Destination/show-destination.php?location=Miami" class="list-group-item active">
+				<a href="../Show%20Destination/show-destination.html?location=Miami" class="list-group-item active">
 			    Miami
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
@@ -87,7 +87,7 @@
 					<p><b>Distance:</b> 2 053,1km</p>
 					<p><b>Leg Travel Duration:</b> 3Hrs 5 Mins</p>
 				</div>
-				<a href="../Show%20Destination/show-destination.php?location=NewYork" class="list-group-item active">
+				<a href="../Show%20Destination/show-destination.html?location=NewYork" class="list-group-item active">
 			    New York
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
