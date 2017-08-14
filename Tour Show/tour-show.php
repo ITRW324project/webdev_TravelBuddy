@@ -73,7 +73,7 @@
 					<p><b>Distance:</b> 13 276.6km</p>
 					<p><b>Leg Travel Duration:</b> 11 Hrs 15 Mins</p>
 				</div>
-				<a href="../Show%20Destination/show-destination.php?location=London" class="list-group-item active">
+				<a href="../Show%20Destination/show-destination.html?location=London" class="list-group-item active">
 			    London
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
@@ -81,7 +81,7 @@
 					<p><b>Distance:</b> 470.8km</p>
 					<p><b>Leg Travel Duration:</b> 2 Hrs 25 Mins</p>
 				</div>
-				<a href="../Show%20Destination/show-destination.php?location=Paris" class="list-group-item active">
+				<a href="../Show%20Destination/show-destination.html?location=Paris" class="list-group-item active">
 			    Paris
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
@@ -89,7 +89,7 @@
 					<p><b>Distance:</b> 1 420.3km</p>
 					<p><b>Leg Travel Duration:</b> 2 Hrs 15 Mins</p>
 				</div>
-				<a href="../Show%20Destination/show-destination.php?location=Rome" class="list-group-item active">
+				<a href="../Show%20Destination/show-destination.html?location=Rome" class="list-group-item active">
 			    Rome
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
@@ -97,7 +97,7 @@
 					<p><b>Distance:</b> 1 359.4km</p>
 					<p><b>Leg Travel Duration:</b> 1 Hrs 55 Mins</p>
 				</div>
-			    <a href="../Show%20Destination/show-destination.php?location=Barcelona" class="list-group-item active">
+			    <a href="../Show%20Destination/show-destination.html?location=Barcelona" class="list-group-item active">
 			    Barcelona
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>

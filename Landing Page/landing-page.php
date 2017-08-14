@@ -36,7 +36,7 @@
 		  <h3 class="container-heading">You previously looked at</h3>
 		  <div class="row">
 		    <div class="col-12 col-md-6 col-lg-3">
-		      <a class="card card-inverse card-link" href="../Show%20Destination/show-destination.php?location=Paris">
+		      <a class="card card-inverse card-link" href="../Show%20Destination/show-destination.html?location=Paris">
 				      <img class="card-img" src="../img/France_Eiffel_Tower.jpeg" alt="Card image">
 				      <div class="card-img-overlay">
 				        <h4 class="card-title">Paris</h4>
@@ -45,7 +45,7 @@
 				    </a>
 			</div>
 		    <div class="col-12 col-md-6 col-lg-3">
-					<a class="card card-inverse card-link" href="../Show%20Destination/show-destination.php?location=Barcelona">
+					<a class="card card-inverse card-link" href="../Show%20Destination/show-destination.html?location=Barcelona">
 				      <img class="card-img" src="../img/Barcelona.jpg" alt="Card image">
 				      <div class="card-img-overlay">
 				        <h4 class="card-title">Barcelona</h4>
@@ -54,7 +54,7 @@
 				    </a>
 					</div>
 		    <div class="col-12 col-md-6 col-lg-3">
-					<a class="card card-inverse card-link" href="../Show%20Destination/show-destination.php?location=Rome">
+					<a class="card card-inverse card-link" href="../Show%20Destination/show-destination.html?location=Rome">
 				      <img class="card-img" src="../img/Rome_Theatre.jpeg" alt="Card image">
 				      <div class="card-img-overlay">
 				        <h4 class="card-title">Rome</h4>
@@ -63,7 +63,7 @@
 				    </a>
 					</div>
 		    <div class="col-12 col-md-6 col-lg-3">
-						<a class="card card-inverse card-link" href="../Show%20Destination/show-destination.php?location=Cape Town">
+						<a class="card card-inverse card-link" href="../Show%20Destination/show-destination.html?location=Cape Town">
 				      <img class="card-img" src="../img/south africa.png" alt="Card image">
 				      <div class="card-img-overlay">
 				        <h4 class="card-title">Cape Town</h4>
@@ -115,7 +115,7 @@
 			<h3 class="container-heading">Top Destinations</h3>
 			<div class="row">
 				<div class="col-12 col-md-12 col-lg-4">
-					<a class="card card-link" href="../Show%20Destination/show-destination.php?location=Paris">
+					<a class="card card-link" href="../Show%20Destination/show-destination.html?location=Paris">
 					<img class="card-img-top card-img-round" src="../img/France_Eiffel_Tower.jpeg" >
 					<div class="card-block">
 						<h4 class="card-title">Paris</h4>
@@ -124,7 +124,7 @@
 				</a>
 				</div>
 				<div class="col-12 col-md-6 col-lg-4">
-					<a class="card card-link" href="../Show%20Destination/show-destination.php?location=Barcelona">
+					<a class="card card-link" href="../Show%20Destination/show-destination.html?location=Barcelona">
 					<img class="card-img-top card-img-round" src="../img/Barcelona.jpg" >
 					<div class="card-block">
 						<h4 class="card-title">Barcelona</h4>
@@ -133,7 +133,7 @@
 				</a>
 				</div>
 				<div class="col-12 col-md-6 col-lg-4">
-					<a class="card card-link" href="../Show%20Destination/show-destination.php?location=Rome">
+					<a class="card card-link" href="../Show%20Destination/show-destination.html?location=Rome">
 					<img class="card-img-top card-img-round" src="../img/Rome_Theatre.jpeg" >
 					<div class="card-block">
 						<h4 class="card-title">Rome</h4>
@@ -141,7 +141,7 @@
 					</div>
 				</a>
 				</div>
-				<a class="btn btn-primary center-button btn-lg" href="../DestinationIndex/destination-index.php">View All</a>
+				<a class="btn btn-primary center-button btn-lg" href="../DestinationIndex/destination-index.html">View All</a>
 			</div>
 		</div>
 		<!-- TOP DESTINATION END -->
@@ -162,7 +162,7 @@
 					<p><b>Distance:</b> 16 723.6km</p>
 					<p><b>Leg Travel Duration:</b> 21 Hrs 14 Mins</p>
 				</div>
-				<a href="../Show%20Destination/show-destination.php?location=California" class="list-group-item active">
+				<a href="../Show%20Destination/show-destination.html?location=California" class="list-group-item active">
 			    California
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
@@ -170,7 +170,7 @@
 					<p><b>Distance:</b> 4 747.8km</p>
 					<p><b>Leg Travel Duration:</b> 4 Hrs 41 Mins</p>
 				</div>
-				<a href="../Show%20Destination/show-destination.php?location=Miami" class="list-group-item active">
+				<a href="../Show%20Destination/show-destination.html?location=Miami" class="list-group-item active">
 			    Miami
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
@@ -178,7 +178,7 @@
 					<p><b>Distance:</b> 2 053,1km</p>
 					<p><b>Leg Travel Duration:</b> 3Hrs 5 Mins</p>
 				</div>
-				<a href="../Show%20Destination/show-destination.php?location=NewYork" class="list-group-item active">
+				<a href="../Show%20Destination/show-destination.html?location=NewYork" class="list-group-item active">
 			    New York
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
