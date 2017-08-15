@@ -60,7 +60,7 @@
 					</div>
 					<div class="form-group">
 						<p>Contact Number: </p>
-						<input  type = "int" class="form-control" name = "number" required= "Need mobile number."></input>
+						<input  type = "number" class="form-control" name = "number" required= "Need mobile number."></input>
 					</div>
 					<div class="form-group">
 						<p>Username: </p>
