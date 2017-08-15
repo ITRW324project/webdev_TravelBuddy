@@ -13,31 +13,31 @@
 	<body>
 		<!-- NAVBAR -->
 		<nav class="navbar">
-				<a href = "../home.html" class="logo logo-small-light">Travel Buddy</a>
+				<a href = "../home.php" class="logo logo-small-light">Travel Buddy</a>
 				<div>
-					<a class="btn btn-outline-secondary btn-sm" href="../Sign Up Page/registration.html">Sign Up</a>
+					<a class="btn btn-outline-secondary btn-sm" href="../Sign Up Page/registration.php">Sign Up</a>
 				</div>
 		</nav>
 		
 		<!-- NAVBAR END -->
 		<div class="fullscreen-section">
 				<div class="card">
-				<a href = "../home.html" class="logo logo-small-dark">Travel Buddy</a>
+				<a href = "../home.php" class="logo logo-small-dark">Travel Buddy</a>
 				<h2>Login</h2>
 				<p>Username or password is incorrect. Enter correct username and password.</p>
 				<form action = "http://simeon.ddns.net:8080/testConnect.php" method = "get">
 					<div class="form-group">
 						<label>Username:</label>
-						<input name = "fname" type = "text" class="form-control"></input>
+						<input name = "fname" autofocus type = "text" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<label>Password:</label>
-						<input name = "password" type = "text" class="form-control"></input>
+						<input name = "password" type = "password" class="form-control"></input>
 					</div>
 					<input type="submit" value="Submit" class="btn btn-primary btn-submit float-right">
-					<!-- <a href = "../Landing Page/landing-page.html" class = "btn btn-primary btn-submit float-right">Submit</a> -->
+					<!-- <a href = "../Landing Page/landing-page.php" class = "btn btn-primary btn-submit float-right">Submit</a> -->
 					<div class = "buttons">
-						<a href = "../home.html">Back</a>&emsp;
+						<a href = "../home.php">Back</a>&emsp;
 						<a href = "#" class = "pass">
 						<a href = "#">Forgot your password?</a>
 					</div>

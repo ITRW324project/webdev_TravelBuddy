@@ -1,5 +1,9 @@
 
 <!DOCTYPE html>
+<?php 
+ $cookie_name = $_COOKIE['UserName'];
+ echo $cookie_name 
+?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -23,10 +27,10 @@
 		<div class="welcome-banner" style="background-image: url(https://static.pexels.com/photos/417344/pexels-photo-417344.jpeg);">
 				<p class="logo logo-large">Travel Buddy</p>
 				<h2>Let’s go on an adventure!</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet congue velit quis gravida. Vivamus cursus arcu a tempor dictum.Quisque sapien nisl, porttitor ut ligula sed, commodo eleifend purus. Fusce bibendum tristique nulla, eget scelerisque erat condimentum at. Aenean consectetur magna tempus orci ullamcorper, ac faucibus enim iaculis.</p>
+				<p>Welcome to Travel Buddy! Here you can explore destinations and be provided with a gallery view, nearby attractions, restaurants and accomodation. A selection of preplanned tours will also be provided. Add tours and destinations to your travel journal and view travel time and distances.</p>
 				<a class="btn btn-primary btn-lg" href="Login Page/login.html">Let's go!</a>
 		</div>
-		<!-- WELCOME BANNER END -->
+		<!-- WELCOME BANNER END -->  
 		<!-- HOW DOES IT WORK -->
 		<div class="container">
 			<h3 class="container-heading">How does it work?</h3>
@@ -91,6 +95,7 @@
 					</a>
 					</div>
 				</div>
+				<a class="btn btn-primary center-button btn-lg" href="Tour Index/Tour-Index.html">View All</a>
 			</div>
 		</div>
 		<!-- PREPLANNED END -->
@@ -124,7 +129,6 @@
 						<p class="card-text">Rome is situated in Italy.  Famous for its Ancient ruins, such as the Forum and the Colosseum.</p>
 					</div>
 				</a>
-
 				</div>
 				<a class="btn btn-primary center-button btn-lg" href="DestinationIndex/destination-index.html">View All</a>
 			</div>

@@ -1,26 +1,4 @@
 <!DOCTYPE html>
-<?php
-//helllo
-	if($_SERVER["REQUEST_METHOD"] == "GET")
-	{
-		if($_GET['bool'] == "0")
-		{
-			$cookie_value = $_GET['name'];
-			setcookie("UserName", $cookie_value, time() + (7200), "/" ,"simeon.ddns.net");
-			echo $_COOKIE['UserName'];
-			header("Location: http://simeon.ddns.net:8085/travelappbuddy/Sign Up Page/registration.php");
-			}
-			}
-			if($_GET['bool'] == "1")
-			{
-				header("Location: http://simeon.ddns.net:8085/travelappbuddy/Sign Up Page/registration.php");
-				echo user
-			}
-		}
-	}
-?>
-
-<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -34,9 +12,9 @@
 	<body>
 		<!-- NAVBAR -->
 		<nav class="navbar">
-				<a href = "../home.html" class="logo logo-small-light">Travel Buddy</a>
+				<a href = "../home.php" class="logo logo-small-light">Travel Buddy</a>
 				<div>
-					<a class="btn btn-outline-secondary btn-sm" href="../Login Page/login.html">Login</a>
+					<a class="btn btn-outline-secondary btn-sm" href="../Login Page/login.php">Login</a>
 				</div>
 		</nav>
 		<!-- NAVBAR END -->
@@ -45,41 +23,40 @@
 				<p class="logo logo-small-dark">Travel Buddy</p>
 				<h2>Sign up</h2>
 				<p>Please fill in the following details to start your adventure!</p>
-				<form action = "http://simeon.ddns.net:8080/signUptoets.php" method = "get">
+				<form action = "http://simeon.ddns.net:8080/signUptoets.php" method = "post">
 					<div class="form-group">
 						<p>First Name:</p>
-						<input name = "fName" type = "text" class="form-control"></input>
+						<input type = "text" class="form-control" name = "fName" autofocus required="Need First Name."/>
 					</div>
 					<div class="form-group">
 						<p>Last Name:</p>
-						<input name = "lName" type = "text" class="form-control"></input>
+						<input type = "text" class="form-control" name = "lName" required="Need Last Name."></input>
 					</div>
 					<div class="form-group">
 						<p>E-Mail: </p>
-						<input name = "email" type = "email" class="form-control"></input>
+						<input type = "email" class="form-control" name = "email" required="Need Email."></input>
 					</div>
 					<div class="form-group">
 						<p>Contact Number: </p>
-						<input name = "number" type = "int" class="form-control"></input>
+						<input  type = "number" class="form-control" name = "number" required= "Need mobile number."></input>
 					</div>
 					<div class="form-group">
 						<p>Username: </p>
-						<input name = "uName" type = "text" class="form-control"></input>
+						<input  type = "text" class="form-control" name = "uName" required= "Need Username."></input>
 					</div>
 					<div class="form-group">
 						<p>Password: </p>
-						<input name = "pWord" type = "password" class="form-control"></input>
+						<input  type = "password" class="form-control" name = "pWord" required= "Need password."></input>
 					</div>
 					<div class="form-group">
 						<p>Re-enter Password: </p>
-						<input name = "pWord2" type = "password" class="form-control"></input>
+						<input  type = "password" class="form-control" name = "pWord2" required= "Need password."></input>
 					</div>
 					<div class="form-group">
 						<p>Where do you stay? </p>
 						<input name = "town" type = "text" class="form-control"></input>
 					</div>
 					<input type="submit" value="Submit" class="btn btn-primary btn-submit float-right">
-					<!--<a ="../Landing Page/landing-page.html" class = "btn btn-primary btn-submit float-right">Submit</a> -->
 					<div class = "buttons">
 						<a href = "../home.html">Back</a>&emsp;
 					</div>

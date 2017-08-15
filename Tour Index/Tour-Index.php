@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<?php 
- $cookie_name = $_COOKIE['UserName'];
- echo $cookie_name 
-?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -16,10 +12,10 @@
 	<body>
 		<!-- NAVBAR -->
 		<nav class="navbar">
-				<a class="logo logo-small-light" href="../Landing Page/landing-page.html">Travel Buddy</a>
+				<a class="logo logo-small-light" href="../Landing Page/landing-page.php">Travel Buddy</a>
 				<div>
 					<button class="btn btn-success btn toggle-travelbook">My Travelbook</button>
-					<a class="btn btn-outline-secondary btn-sm" href="../home.html">Logout</a>
+					<a class="btn btn-outline-secondary btn-sm" href="../home.php">Logout</a>
 				</div>
 		</nav>
 		<div class="gradient-banner">
@@ -31,58 +27,58 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-md-12 col-lg-4">
-						<a class="card card-link" href="../Tour Show/tour-show.html">
-						<img class="card-img-top" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" >
+						<a class="card card-link" href="../Tour Show/tour-show.php">
+						<img class="card-img-top" src="../img/Brazil_Hill.jpeg" >
 						<div class="card-block">
-							<h4 class="card-title">Card title</h4>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<h4 class="card-title">Tropical Tour</h4>
+							<p class="card-text">Take a 1 week tour through the misty tropical valleys of Thailand.</p>
 						</div>
 					</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-4">
-						<a class="card card-link" href="../Tour Show/tour-show.html">
-						<img class="card-img-top" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" >
+						<a class="card card-link" href="../Tour Show/tour-show.php">
+						<img class="card-img-top" src="../img/DC_Landmark.jpg" >
 						<div class="card-block">
-							<h4 class="card-title">Card title</h4>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<h4 class="card-title">American History Tour</h4>
+							<p class="card-text">Take a 1 week tour through American History, by accompanying our guides through DC Washington. </p>
 						</div>
 					</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-4">
-						<a class="card card-link" href="../Tour Show/tour-show.html">
-						<img class="card-img-top" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" >
+						<a class="card card-link" href="../Tour Show/tour-show.php">
+						<img class="card-img-top" src="../img/London_Transport.jpg" >
 						<div class="card-block">
-							<h4 class="card-title">Card title</h4>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<h4 class="card-title">European Luxury Tour</h4>
+							<p class="card-text">Take a 4 week tour through Europe.  Explore all the luxuries that Europe has to offer.</p>
 						</div>
 					</a>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12 col-md-12 col-lg-4">
-						<a class="card card-link" href="../Tour Show/tour-show.html">
-						<img class="card-img-top" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" >
+						<a class="card card-link" href="../Tour Show/tour-show.php">
+						<img class="card-img-top" src="../img/NewYork_Streets.jpeg" >
 						<div class="card-block">
-							<h4 class="card-title">Card title</h4>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<h4 class="card-title">City Life Tour</h4>
+							<p class="card-text">Take a week to experience the famous rushed streets of New York City.  Including tours to Manhattan and Brooklyn.</p>
 						</div>
 					</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-4">
-						<a class="card card-link" href="../Tour Show/tour-show.html">
-						<img class="card-img-top" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" >
+						<a class="card card-link" href="../Tour Show/tour-show.php">
+						<img class="card-img-top" src="../img/Thailand_Festivals.jpeg" >
 						<div class="card-block">
-							<h4 class="card-title">Card title</h4>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<h4 class="card-title">Cultural Tour</h4>
+							<p class="card-text">Explore the cultures of Asia's oldest traditions for 2 weeks.</p>
 						</div>
 					</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-4">
-						<a class="card card-link" href="../Tour Show/tour-show.html">
-						<img class="card-img-top" src="https://static.pexels.com/photos/34608/pexels-photo.jpg" >
+						<a class="card card-link" href="../Tour Show/tour-show.php">
+						<img class="card-img-top" src="../img/CapeTown_TableMountain.jpeg" >
 						<div class="card-block">
-							<h4 class="card-title">Card title</h4>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<h4 class="card-title">Best of South Africa</h4>
+							<p class="card-text">Join us for a week of wonder in South Africa's most beautiful city and surrounding nature areas in Cape Town.</p>
 						</div>
 					</a>
 					</div>

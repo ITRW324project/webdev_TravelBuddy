@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php 
+ $cookie_name = $_COOKIE['UserName'];
+ echo $cookie_name 
+?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -12,10 +16,10 @@
 	<body>
 		<!-- NAVBAR -->
 		<nav class="navbar">
-				<a class="logo logo-small-light" href="../Landing Page/landing-page.html">Travel Buddy</a>
+				<a class="logo logo-small-light" href="../Landing Page/landing-page.php">Travel Buddy</a>
 				<div>
 					<button class="btn btn-success btn toggle-travelbook">My Travelbook</button>
-					<a class="btn btn-outline-secondary btn-sm" href="../home.html">Logout</a>
+					<a class="btn btn-outline-secondary btn-sm" href="../home.php">Logout</a>
 				</div>
 		</nav>
 		<div class="gradient-banner">
@@ -126,40 +130,42 @@
 			<div class="card">
 				<h6 class="sidebar-heading">Luxury Europe Tour</h6>
 				<div class="list-group">
+					<div class="list-group">
 					<a href="#" class="list-group-item home">
-						HOME
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
-					</div>
-					<a href="#" class="list-group-item active">
-						London
-						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
-					</div>
-					<a href="#" class="list-group-item active">
-						Paris
-						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
-					</div>
-					<a href="#" class="list-group-item active">
-						Rome
-						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
-					</div>
-					<a href="#" class="list-group-item home">
-						HOME
-					</a>
+			    HOME
+			  </a>
+			  <div href="#" class="list-group-item list-group-item-action">
+					<p><b>Distance:</b> 16 723.6km</p>
+					<p><b>Leg Travel Duration:</b> 21 Hrs 14 Mins</p>
+				</div>
+				<a href="../Show%20Destination/show-destination.html?location=California" class="list-group-item active">
+			    California
+					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
+			  </a>
+				<div href="#" class="list-group-item list-group-item-action">
+					<p><b>Distance:</b> 4 747.8km</p>
+					<p><b>Leg Travel Duration:</b> 4 Hrs 41 Mins</p>
+				</div>
+				<a href="../Show%20Destination/show-destination.html?location=Miami" class="list-group-item active">
+			    Miami
+					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
+			  </a>
+				<div href="#" class="list-group-item list-group-item-action">
+					<p><b>Distance:</b> 2 053,1km</p>
+					<p><b>Leg Travel Duration:</b> 3Hrs 5 Mins</p>
+				</div>
+				<a href="../Show%20Destination/show-destination.html?location=NewYork" class="list-group-item active">
+			    New York
+					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
+			  </a>
+				<div href="#" class="list-group-item list-group-item-action">
+					<p><b>Distance:</b> 12 831km</p>
+					<p><b>Leg Travel Duration:</b> 14 Hrs 50 Mins</p>
+				</div>
+				<a href="#" class="list-group-item home">
+			    HOME
+			  </a>
+					<a class="btn btn-primary btn-lg" href="../Journal Destinations/journal_destinations.php">View Map</a>
 				</div>
 			</div>
 		</div>
