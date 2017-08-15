@@ -19,7 +19,7 @@
 				<a class="logo logo-small-light" href="../Landing Page/landing-page.html">Travel Buddy</a>
 				<div>
 					<button class="btn btn-success btn toggle-travelbook">My Travelbook</button>
-					<a class="btn btn-outline-secondary btn-sm" href="../home.html">Logout</a>
+					<a class="btn btn-outline-secondary btn-sm" href="../Log Out/logout.php">Logout</a>
 				</div>
 		</nav>
 		<div class="gradient-banner">

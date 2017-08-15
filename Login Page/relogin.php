@@ -28,11 +28,11 @@
 				<form action = "http://simeon.ddns.net:8080/testConnect.php" method = "get">
 					<div class="form-group">
 						<label>Username:</label>
-						<input name = "fname" autofocus type = "text" class="form-control"></input>
+						<input name = "fname" type = "text" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<label>Password:</label>
-						<input name = "password" type = "password" class="form-control"></input>
+						<input name = "password" type = "text" class="form-control"></input>
 					</div>
 					<input type="submit" value="Submit" class="btn btn-primary btn-submit float-right">
 					<!-- <a href = "../Landing Page/landing-page.php" class = "btn btn-primary btn-submit float-right">Submit</a> -->

@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<?php 
- $cookie_name = $_COOKIE['UserName'];
- echo $cookie_name 
-?>
 <html lang = "en">
 	<head>
 		<meta charset = "utf-8">
@@ -21,6 +17,7 @@
 			<ul class="nav">
 				<li class="sign-up"><a href="registration.html">Sign Up</a></li>
 				<li class="login"><a href="login.html">Login</a></li>
+				<?php $cookie_name = $_COOKIE['UserName']; echo $cookie_name; ?>
 			</ul>
 		</nav>
 	</div>

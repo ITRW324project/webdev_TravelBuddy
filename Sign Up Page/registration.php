@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -23,34 +24,34 @@
 				<p class="logo logo-small-dark">Travel Buddy</p>
 				<h2>Sign up</h2>
 				<p>Please fill in the following details to start your adventure!</p>
-				<form action = "http://simeon.ddns.net:8080/signUptoets.php" method = "post">
+				<form action = "http://simeon.ddns.net:8080/signUptoets.php" method = "get">
 					<div class="form-group">
 						<p>First Name:</p>
-						<input type = "text" class="form-control" name = "fName" autofocus required="Need First Name."/>
+						<input name = "fName" type = "text" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<p>Last Name:</p>
-						<input type = "text" class="form-control" name = "lName" required="Need Last Name."></input>
+						<input name = "lName" type = "text" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<p>E-Mail: </p>
-						<input type = "email" class="form-control" name = "email" required="Need Email."></input>
+						<input name = "email" type = "email" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<p>Contact Number: </p>
-						<input  type = "number" class="form-control" name = "number" required= "Need mobile number."></input>
+						<input name = "number" type = "int" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<p>Username: </p>
-						<input  type = "text" class="form-control" name = "uName" required= "Need Username."></input>
+						<input name = "uName" type = "text" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<p>Password: </p>
-						<input  type = "password" class="form-control" name = "pWord" required= "Need password."></input>
+						<input name = "pWord" type = "password" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<p>Re-enter Password: </p>
-						<input  type = "password" class="form-control" name = "pWord2" required= "Need password."></input>
+						<input name = "pWord2" type = "password" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<p>Where do you stay? </p>
@@ -58,7 +59,7 @@
 					</div>
 					<input type="submit" value="Submit" class="btn btn-primary btn-submit float-right">
 					<div class = "buttons">
-						<a href = "../home.html">Back</a>&emsp;
+						<a href = "../home.php">Back</a>&emsp;
 					</div>
 				</form>
 			</div>

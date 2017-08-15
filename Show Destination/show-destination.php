@@ -3,7 +3,6 @@
  $cookie_name = $_COOKIE['UserName'];
  echo $cookie_name 
 ?>
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -21,6 +20,7 @@
 				<div>
 					<button class="btn btn-success btn toggle-travelbook">My Travelbook</button>
 					<a class="btn btn-outline-secondary btn-sm" href="../home.php">Logout</a>
+					<?php $cookie_name = $_COOKIE['UserName']; echo $cookie_name; ?>
 				</div>
 		</nav>
 		<!-- NAVBAR END -->
