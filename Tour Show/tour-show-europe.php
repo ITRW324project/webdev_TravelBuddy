@@ -65,10 +65,14 @@
 				<b>Choose your final destination:</b>
 				<br />
 				<select id="end">
-					<option value="Durban, ZA" name="durban">Durban</option>
-					<option value="Johannesberg, ZA" name="johannesberg">Johannesberg</option>
-					<option value="Pretoria, ZA" name="pretoria">Pretoria</option>
-					<option value="Cape Town, ZA" name="capeTown">Cape Town</option>
+					<option value="London, GBR" name="london">London</option>
+					<option value="Los Angeles, CA" name="los angeles">Los Angeles</option>
+					<option value="Seattle, WA" name="seattle">Seattle</option>
+					<option value="Paris, FRA" name="paris">Paris</option>
+					<option value="Venice, ITA" name="venice">Venice</option>
+					<option value="Berlin, DEU" name="berlin">Berlin</option>
+					<option value="Dublin, IRL" name="dublin">Dublin</option>
+					<option value="Stockholm, SWE" name="stockholm">Stockholm</option>
 				</select>
 				<br>
 				<input type="submit" id="submit">

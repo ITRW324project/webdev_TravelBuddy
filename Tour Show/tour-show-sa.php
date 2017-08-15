@@ -73,7 +73,7 @@
 					var directionsService = new google.maps.DirectionsService;
 					var directionsDisplay = new google.maps.DirectionsRenderer;
 					var map = new google.maps.Map(document.getElementById('googleMap'), {
-						zoom: 4,
+						zoom: 5,
 						center: {lat: -29, lng: 23.5}
 					});
 					directionsDisplay.setMap(map);
