@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -24,7 +23,7 @@
 				<p class="logo logo-small-dark">Travel Buddy</p>
 				<h2>Sign up</h2>
 				<p>Please fill in the following details to start your adventure!</p>
-				<form action = "http://simeon.ddns.net:8080/signUptoets.php" method = "get">
+				<form action = "http://simeon.ddns.net:8080/signUptoets.php" method = "post">
 					<div class="form-group">
 						<p>First Name:</p>
 						<input name = "fName" type = "text" class="form-control"></input>
@@ -58,9 +57,8 @@
 						<input id = "town" type = "text" class="form-control"></input>
 					</div>
 					<input type="submit" value="Submit" class="btn btn-primary btn-submit float-right">
-					<!--<a href="../Landing Page/landing-page.php" class = "btn btn-primary btn-submit float-right">Submit</a> -->
 					<div class = "buttons">
-						<a href = "../home.php">Back</a>&emsp;
+						<a href = "../home.html">Back</a>&emsp;
 					</div>
 				</form>
 			</div>
