@@ -60,23 +60,23 @@
 					</div>
 					<div class="form-group">
 						<p>Contact Number: </p>
-						<input name = "number" type = "int" class="form-control"></input>
+						<input  type = "int" class="form-control" name = "number" required= "Need mobile number."></input>
 					</div>
 					<div class="form-group">
 						<p>Username: </p>
-						<input name = "uName" type = "text" class="form-control"></input>
+						<input  type = "text" class="form-control" name = "uName" required= "Need Username."></input>
 					</div>
 					<div class="form-group">
 						<p>Password: </p>
-						<input name = "pWord" type = "password" class="form-control"></input>
+						<input  type = "password" class="form-control" name = "pWord" required= "Need password."></input>
 					</div>
 					<div class="form-group">
 						<p>Re-enter Password: </p>
-						<input name = "pWord2" type = "password" class="form-control"></input>
+						<input  type = "password" class="form-control" name = "pWord2" required= "Need password."></input>
 					</div>
 					<div class="form-group">
 						<p>Where do you stay? </p>
-						<input id = "town" type = "text" class="form-control"></input>
+						<input  type = "text" class="form-control" id = "town" required= "Need Location."></input>
 					</div>
 					<input type="submit" value="Submit" class="btn btn-primary btn-submit float-right">
 					<!--<a href="../Landing Page/landing-page.php" class = "btn btn-primary btn-submit float-right">Submit</a> -->
