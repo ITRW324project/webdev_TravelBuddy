@@ -59,8 +59,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Group15_Database_Travel`.`Locations` (
   `Loc_ID` INT NOT NULL,
   `Loc_name` VARCHAR(45) NOT NULL,
-  `Lat` FLOAT NULL,
-  `Long` FLOAT NULL,
   PRIMARY KEY (`Loc_ID`))
 ENGINE = InnoDB;
 
