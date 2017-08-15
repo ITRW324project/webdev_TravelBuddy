@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
-	if($_SERVER["REQUEST_METHOD"] == "GET")
+	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		$cookie_value = $_GET['name'];
-		$bool = $_GET['bool'];
+		$cookie_value = $_POST['name'];
+		$bool = $_POST['bool'];
 		if($bool == "1")
 		{
 			setcookie("UserName", $cookie_value, time() + (7200), "/" ,"simeon.ddns.net");

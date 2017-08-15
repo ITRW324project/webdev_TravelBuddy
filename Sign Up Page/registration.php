@@ -1,25 +1,4 @@
 <!DOCTYPE html>
-<?php
-//helllo
-	if($_SERVER["REQUEST_METHOD"] == "GET")
-	{
-		if($_GET['bool'] == "0")
-		{
-			$cookie_value = $_GET['name'];
-			setcookie("UserName", $cookie_value, time() + (7200), "/" ,"simeon.ddns.net");
-			echo $_COOKIE['UserName'];
-			header("Location: http://simeon.ddns.net:8085/travelappbuddy/Sign Up Page/registration.php");
-			}
-			}
-			if($_GET['bool'] == "1")
-			{
-				header("Location: http://simeon.ddns.net:8085/travelappbuddy/Sign Up Page/registration.php");
-				echo user
-			}
-		}
-	}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
