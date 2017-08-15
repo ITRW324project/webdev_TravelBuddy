@@ -48,15 +48,15 @@
 				<form action = "http://simeon.ddns.net:8080/signUptoets.php" method = "get">
 					<div class="form-group">
 						<p>First Name:</p>
-						<input name = "fName" type = "text" class="form-control"></input>
+						<input type = "text" class="form-control" name = "fName" required="Need First Name."/>
 					</div>
 					<div class="form-group">
 						<p>Last Name:</p>
-						<input name = "lName" type = "text" class="form-control"></input>
+						<input type = "text" class="form-control" name = "lName" required="Need Last Name."></input>
 					</div>
 					<div class="form-group">
 						<p>E-Mail: </p>
-						<input name = "email" type = "email" class="form-control"></input>
+						<input type = "email" class="form-control" name = "email" required="Need Email."></input>
 					</div>
 					<div class="form-group">
 						<p>Contact Number: </p>
