@@ -7,12 +7,12 @@
 			$cookie_value = $_GET['name'];
 			setcookie("UserName", $cookie_value, time() + (7200), "/" ,"simeon.ddns.net");
 			echo $_COOKIE['UserName'];
-			header("Location: http://simeon.ddns.net:8085/travelappbuddy/Landing Page/landing-page.html");
+			header("Location: http://simeon.ddns.net:8085/travelappbuddy/Landing Page/landing-page.php");
 			}
 			}
 			if($_GET['bool'] == "0")
 			{
-				header("Location: http://simeon.ddns.net:8085/travelappbuddy/Login Page/relogin.html");
+				header("Location: http://simeon.ddns.net:8085/travelappbuddy/Login Page/relogin.php");
 			}
 		}
 	}
@@ -31,16 +31,16 @@
 	<body>
 		<!-- NAVBAR -->
 		<nav class="navbar">
-				<a href = "../home.html" class="logo logo-small-light">Travel Buddy</a>
+				<a href = "../home.php" class="logo logo-small-light">Travel Buddy</a>
 				<div>
-					<a class="btn btn-outline-secondary btn-sm" href="../Sign Up Page/registration.html">Sign Up</a>
+					<a class="btn btn-outline-secondary btn-sm" href="../Sign Up Page/registration.php">Sign Up</a>
 				</div>
 		</nav>
 		
 		<!-- NAVBAR END -->
 		<div class="fullscreen-section">
 				<div class="card">
-				<a href = "../home.html" class="logo logo-small-dark">Travel Buddy</a>
+				<a href = "../home.php" class="logo logo-small-dark">Travel Buddy</a>
 				<h2>Login</h2>
 				<p>Please enter your username and password.</p>
 				<form action = "http://simeon.ddns.net:8080/testConnect.php" method = "get">
@@ -53,9 +53,9 @@
 						<input name = "password" type = "text" class="form-control"></input>
 					</div>
 					<input type="submit" value="Submit" class="btn btn-primary btn-submit float-right">
-					<!-- <a href = "../Landing Page/landing-page.html" class = "btn btn-primary btn-submit float-right">Submit</a> -->
+					<!-- <a href = "../Landing Page/landing-page.php" class = "btn btn-primary btn-submit float-right">Submit</a> -->
 					<div class = "buttons">
-						<a href = "../home.html">Back</a>&emsp;
+						<a href = "../home.php">Back</a>&emsp;
 						<a href = "#" class = "pass">
 						<a href = "#">Forgot your password?</a>
 					</div>
