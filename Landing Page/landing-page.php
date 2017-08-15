@@ -19,8 +19,9 @@
 				<a class="logo logo-small-light" href="../home.php">Travel Buddy</a>
 				<div>
 					<button class="btn btn-success btn toggle-travelbook">My Travelbook</button>
-					<a class="btn btn-outline-secondary btn-sm" href="../home.php">Logout</a>
-					<form method="GET" action="http://simeon.ddns.net:8080/logout.php">
+					<form method="GET" action="http://simeon.ddns.net:8080/logout.php" class="display-inline">
+						<a class="btn btn-outline-secondary btn-sm" href="../home.php">Logout</a>
+					</form>
 				</div>
 		</nav>
 		<!-- NAVBAR END -->

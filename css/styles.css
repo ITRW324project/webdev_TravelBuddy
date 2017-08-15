@@ -479,3 +479,7 @@ a {
 .center-button {
 	margin: auto;
 }
+
+.display-inline{
+	display: inline;
+}
