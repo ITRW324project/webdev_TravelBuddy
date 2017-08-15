@@ -27,37 +27,112 @@
 		</div>
 		<!-- BANNER END -->
 		<!-- GOOLE MAP -->
+		<div id="left-panel">
+			<div>
+				<b>Choose where you want to start:</b>
+				<br />
+				<select id="start">
+					<option value="London, GBR" name="london">London</option>
+					<option value="Los Angeles, CA" name="los angeles">Los Angeles</option>
+					<option value="Seattle, WA" name="seattle">Seattle</option>
+					<option value="Paris, FRA" name="paris">Paris</option>
+					<option value="Venice, ITA" name="venice">Venice</option>
+					<option value="Berlin, DEU" name="berlin">Berlin</option>
+					<option value="Dublin, IRL" name="dublin">Dublin</option>
+					<option value="Stockholm, SWE" name="stockholm">Stockholm</option>
+					
+					</select>
+					<br>
+				<b>Waypoints:</b> <br>
+				<i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
+				<select multiple id="waypoints">
+					<option value="Sacramento, CA" name="Sacramento">Sacramento</option>
+					<option value="Liverpool, GBR" name="Liverpool">Liverpool</option>
+					<option value="Manchester, GBR" name="Manchester">Manchester</option>
+					<option value="Bristol, GBR" name="Bristol">Bristol</option>
+					<option value="Rome, ITA" name="Rome">Rome</option>
+					<option value="Florence, ITA" name="Florence">Florence</option>
+					<option value="Milan, ITA" name="beaufort-west">Milan</option>
+					<option value="Lyon, FRA" name="Lyon">Lyon</option>
+					<option value="Hamburg, DEU" name="Hamburg">Hamburg</option>
+					<option value="Cork, IRL" name="Cork">Cork</option>
+					<option value="Uppsala, SWE" name="Uppsala">Uppsala</option>					
+				</select>
+				</div>
+		</div>
+		<div id="right-panel">
+			<div>
+				<b>Choose your final destination:</b>
+				<br />
+				<select id="end">
+					<option value="Durban, ZA" name="durban">Durban</option>
+					<option value="Johannesberg, ZA" name="johannesberg">Johannesberg</option>
+					<option value="Pretoria, ZA" name="pretoria">Pretoria</option>
+					<option value="Cape Town, ZA" name="capeTown">Cape Town</option>
+				</select>
+				<br>
+				<input type="submit" id="submit">
+			</div>
+			
+		</div>
 		<div id = "googleMap">
-			<script>
+<script>
 				function myMap() {
-					var mapProp= {
-						center:new google.maps.LatLng(21.0167, 12.3000),
-						zoom:2,
-					};
-					var barcelona = new google.maps.LatLng(41.2974, 2.0833);
-					var rome = new google.maps.LatLng(41.9028, 12.4964);
-					var paris = new google.maps.LatLng(48.8566, 2.3522);
-					var london = new google.maps.LatLng(51.508742,-0.120850);
-					var ortambo = new google.maps.LatLng(-26.1367 , 28.2411);
-					var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-					var marker1 = new google.maps.Marker({position: london});
-					var marker2 = new google.maps.Marker({position: ortambo});
-					var marker3 = new google.maps.Marker({position: paris});
-					var marker4 = new google.maps.Marker({position: rome});
-					var marker5 = new google.maps.Marker({position: barcelona});
-					marker1.setMap(map);
-					marker2.setMap(map);
-					marker3.setMap(map);
-					marker4.setMap(map);
-					marker5.setMap(map);
-
-					var flightPath = new google.maps.Polyline({
-					path: [ortambo, london, paris, rome, barcelona],
-					strokeColor: "#0000FF",
-					strokeOpacity: 0.8,
-					strokeWeight: 2
+					var directionsService = new google.maps.DirectionsService;
+					var directionsDisplay = new google.maps.DirectionsRenderer;
+					var map = new google.maps.Map(document.getElementById('googleMap'), {
+						zoom: 4,
+						center: {lat: -29, lng: 23.5}
 					});
-					flightPath.setMap(map);
+					directionsDisplay.setMap(map);
+					
+					document.getElementById('submit').addEventListener('click', function() {
+						calculateAndDisplayRoute(directionsService, directionsDisplay);
+						changeValues();
+					});
+				}
+				
+				function changeValues() {
+					document.getElementById('home_name').value = document.getElementById('start').value;
+				}
+				
+				function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+					var waypts = [];
+					var checkboxArray = document.getElementById('waypoints');
+					for (var i = 0; i < checkboxArray.length; i++) {
+						if (checkboxArray.options[i].selected) {
+							waypts.push({
+								location: checkboxArray[i].value,
+								stopover: true
+							});
+						}
+					}
+					
+					directionsService.route({
+						origin: document.getElementById('start').value,
+						destination: document.getElementById('end').value,
+						waypoints: waypts,
+						optimizeWaypoints: true,
+						travelMode: 'DRIVING'
+					}, function(response, status) {
+							if (status === 'OK') {
+								directionsDisplay.setDirections(response);
+								var route = response.routes[0];
+								var homePanelPlace = document.getElementById('home-panel-place');
+								var homePanelDistance = document.getElementById('home-panel-distance');
+								var homePanelDuration = document.getElementById('home-panel-duration');
+								var dest1PanelDistance = document.getElementById('dest1-panel-distance');
+								summaryPanel.innerHTML = '';
+								for (var i = 0; i < route.legs.length; i++) {
+									var routeSegment = i + 1;
+									summaryPanel.innerHTML += route.legs[i].start_address;
+									homePanelDistance.innerHTML = '<b>Distance: </b>' + route.legs[i].distance.text;
+									homePanelDuration.innerHTML = '<b>Duration: </b>' + route.legs[i].duration.text;
+								}
+							} else {
+								window.alert('Directions request failed due to ' + status);
+							}
+						});
 				}
 			</script>
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjj2DSxrDr9jArPVtf5gcguBo7m6NVAsM&callback=myMap"></script>
