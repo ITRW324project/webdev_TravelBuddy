@@ -110,14 +110,19 @@
 							if (status === 'OK') {
 								directionsDisplay.setDirections(response);
 								var route = response.routes[0];
-								var summaryPanel = document.getElementById('directions1-panel');
-								var homePanelDistance = document.getElementById('home-panel-distance');
+								var summaryPanel = document.getElementById('summaryPanel');
+								var summaryPanelDistance = document.getElementById('summaryPanelDistance');
+								var dest1Place = document.getElementById('dest1Place');
+								var dest1Distance = document.getElementById('dest1Distance');
 								
 								summaryPanel.innerHTML = '';
 								for (var i = 0; i < route.legs.length; i++) {
 									var routeSegment = i + 1;
-									summaryPanel.innerHTML += route.legs[i].start_address;
-									homePanelDistance.innerHTML = '<b>Distance: </b>' + route.legs[i].distance.text;
+									//summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
+									//'</b><br>';
+									summaryPanel.innerHTML += route.legs[i].start_address ;
+									summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+									summaryPanelDistance.innerHTML += route.legs[i].distance.text;
 								}
 							} else {
 								window.alert('Directions request failed due to ' + status);
@@ -134,18 +139,18 @@
 		<div class="container">
 			 <div class="list-group">
 			  <a href="#" class="list-group-item home" id="start" value="chicago, il">
-					<div id="directions1-panel"></div>
+					<div id="summaryPanel"></div>
 			  </a>
 			  <div href="#" class="list-group-item list-group-item-action" id="end" value="st louis, mo">
-					<p id="home-panel-distance"><b>Distance:</b></p>
-					<p><b>Leg Travel Duration:</b> 11 Hrs 15 Mins</p>
+					<p id="summaryPanelDistance"></p>
+					<p><b>Leg Travel Duration:</b> 0Hrs 0Mins</p>
 				</div>
 				<a href="../Show%20Destination/show-destination.html?location=London" class="list-group-item active">
-			    <div id="directions1-panel" style = "width: 100%"></div>
+			    <div id="dest1Place"></div>
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
 				<div href="#" class="list-group-item list-group-item-action">
-					<p id="dest1-panel-distance"><b>Distance:</b></p>
+					<p id="summaryPanelDistance"></p>
 					<p><b>Leg Travel Duration:</b> 2 Hrs 25 Mins</p>
 				</div>
 				<a href="../Show%20Destination/show-destination.html?location=Paris" class="list-group-item active">
