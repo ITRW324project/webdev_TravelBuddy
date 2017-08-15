@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<?php 
- $cookie_name = $_COOKIE['UserName'];
- echo $cookie_name 
-?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -19,7 +15,8 @@
 				<a class="logo logo-small-light" href="../Landing Page/landing-page.html">Travel Buddy</a>
 				<div>
 					<button class="btn btn-success btn toggle-travelbook">My Travelbook</button>
-					<a class="btn btn-outline-secondary btn-sm" href="../home.html">Logout</a>
+					<a class="btn btn-outline-secondary btn-sm" href="../Log Out/logout.php">Logout</a>
+					<?php $cookie_name = $_COOKIE['UserName']; echo $cookie_name; ?>
 				</div>
 		</nav>
 		<!-- NAVBAR END -->

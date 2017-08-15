@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<?php 
- $cookie_name = $_COOKIE['UserName'];
- echo $cookie_name 
-?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -19,9 +15,8 @@
 				<a class="logo logo-small-light" href="../home.php">Travel Buddy</a>
 				<div>
 					<button class="btn btn-success btn toggle-travelbook">My Travelbook</button>
-					<form method="GET" action="http://simeon.ddns.net:8080/logout.php" class="display-inline">
-						<a class="btn btn-outline-secondary btn-sm" href="../home.php">Logout</a>
-					</form>
+					<a class="btn btn-outline-secondary btn-sm" href="../Log Out/logout.php">Logout</a>
+					<?php $cookie_name = $_COOKIE['UserName']; echo $cookie_name; ?>
 				</div>
 		</nav>
 		<!-- NAVBAR END -->
