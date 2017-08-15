@@ -112,17 +112,17 @@
 								var route = response.routes[0];
 								var summaryPanel = document.getElementById('summaryPanel');
 								var summaryPanelDistance = document.getElementById('summaryPanelDistance');
-								var dest1Place = document.getElementById('dest1Place');
-								var dest1Distance = document.getElementById('dest1Distance');
+								var summaryPanelDuration = document.getElementById('summaryPanelDuration');
 								
 								summaryPanel.innerHTML = '';
 								for (var i = 0; i < route.legs.length; i++) {
 									var routeSegment = i + 1;
-									//summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
-									//'</b><br>';
-									summaryPanel.innerHTML += route.legs[i].start_address ;
-									summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
-									summaryPanelDistance.innerHTML += route.legs[i].distance.text;
+									summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
+									'</b><br>';
+									summaryPanel.innerHTML += route.legs[i].start_address + ' to ' ;
+									summaryPanel.innerHTML += route.legs[i].end_address + '<br><br>';
+									summaryPanelDistance.innerHTML += '<b>Distance:(' + routeSegment + ') </b>' + route.legs[i].distance.text + '					';
+									summaryPanelDuration.innerHTML += '<b>Duration:(' + routeSegment + ') </b>' + route.legs[i].duration.text + '					';
 								}
 							} else {
 								window.alert('Directions request failed due to ' + status);
@@ -143,7 +143,7 @@
 			  </a>
 			  <div href="#" class="list-group-item list-group-item-action" id="end" value="st louis, mo">
 					<p id="summaryPanelDistance"></p>
-					<p><b>Leg Travel Duration:</b> 0Hrs 0Mins</p>
+					<p id="summaryPanelDuration"></p>
 				</div>
 				<a href="../Show%20Destination/show-destination.html?location=London" class="list-group-item active">
 			    <div id="dest1Place"></div>
