@@ -468,7 +468,10 @@ a {
 	}
 }
  #googleMap {
+	 width: 69.5%	;
 	 height: 40vh;
+	 float: left;
+	margin: 0 2rem 0 2rem;
  }
 
  .travel-book-buttons {
@@ -478,4 +481,31 @@ a {
 
 .center-button {
 	margin: auto;
+}
+
+.display-inline{
+	display: inline;
+}
+
+#left-panel {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	width: 12%;
+	float: left;
+}
+
+#right-panel {
+	width: 12%;
+	float: right;
+	margin-right: 1rem;	
+}
+
+#sa-list {
+	margin-left: 5%;
+	float: left;
+}
+
+#eu-list {
+	margin-left: 5%;
+	float: left;
 }

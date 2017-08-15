@@ -51,6 +51,7 @@
 				</select>
 				</div>
 		</div>
+	
 		<div id="right-panel">
 			<div>
 				<b>Choose your final destination:</b>
@@ -63,9 +64,9 @@
 				</select>
 				<br>
 				<input type="submit" id="submit">
-			</div>
-			
+			</div>			
 		</div>
+		
 		<div id = "googleMap">
 			<script>
 				function myMap() {
@@ -109,16 +110,14 @@
 							if (status === 'OK') {
 								directionsDisplay.setDirections(response);
 								var route = response.routes[0];
-								var homePanelPlace = document.getElementById('home-panel-place');
+								var summaryPanel = document.getElementById('directions1-panel');
 								var homePanelDistance = document.getElementById('home-panel-distance');
-								var homePanelDuration = document.getElementById('home-panel-duration');
-								var dest1PanelDistance = document.getElementById('dest1-panel-distance');
+								
 								summaryPanel.innerHTML = '';
 								for (var i = 0; i < route.legs.length; i++) {
 									var routeSegment = i + 1;
 									summaryPanel.innerHTML += route.legs[i].start_address;
 									homePanelDistance.innerHTML = '<b>Distance: </b>' + route.legs[i].distance.text;
-									homePanelDuration.innerHTML = '<b>Duration: </b>' + route.legs[i].duration.text;
 								}
 							} else {
 								window.alert('Directions request failed due to ' + status);
@@ -129,15 +128,16 @@
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjj2DSxrDr9jArPVtf5gcguBo7m6NVAsM&callback=myMap"></script>
 		</div>
 		<!-- GOOGLE MAP END -->
+		
 		<!-- TOUR LIST -->
 		<div id = "sa-list">
 		<div class="container">
 			 <div class="list-group">
 			  <a href="#" class="list-group-item home" id="start" value="chicago, il">
-					<div id="home-panel-place"></div>
+					<div id="directions1-panel"></div>
 			  </a>
 			  <div href="#" class="list-group-item list-group-item-action" id="end" value="st louis, mo">
-					<p><b>Distance:</b> 0 km</p>
+					<p id="home-panel-distance"><b>Distance:</b></p>
 					<p><b>Leg Travel Duration:</b> 11 Hrs 15 Mins</p>
 				</div>
 				<a href="../Show%20Destination/show-destination.html?location=London" class="list-group-item active">
@@ -145,8 +145,8 @@
 					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
 			  </a>
 				<div href="#" class="list-group-item list-group-item-action">
-					<p id="dest1-panel-distance"></p>
-					<p id="dest1-panel-duration"></p>
+					<p id="dest1-panel-distance"><b>Distance:</b></p>
+					<p><b>Leg Travel Duration:</b> 2 Hrs 25 Mins</p>
 				</div>
 				<a href="../Show%20Destination/show-destination.html?location=Paris" class="list-group-item active">
 			    Paris
