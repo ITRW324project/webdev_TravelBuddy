@@ -20,8 +20,7 @@
 				<div>
 					<button class="btn btn-success btn toggle-travelbook">My Travelbook</button>
 					<form method="GET" action="http://simeon.ddns.net:8080/logout.php">
-						<a class="btn btn-outline-secondary btn-sm" href="../home.php">Logout</a>
-					</form>
+					<a class="btn btn-outline-secondary btn-sm" href="../home.php">Logout</a>
 				</div>
 		</nav>
 		<!-- NAVBAR END -->
@@ -109,6 +108,7 @@
 						</a>
 					</div>
 				</div>
+				<a class="btn btn-primary center-button btn-lg" href="../Tour Index/Tour-Index.php">View All</a>
 			</div>
 		</div>
 		<!-- PREPLANNED END -->
@@ -143,7 +143,7 @@
 					</div>
 				</a>
 				</div>
-				<a class="btn btn-primary center-button btn-lg" href="../DestinationIndex/destination-index.html">View All</a>
+				<a class="btn btn-primary center-button btn-lg" href="../DestinationIndex/destination-index.php">View All</a>
 			</div>
 		</div>
 		<!-- TOP DESTINATION END -->
@@ -155,7 +155,7 @@
 			</button>
 			<h3>My Travelbook</h3>
 			<div class="card">
-				<h6 class="sidebar-heading">Luxury Europe Tour</h6>
+				<h6 class="sidebar-heading">Chosen Destinations</h6>
 				<div class="list-group">
 					<a href="#" class="list-group-item home">
 			    HOME
