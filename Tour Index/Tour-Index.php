@@ -12,10 +12,10 @@
 	<body>
 		<!-- NAVBAR -->
 		<nav class="navbar">
-				<a class="logo logo-small-light" href="../Landing Page/landing-page.html">Travel Buddy</a>
+				<a class="logo logo-small-light" href="../Landing Page/landing-page.php">Travel Buddy</a>
 				<div>
 					<button class="btn btn-success btn toggle-travelbook">My Travelbook</button>
-					<a class="btn btn-outline-secondary btn-sm" href="../home.html">Logout</a>
+					<a class="btn btn-outline-secondary btn-sm" href="../home.php">Logout</a>
 				</div>
 		</nav>
 		<div class="gradient-banner">
@@ -27,7 +27,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-md-12 col-lg-4">
-						<a class="card card-link" href="../Tour Show/tour-show.html">
+						<a class="card card-link" href="../Tour Show/tour-show.php">
 						<img class="card-img-top" src="../img/Brazil_Hill.jpeg" >
 						<div class="card-block">
 							<h4 class="card-title">Tropical Tour</h4>
@@ -36,7 +36,7 @@
 					</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-4">
-						<a class="card card-link" href="../Tour Show/tour-show.html">
+						<a class="card card-link" href="../Tour Show/tour-show.php">
 						<img class="card-img-top" src="../img/DC_Landmark.jpg" >
 						<div class="card-block">
 							<h4 class="card-title">American History Tour</h4>
@@ -45,7 +45,7 @@
 					</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-4">
-						<a class="card card-link" href="../Tour Show/tour-show.html">
+						<a class="card card-link" href="../Tour Show/tour-show.php">
 						<img class="card-img-top" src="../img/London_Transport.jpg" >
 						<div class="card-block">
 							<h4 class="card-title">European Luxury Tour</h4>
@@ -56,7 +56,7 @@
 				</div>
 				<div class="row">
 					<div class="col-12 col-md-12 col-lg-4">
-						<a class="card card-link" href="../Tour Show/tour-show.html">
+						<a class="card card-link" href="../Tour Show/tour-show.php">
 						<img class="card-img-top" src="../img/NewYork_Streets.jpeg" >
 						<div class="card-block">
 							<h4 class="card-title">City Life Tour</h4>
@@ -65,7 +65,7 @@
 					</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-4">
-						<a class="card card-link" href="../Tour Show/tour-show.html">
+						<a class="card card-link" href="../Tour Show/tour-show.php">
 						<img class="card-img-top" src="../img/Thailand_Festivals.jpeg" >
 						<div class="card-block">
 							<h4 class="card-title">Cultural Tour</h4>
@@ -74,7 +74,7 @@
 					</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-4">
-						<a class="card card-link" href="../Tour Show/tour-show.html">
+						<a class="card card-link" href="../Tour Show/tour-show.php">
 						<img class="card-img-top" src="../img/CapeTown_TableMountain.jpeg" >
 						<div class="card-block">
 							<h4 class="card-title">Best of South Africa</h4>

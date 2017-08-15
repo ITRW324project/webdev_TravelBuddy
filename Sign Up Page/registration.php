@@ -34,9 +34,9 @@
 	<body>
 		<!-- NAVBAR -->
 		<nav class="navbar">
-				<a href = "../home.html" class="logo logo-small-light">Travel Buddy</a>
+				<a href = "../home.php" class="logo logo-small-light">Travel Buddy</a>
 				<div>
-					<a class="btn btn-outline-secondary btn-sm" href="../Login Page/login.html">Login</a>
+					<a class="btn btn-outline-secondary btn-sm" href="../Login Page/login.php">Login</a>
 				</div>
 		</nav>
 		<!-- NAVBAR END -->
@@ -79,9 +79,9 @@
 						<input id = "town" type = "text" class="form-control"></input>
 					</div>
 					<input type="submit" value="Submit" class="btn btn-primary btn-submit float-right">
-					<!--<a href="../Landing Page/landing-page.html" class = "btn btn-primary btn-submit float-right">Submit</a> -->
+					<!--<a href="../Landing Page/landing-page.php" class = "btn btn-primary btn-submit float-right">Submit</a> -->
 					<div class = "buttons">
-						<a href = "../home.html">Back</a>&emsp;
+						<a href = "../home.php">Back</a>&emsp;
 					</div>
 				</form>
 			</div>
