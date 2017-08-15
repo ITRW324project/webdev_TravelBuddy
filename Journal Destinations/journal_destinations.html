@@ -50,7 +50,7 @@
 					marker4.setMap(map);
 
 					var flightPath = new google.maps.Polyline({
-					path: [ortambo, newyork,  miami, california],
+					path: [ortambo, california,  miami, newyork],
 					strokeColor: "#0000FF",
 					strokeOpacity: 0.8,
 					strokeWeight: 2
