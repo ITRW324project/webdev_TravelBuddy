@@ -48,7 +48,7 @@
 				<form action = "http://simeon.ddns.net:8080/signUptoets.php" method = "get">
 					<div class="form-group">
 						<p>First Name:</p>
-						<input type = "text" class="form-control" name = "fName" required="Need First Name."/>
+						<input type = "text" class="form-control" name = "fName" autofocus required="Need First Name."/>
 					</div>
 					<div class="form-group">
 						<p>Last Name:</p>

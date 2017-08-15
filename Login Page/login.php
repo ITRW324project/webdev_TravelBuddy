@@ -46,7 +46,7 @@
 				<form action = "http://simeon.ddns.net:8080/testConnect.php" method = "get">
 					<div class="form-group">
 						<label>Username:</label>
-						<input name = "fname" type = "text" class="form-control"></input>
+						<input name = "fname" autofocus type = "text" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<label>Password:</label>
