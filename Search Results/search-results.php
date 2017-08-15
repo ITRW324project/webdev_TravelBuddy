@@ -12,10 +12,10 @@
 	<body>
 		<!-- NAVBAR -->
 		<nav class="navbar">
-				<a class="logo logo-small-light" href="../Landing Page/landing-page.html">Travel Buddy</a>
+				<a class="logo logo-small-light" href="../Landing Page/landing-page.php">Travel Buddy</a>
 				<div>
 					<button class="btn btn-success btn toggle-travelbook">My Travelbook</button>
-					<a class="btn btn-outline-secondary btn-sm" href="../home.html">Logout</a>
+					<a class="btn btn-outline-secondary btn-sm" href="../home.php">Logout</a>
 				</div>
 		</nav>
 		<!-- NAVBAR END -->
@@ -58,7 +58,7 @@
 				<h3 class="container-heading">Resources</h3>
 				<div class="row">
 					<div class="col-12 col-md-12 col-lg-4">
-						<div href="Tour Show/tour-show.html" class="card card-link">
+						<div href="Tour Show/tour-show.php" class="card card-link">
 							<img class="card-img-top" src="https://static.pexels.com/photos/541517/pexels-photo-541517.jpeg" >
 							<div class="card-block">
 								<h4 class="card-title">Attractions</h4>
@@ -68,7 +68,7 @@
 						</div>
 					</div>
 					<div class="col-12 col-md-12 col-lg-4">
-						<div href="Tour Show/tour-show.html" class="card card-link">
+						<div href="Tour Show/tour-show.php" class="card card-link">
 							<img class="card-img-top" src="https://static.pexels.com/photos/5317/food-salad-restaurant-person.jpg" >
 							<div class="card-block">
 								<h4 class="card-title">Restaurants</h4>
@@ -78,7 +78,7 @@
 						</div>
 					</div>
 					<div class="col-12 col-md-6 col-lg-4">
-						<div href="Tour Show/tour-show.html" class="card card-link">
+						<div href="Tour Show/tour-show.php" class="card card-link">
 						<img class="card-img-top" src="https://static.pexels.com/photos/286744/pexels-photo-286744.jpeg" >
 						<div class="card-block">
 							<h4 class="card-title">Accomodation</h4>
@@ -150,42 +150,42 @@
 			</button>
 			<h3>My Travelbook</h3>
 			<div class="card">
-				<h6 class="sidebar-heading">Luxury Europe Tour</h6>
-				<div class="list-group">
+				<h6 class="sidebar-heading">Chosen Destinations</h6>
+				 <div class="list-group">
 					<a href="#" class="list-group-item home">
-						HOME
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
-					</div>
-					<a href="#" class="list-group-item active">
-						London
-						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
-					</div>
-					<a href="#" class="list-group-item active">
-						Paris
-						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
-					</div>
-					<a href="#" class="list-group-item active">
-						Rome
-						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1021k</p>
-						<p><b>Leg Travel Duration:</b> 5 Hrs 45 Mins</p>
-					</div>
-					<a href="#" class="list-group-item home">
-						HOME
-					</a>
+			    HOME
+			 </a>
+			  <div href="#" class="list-group-item list-group-item-action">
+					<p><b>Distance:</b> 16 723.6km</p>
+					<p><b>Leg Travel Duration:</b> 21 Hrs 14 Mins</p>
+				</div>
+				<a href="../Show%20Destination/show-destination.html?location=California" class="list-group-item active">
+			    California
+					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
+			  </a>
+				<div href="#" class="list-group-item list-group-item-action">
+					<p><b>Distance:</b> 4 747.8km</p>
+					<p><b>Leg Travel Duration:</b> 4 Hrs 41 Mins</p>
+				</div>
+				<a href="../Show%20Destination/show-destination.html?location=Miami" class="list-group-item active">
+			    Miami
+					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
+			  </a>
+				<div href="#" class="list-group-item list-group-item-action">
+					<p><b>Distance:</b> 2 053,1km</p>
+					<p><b>Leg Travel Duration:</b> 3Hrs 5 Mins</p>
+				</div>
+				<a href="../Show%20Destination/show-destination.html?location=NewYork" class="list-group-item active">
+			    New York
+					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
+			  </a>
+				<div href="#" class="list-group-item list-group-item-action">
+					<p><b>Distance:</b> 12 831km</p>
+					<p><b>Leg Travel Duration:</b> 14 Hrs 50 Mins</p>
+				</div>
+				<a href="#" class="list-group-item home">
+			    HOME
+			  </a>
 				</div>
 			</div>
 		</div>
@@ -228,7 +228,7 @@
 							<div class="form-group">
 								<input type = "text" class="form-control"></input>
 							</div>
-							<a class="btn btn-primary" href="../Tour Show/tour-show.html">Okay</a>
+							<a class="btn btn-primary" href="../Tour Show/tour-show.php">Okay</a>
 							<button type="button" class="btn btn-secondary js-new-travelbook">Cancel</button>
 						</form>
 				</div>
@@ -251,7 +251,7 @@
 							<span class="custom-control-description">Travelbook 2</span>
 						</label>
 						</div>
-						<a class="btn btn-primary" href="../Tour Show/tour-show.html">Okay</a>
+						<a class="btn btn-primary" href="../Journal Destinations/journal_destinations.php">Okay</a>
 						<button type="button" class="btn btn-secondary js-existing-travelbook">Cancel</button>
 					</form>
 			</div>
