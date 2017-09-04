@@ -7,7 +7,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="travel_buddyapp.travelbuddyapp.MainActivity"
     tools:showIn="@layout/activity_main"
-    android:background="@drawable/main_screen"
+    android:background="@drawable/mainscreen"
     >
 
     <TextView
