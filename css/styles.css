@@ -353,6 +353,12 @@ a {
 	border-left: 5px dotted #4a90e2;
 }
 
+.list-group.item {
+	text-align: left;
+	margin-left: 8rem;
+	margin-bottom: 3rem;
+}
+
 .list-group-item.home {
 	background-color: #eceeef;
 	color: #636c72;
@@ -370,10 +376,10 @@ a {
 .summary {
 		background: linear-gradient(45deg, #406591, #4a90e2);
 		color: #f7f7f9;
-		text-align: left;
+		text-align: center;
 		padding: 1rem;
 		border-radius: 5px;
-		margin: 1rem 0;
+		margin: 1rem 5rem 0 8rem;
 }
 
 .summary p {
@@ -508,4 +514,28 @@ a {
 #eu-list {
 	margin-left: 5%;
 	float: left;
+}
+
+.summaryPanel {
+	float: left;
+}
+
+.startAddress {
+	font-size: 30px;
+}
+
+.startAddress:hover{
+	text-decoration: none;
+}
+
+.endAddress {
+	font-size: 30px;
+}
+
+.endAddress:hover{
+	text-decoration: none;
+}
+
+.to {
+	font-size: 30px;
 }

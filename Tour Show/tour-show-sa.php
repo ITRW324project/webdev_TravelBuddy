@@ -111,23 +111,38 @@
 								directionsDisplay.setDirections(response);
 								var route = response.routes[0];
 								var summaryPanel = document.getElementById('summaryPanel');
-								var summaryPanelDistance = document.getElementById('summaryPanelDistance');
-								var summaryPanelDuration = document.getElementById('summaryPanelDuration');
+								var totalDistance = document.getElementById('totalDistance');
+								totDist = 0;
+								var location1 = document.getElementById('start').text;
+								var url = '../Show%20Destination/show-destination.html?location='+location1;
 								
 								summaryPanel.innerHTML = '';
+								totalDistance.innerHTML = '';
 								for (var i = 0; i < route.legs.length; i++) {
 									var routeSegment = i + 1;
-									summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
-									'</b><br>';
-									summaryPanel.innerHTML += route.legs[i].start_address + ' to ' ;
-									summaryPanel.innerHTML += route.legs[i].end_address + '<br><br>';
-									summaryPanelDistance.innerHTML += '<b>Distance:(' + routeSegment + ') </b>' + route.legs[i].distance.text + '					';
-									summaryPanelDuration.innerHTML += '<b>Duration:(' + routeSegment + ') </b>' + route.legs[i].duration.text + '					';
+									summaryPanel.innerHTML += "<a class='startAddress' href='../Show%20Destination/show-destination.html?location=Cape Town'>" + route.legs[i].start_address + "</a>" + "<span class='to'>" + ' to ' + "</span>";
+									summaryPanel.innerHTML += "<a class='endAddress' href='../Show%20Destination/show-destination.html?location=Durban'>" + route.legs[i].end_address + "</a>" + '</br>';	
+									summaryPanel.innerHTML += '<b>Distance:</b> ' + route.legs[i].distance.text + '</br>';
+									summaryPanel.innerHTML += '<b>Duration:</b> ' + route.legs[i].duration.text + '</br></br>';
 								}
+								computeTotalDistance(response);
 							} else {
 								window.alert('Directions request failed due to ' + status);
 							}
 						});
+				}
+				
+				function computeTotalDistance(result) {
+					var totalDist = 0;
+					var totalTime = 0;
+					var myroute = result.routes[0];
+					for (i = 0; i < myroute.legs.length; i++) {
+						totalDist += myroute.legs[i].distance.value;
+						totalTime += myroute.legs[i].duration.value;
+					}
+					totalDist = totalDist / 1000.
+					document.getElementById("totalDistance").innerHTML = totalDist.toFixed(2) + " km<br>";
+					document.getElementById("totalDuration").innerHTML = (totalTime/3600).toFixed(0) + " hrs " + ((totalTime % 3600) / 60).toFixed(0) + " mins";
 				}
 			</script>
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjj2DSxrDr9jArPVtf5gcguBo7m6NVAsM&callback=myMap"></script>
@@ -137,55 +152,12 @@
 		<!-- TOUR LIST -->
 		<div id = "sa-list">
 		<div class="container">
-			 <div class="list-group">
-			  <a href="#" class="list-group-item home" id="start" value="chicago, il">
-					<div id="summaryPanel"></div>
-			  </a>
-			  <div href="#" class="list-group-item list-group-item-action" id="end" value="st louis, mo">
-					<p id="summaryPanelDistance"></p>
-					<p id="summaryPanelDuration"></p>
-				</div>
-				<a href="../Show%20Destination/show-destination.html?location=London" class="list-group-item active">
-			    <div id="dest1Place"></div>
-					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-			  </a>
-				<div href="#" class="list-group-item list-group-item-action">
-					<p id="summaryPanelDistance"></p>
-					<p><b>Leg Travel Duration:</b> 2 Hrs 25 Mins</p>
-				</div>
-				<a href="../Show%20Destination/show-destination.html?location=Paris" class="list-group-item active">
-			    Paris
-					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-			  </a>
-				<div href="#" class="list-group-item list-group-item-action">
-					<p><b>Distance:</b> 1 420.3km</p>
-					<p><b>Leg Travel Duration:</b> 2 Hrs 15 Mins</p>
-				</div>
-				<a href="../Show%20Destination/show-destination.html?location=Rome" class="list-group-item active">
-			    Rome
-					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-			  </a>
-				<div href="#" class="list-group-item list-group-item-action">
-					<p><b>Distance:</b> 1 359.4km</p>
-					<p><b>Leg Travel Duration:</b> 1 Hrs 55 Mins</p>
-				</div>
-			    <a href="../Show%20Destination/show-destination.html?location=Barcelona" class="list-group-item active">
-			    Barcelona
-					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-			  </a>
-				<div href="#" class="list-group-item list-group-item-action">
-					<p><b>Distance:</b> 11 793.6km</p>
-					<p><b>Leg Travel Duration:</b> 14 Hrs 15 Mins</p>
-				</div>
-				<a href="#" class="list-group-item home">
-			    HOME
-			  </a>
-			--></div>
+			<div id="summaryPanel"></div>
+			
 			<div class="summary">
 				<h6>Best of South Africa</h6>
-				<p><b>Total Distance:</b> 28 320.7km</p>
-				<p><b>Total Leg Travel Duration:</b> 32 Hrs 5 Mins</p>
-				<a class="btn btn-primary btn mt-1" href="../Landing Page/landing-page.php">Add more destinations</a>
+				<p><b>Total Distance:</b> <div id="totalDistance"></div></p>
+				<p><b>Total Leg Travel Duration:</b> <div id="totalDuration"></div></p>
 			</div>
 		</div>
 		</div>
@@ -257,7 +229,14 @@
 				</div>
 		</nav>
 		<!-- FOOTER END -->
-
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script>
+			$('start').value(function(){
+				startAddress = $(this).val();
+				$('.startAddress').attr('href', '../Show%20Destination/show-destination.html?location=' + startAddress);
+			});
+		</script>
 		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
