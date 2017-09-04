@@ -23,8 +23,9 @@
 				<p class="logo logo-small-dark">Travel Buddy</p>
 				<h2>Sign up</h2>
 				<p>Please fill in the following details to start your adventure!</p>
-				<form action = "http://simeon.ddns.net:8080/signUptoets.php" method = "get">
+				<form>
 					<div class="form-group">
+						<p><span id = "txtSubmit" </span></p>
 						<p>First Name:</p>
 						<input name = "fName" type = "text" class="form-control"></input>
 					</div>
@@ -41,28 +42,45 @@
 						<input name = "number" type = "int" class="form-control"></input>
 					</div>
 					<div class="form-group">
-						<p>Username: </p>
-						<input name = "uName" type = "text" class="form-control"></input>
+						<p>Username: <span id = "txtName"</span> </p>
+						<input name = "uName" type = "text" class="form-control" onkeyup="checkName(this.value)"></input>
 					</div>
 					<div class="form-group">
 						<p>Password: </p>
 						<input name = "pWord" type = "password" class="form-control"></input>
 					</div>
 					<div class="form-group">
-						<p>Re-enter Password: </p>
+						<p>Re-enter Password: <span id = "txtPword" </span></p>
 						<input name = "pWord2" type = "password" class="form-control"></input>
 					</div>
 					<div class="form-group">
-						<p>Where do you stay? </p>
+						<p>Where do you stay?  </p>
 						<input name = "town" type = "text" class="form-control"></input>
 					</div>
-					<input type="submit" value="Submit" class="btn btn-primary btn-submit float-right">
+					<input type="Submit" class="btn btn-primary btn-submit float-right" onclick="submitForm(this.form.value)"></input>
 					<div class = "buttons">
 						<a href = "../home.html">Back</a>&emsp;
 					</div>
 				</form>
 			</div>
 		</div>
+		<script>
+			function checkName(userName) {
+    		if (userName.length == 0) {
+        	document.getElementById("txtName").innerHTML = "";
+        	return;
+    		} else {
+        	var xmlhttp = new XMLHttpRequest();
+        	xmlhttp.onreadystatechange = function() {
+          				if (this.readyState == 4 && this.status == 200) {
+            				document.getElementById("txtName").innerHTML = this.responseText;
+          				}
+        				};
+        	xmlhttp.open("POST", "http://192.168.2.150:8080/testName.php?name=" + userName, true);
+        	xmlhttp.send();
+    		}
+			}
+		</script>
 		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>

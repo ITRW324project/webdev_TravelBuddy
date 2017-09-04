@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -24,7 +23,7 @@
 				<p class="logo logo-small-dark">Travel Buddy</p>
 				<h2>Sign up</h2>
 				<p>Please fill in the following details to start your adventure!</p>
-				<form action = "http://simeon.ddns.net:8080/signUptoets.php" method = "get">
+				<form action = "http://192.168.2.150.net:8080/sign.php" method = "post">
 					<div class="form-group">
 						<p>First Name:</p>
 						<input name = "fName" type = "text" class="form-control"></input>
@@ -69,3 +68,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	</body>
 </html>
+
+<?php
+
+?>

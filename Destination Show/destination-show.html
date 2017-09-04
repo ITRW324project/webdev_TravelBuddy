@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<script type = "text/javascript">
+            function getCookie(name)
+            {
+              var re = new RegExp(name + "=([^;]+)");
+              var value = re.exec(document.cookie);
+              return (value != null) ? unescape(value[1]) : null;
+            }
+          </script>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -16,6 +24,10 @@
 				<div>
 					<button class="btn btn-success btn toggle-travelbook">My Travelbook</button>
 					<a class="btn btn-outline-secondary btn-sm" href="../home.html">Logout</a>
+					<script type = "text/javascript">
+						document.write(getCookie("user"));
+					</script>
+					<span id = "user"></span>
 				</div>
 		</nav>
 		<!-- NAVBAR END -->
