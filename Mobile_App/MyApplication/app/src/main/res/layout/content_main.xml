@@ -53,9 +53,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="@+id/Login_Button"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="77dp"
+        android:layout_marginBottom="78dp"
         app:layout_constraintLeft_toLeftOf="@+id/Login_Button"
-        app:layout_constraintHorizontal_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.0" />
 
     <Button
         android:id="@+id/Login_Button"
@@ -68,7 +68,7 @@
         app:layout_constraintBottom_toTopOf="@+id/Sign_Up_Button"
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="21dp"
+        android:layout_marginBottom="11dp"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
