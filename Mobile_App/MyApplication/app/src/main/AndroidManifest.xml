@@ -27,8 +27,13 @@
         <activity
             android:name=".WelcomeActivity"
             android:exported="true" />
-        <activity android:name=".TripActivity" />
-        <activity android:name=".LoginAct"></activity>
+
+        <activity android:name=".TripActivity"
+            android:exported="true"/>
+
+        <activity android:name=".LoginAct"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>

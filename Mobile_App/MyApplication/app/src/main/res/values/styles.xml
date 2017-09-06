@@ -19,14 +19,14 @@
 
     <style name="editText_style">
         <item name="android:gravity">center</item>
-        <item name="android:background">@drawable/edittext_Background</item>
+        <item name="android:background">@drawable/edittext_background</item>
         <item name="android:layout_margin">7dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:ems">10</item>
     </style>
 <style name="ButtonStyle">
-    <item name="android:background">@drawable/editbutton_Style</item>
+    <item name="android:background">@drawable/editbutton_style</item>
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
 </style>
