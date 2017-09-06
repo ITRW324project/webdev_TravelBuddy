@@ -5,35 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="travel_buddyapp.travelbuddyapp.TripActivity"
-    android:background="@drawable/gradient_green">
-
-    <ListView
-        android:id="@+id/tripresults_listview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="88dp"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.0">
-    </ListView>
+    android:background="@drawable/sky_imgae">
 
     <TextView
         android:id="@+id/Trip_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="296dp"
+        android:layout_height="65dp"
         android:layout_marginStart="130dp"
         android:layout_marginTop="16dp"
         android:text="Trip 1"
+        android:textColor="@android:color/black"
+        android:textColorLink="@android:color/black"
         android:textSize="50sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1"
-        android:textColor="#f7f7f9"/>
+        tools:layout_editor_absoluteX="160dp"
+        android:layout_marginLeft="130dp" />
 
     <Button
         android:id="@+id/back_button"
@@ -51,5 +40,32 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/viewmap_button"
+        android:layout_width="214dp"
+        android:layout_height="48dp"
+        android:text="View Map"
+        app:layout_constraintTop_toBottomOf="@+id/Trip_text"
+        android:layout_marginLeft="85dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/gradient_green"
+        android:textColor="#f7f7f9"
+        android:layout_marginStart="85dp" />
+
+    <ListView
+        android:id="@+id/tripresults_listview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="139dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        >
+    </ListView>
 
 </android.support.constraint.ConstraintLayout>

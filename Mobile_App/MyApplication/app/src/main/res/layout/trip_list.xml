@@ -8,11 +8,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textSize="35sp" />
+        android:textSize="35sp"
+        android:textColor="#f7f7f9"
+        android:background="@drawable/gradient_green"
+        />
 
     <TextView
         android:id="@+id/destination_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp" />
+        android:textSize="27sp"
+        android:background="#f7f7f9"/>
 </LinearLayout>

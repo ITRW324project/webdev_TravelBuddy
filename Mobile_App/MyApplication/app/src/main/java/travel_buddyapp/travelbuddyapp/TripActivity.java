@@ -21,9 +21,9 @@ public class TripActivity extends AppCompatActivity {
         ListView resultsListview = (ListView) findViewById(R.id.tripresults_listview);
 
         HashMap<String,String> destinationdescription = new HashMap<>();
-        destinationdescription.put("London","5h16m 210 000km");
-        destinationdescription.put("Paris","5h16m 210 000km");
-        destinationdescription.put("Germany","5h16m 210 000km");
+        destinationdescription.put("London","Travel Time:  5h16m \nTravel Distance:  210 000km");
+        destinationdescription.put("Paris","Travel Time:  5h16m \nTravel Distance:  210 000km");
+        destinationdescription.put("Germany","Travel Time:  5h16m \nTravel Distance:  210 000km");
 
         List<HashMap<String,String>> listItems = new ArrayList<>();
         SimpleAdapter adapter = new SimpleAdapter(this,listItems, R.layout.trip_list,
