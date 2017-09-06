@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="travel_buddyapp.travelbuddyapp.LoginAct">
+
+    <Button
+        android:id="@+id/button"
+        style="@style/ButtonStyle"
+        android:layout_width="300dp"
+        android:layout_height="46dp"
+        android:text="Log in"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="336dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        style="@style/editText_style"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        style="@style/editText_style"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="266dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/Text_Style"
+        android:text="Forgot your password?"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="397dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="153dp"
+        android:layout_height="70dp"
+        android:text="Log in"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="63dp" />
+
+</android.support.constraint.ConstraintLayout>
