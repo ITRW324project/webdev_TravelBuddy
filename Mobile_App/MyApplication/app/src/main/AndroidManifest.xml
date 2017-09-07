@@ -33,10 +33,23 @@
         <activity
             android:name=".LoginAct"
             android:exported="true" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".Search_Activity" />
-        <activity android:name=".ResetPass_Activity" />
-        <activity android:name=".NewTravelbook_Activity"></activity>
+
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".Search_Activity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".ResetPass_Activity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".NewTravelbook_Activity"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>
