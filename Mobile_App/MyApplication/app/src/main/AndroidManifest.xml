@@ -34,7 +34,8 @@
             android:name=".LoginAct"
             android:exported="true" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".Search_Activity"></activity>
+        <activity android:name=".Search_Activity" />
+        <activity android:name=".ResetPass_Activity"></activity>
     </application>
 
 </manifest>
