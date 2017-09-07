@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="travel_buddyapp.travelbuddyapp.TripActivity"
-    android:background="@drawable/sky_imgae">
+    android:background="@drawable/citylights_imgae">
 
     <TextView
         android:id="@+id/Trip_text"
@@ -14,7 +14,7 @@
         android:layout_marginStart="130dp"
         android:layout_marginTop="16dp"
         android:text="Trip 1"
-        android:textColor="@android:color/black"
+        android:textColor="#f7f7f9"
         android:textColorLink="@android:color/black"
         android:textSize="50sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -30,6 +30,7 @@
         android:layout_height="wrap_content"
         android:background="@null"
         android:text="Back"
+        android:textColor="#f7f7f9"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
@@ -49,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Trip_text"
         android:layout_marginLeft="85dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:background="@drawable/gradient_green"
+        android:background="#4a90e2"
         android:textColor="#f7f7f9"
         android:layout_marginStart="85dp" />
 
