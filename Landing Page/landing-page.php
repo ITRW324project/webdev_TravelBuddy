@@ -86,7 +86,7 @@
 						</a>
 					</div>
 					<div class="col-12 col-md-12 col-lg-4">
-						<a class="card card-link" href="../Tour Show/preplanned_tour_sa.php">
+						<a class="card card-link" href="../Tour Show/tour-show.php">
 							<img class="card-img-top" src="../img/CapeTown_TableMountain.jpeg" >
 							<div class="card-block">
 								<h4 class="card-title">Best of South Africa</h4>

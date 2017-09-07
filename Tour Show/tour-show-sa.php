@@ -133,23 +133,16 @@
 				}
 				
 				function computeTotalDistance(result) {
-					var totalDistance = 0;
+					var totalDist = 0;
+					var totalTime = 0;
 					var myroute = result.routes[0];
-					for (var i = 0; i < myroute.legs.length; i++) {
-						totalDistance += myroute.legs[i].distance.value;
+					for (i = 0; i < myroute.legs.length; i++) {
+						totalDist += myroute.legs[i].distance.value;
+						totalTime += myroute.legs[i].duration.value;
 					}
-					totalDistance = totalDistance / 1000;
-					document.getElementById('totalDistance').innerHTML = totalDistance + ' km';
-				}
-				
-				function computeTotalDuration(result) {
-					var totalDuration = 0;
-					var myroute = result.routes[0];
-					for (var i = 0; i < myroute.legs.length; i++) {
-						totalDuration += myroute.legs[i].duration.value;
-					}
-					totalDuration = totalDuration / 1000;
-					document.getElementById('totalDuration').innerHTML = totalDuration + ' km';
+					totalDist = totalDist / 1000.
+					document.getElementById("totalDistance").innerHTML = totalDist.toFixed(2) + " km<br>";
+					document.getElementById("totalDuration").innerHTML = (totalTime/3600).toFixed(0) + " hrs " + ((totalTime % 3600) / 60).toFixed(0) + " mins";
 				}
 			</script>
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjj2DSxrDr9jArPVtf5gcguBo7m6NVAsM&callback=myMap"></script>
@@ -162,11 +155,9 @@
 			<div id="summaryPanel"></div>
 			
 			<div class="summary">
-				<h6><strong>Best of South Africa</strong></h6>
+				<h6>Best of South Africa</h6>
 				<p><b>Total Distance:</b> <div id="totalDistance"></div></p>
 				<p><b>Total Leg Travel Duration:</b> <div id="totalDuration"></div></p>
-				<br />
-				<button class="btn btn-success btn toggle-travelbook">Create New Travelbook</button>
 			</div>
 		</div>
 		</div>
