@@ -32,8 +32,9 @@
             android:exported="true" />
         <activity
             android:name=".LoginAct"
-            android:exported="true"></activity>
-        <activity android:name=".SignUpActivity"></activity>
+            android:exported="true" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".Search_Activity"></activity>
     </application>
 
 </manifest>
