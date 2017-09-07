@@ -22,51 +22,111 @@
 		<!-- NAVBAR END -->
 		<!-- BANNER -->
 		<div class="gradient-banner" >
-        <h1>Luxury Europe Tour</h1>
-        <p>Take a 4 week tour through Europe.  Explore all the luxuries that Europe has to offer.  The tour will depart from London.  This tour will provide you with all the exlusive attractions that Europe has to offer.  All travels will be done per flight, except for the departure from London to France; you will travel by train.  Information regarding the distance traveled and time traveled will be displayed below.</p>
+        <h1>Best of South Africa</h1>
+        <p>When we say "Best of South Africa", we mean it. Hop on the road and tour through South Africa along the coastline via car travel. Every destination will leave you breathless as you see what the most southern tip of Africa has to offer. Not only the journey will enlighten your senses, the people, places and friendships you will meet and create is something to look forward too. All travel is done by car which can be hired from the airport as you land in this beautiful country.</p>
     	</div>
 		</div>
 		<!-- BANNER END -->
 		<!-- GOOLE MAP -->
-		<div id = "googleMap">
+		<div id = "googleMap"></div>
 			<script>
-				function myMap() {
-					var mapProp= {
-						center:new google.maps.LatLng(21.0167, 12.3000),
-						zoom:2,
+				var geocoder;
+				var map;
+				var directionsDisplay;
+				var directionsService = new google.maps.DirectionsService();
+				var locations = [
+					['Cape Town', -33.9249, 18.4241, 1],
+					['Stellenbosch', -33.9321, 18.8602, 2],
+					['Port Elizabeth', -33.7139, 25.5207, 3],
+					['Durban', -29.8587, 31.0218, 4],
+					['Pietermaritzberg', -29.6006, 30.3794],
+					['Pretoria',-25.7479, 28.2293, 6],
+					['Johannesberg', -26.2041, 28.0473, 7],
+					['Kimberley', -28.7282, 24.7499, 8],
+					['Bloemfontein', -29.0852, 26.1596, 9]
+				];
+
+				function initialize() {
+					directionsDisplay = new google.maps.DirectionsRenderer();
+
+					var map = new google.maps.Map(document.getElementById('googleMap'), {
+						zoom: 5,
+						center: new google.maps.LatLng(-29, 23.5),
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					});
+					directionsDisplay.setMap(map);
+					var infowindow = new google.maps.InfoWindow();
+
+					var marker, i;
+					var request = {
+						travelMode: google.maps.TravelMode.DRIVING
 					};
-					var barcelona = new google.maps.LatLng(41.2974, 2.0833);
-					var rome = new google.maps.LatLng(41.9028, 12.4964);
-					var paris = new google.maps.LatLng(48.8566, 2.3522);
-					var london = new google.maps.LatLng(51.508742,-0.120850);
-					var ortambo = new google.maps.LatLng(-26.1367 , 28.2411);
+					for (i = 0; i < locations.length; i++) {
+						marker = new google.maps.Marker({
+							position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+							map: map
+						});
+
+						google.maps.event.addListener(marker, 'click', (function(marker, i) {
+							return function() {
+								infowindow.setContent(locations[i][0]);
+								infowindow.open(map, marker);
+							}
+						})(marker, i));
+						if (i == 0) request.origin = marker.getPosition();
+						else if (i == locations.length - 1) request.destination = marker.getPosition();
+						else {
+							if (!request.waypoints) request.waypoints = [];
+							request.waypoints.push({
+								location: marker.getPosition(),
+								stopover: true
+							});
+						}
+
+					}
+					directionsService.route(request, function(result, status) {
+						if (status == google.maps.DirectionsStatus.OK) {
+							directionsDisplay.setDirections(result);
+						}
+					});
+				}
+				google.maps.event.addDomListener(window, "load", initialize);
+			
+					/*var capetown = new google.maps.LatLng(-33.9249, 18.4241);
+					var stellenbosch = new google.maps.LatLng(-33.9321, 18.8602);
+					var portelizabeth = new google.maps.LatLng(-33.7139, 25.5207);
+					var durban = new google.maps.LatLng(-29.8587,31.0218);
+					var pietermaritzberg = new google.maps.LatLng(-29.6006 , 30.3794);
+					var pretoria = new google.maps.LatLng(-25.7479 , 28.2293);
+					var johannesberg = new google.maps.LatLng(-26.2041 , 28.0473);
+					var bloemfontein = new google.maps.LatLng(-29.0852 , 26.1596);
+					var kimberley = new google.maps.LatLng(-28.7282 , 24.7499);
 					var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-					var marker1 = new google.maps.Marker({position: london});
-					var marker2 = new google.maps.Marker({position: ortambo});
-					var marker3 = new google.maps.Marker({position: paris});
-					var marker4 = new google.maps.Marker({position: rome});
-					var marker5 = new google.maps.Marker({position: barcelona});
+					var marker1 = new google.maps.Marker({position: durban});
+					var marker2 = new google.maps.Marker({position: pietermaritzberg});
+					var marker3 = new google.maps.Marker({position: portelizabeth});
+					var marker4 = new google.maps.Marker({position: stellenbosch});
+					var marker5 = new google.maps.Marker({position: capetown});
+					var marker6 = new google.maps.Marker({position: pretoria});
+					var marker7 = new google.maps.Marker({position: johannesberg});
+					var marker8 = new google.maps.Marker({position: bloemfontein});
+					var marker9 = new google.maps.Marker({position: kimberley});
 					marker1.setMap(map);
 					marker2.setMap(map);
 					marker3.setMap(map);
 					marker4.setMap(map);
 					marker5.setMap(map);
-
-					var flightPath = new google.maps.Polyline({
-					path: [ortambo, london, paris, rome, barcelona],
-					strokeColor: "#0000FF",
-					strokeOpacity: 0.8,
-					strokeWeight: 2
-					});
-					flightPath.setMap(map);
-				}
+					marker6.setMap(map);
+					marker7.setMap(map);
+					marker8.setMap(map);
+					marker9.setMap(map);
+					directionsDisplay.setMap(map);*/
 			</script>
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjj2DSxrDr9jArPVtf5gcguBo7m6NVAsM&callback=myMap"></script>
-		</div>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjj2DSxrDr9jArPVtf5gcguBo7m6NVAsM&callback=initialize"></script>
 		<!-- GOOGLE MAP END -->
 		<!-- TOUR LIST -->
 		<div class="container">
-			<div class="list-group">
+			<div class="sa-list">
 			  <a href="#" class="list-group-item home">
 			    HOME
 			  </a>
