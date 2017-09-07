@@ -60,6 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
         android:text="Username:"
+        android:textColor="#f7f7f9"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:layout_editor_absoluteX="16dp" />
 
@@ -68,6 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email:"
+        android:textColor="#f7f7f9"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="116dp" />
 
@@ -76,6 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password:"
+        android:textColor="#f7f7f9"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="172dp" />
 
@@ -84,6 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Confirm Password:"
+        android:textColor="#f7f7f9"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="236dp" />
 
