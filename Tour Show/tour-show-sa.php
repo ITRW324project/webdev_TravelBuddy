@@ -31,7 +31,7 @@
 			<div>
 				<b>Choose where you want to start:</b>
 				<br />
-				<select id="start">
+				<select id="start" name="start">
 					<option value="Cape Town, ZA" name="capeTown">Cape Town</option>
 					<option value="Durban, ZA" name="durban">Durban</option>
 					<option value="Johannesburg, ZA" name="johannesberg">Johannesburg</option>
@@ -40,7 +40,7 @@
 					<br>
 				<b>Waypoints:</b> <br>
 				<i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
-				<select multiple id="waypoints">
+				<select name="waypoints[]" multiple="multiple" id="waypoints">
 					<option value="east london, ZA" name="east-london">East London</option>
 					<option value="jeffreys bay, ZA" name="jeffreys-bay">Jeffreys Bay</option>
 					<option value="port elizabeth, ZA" name="port-elizabeth">Port Elizabeth</option>
@@ -51,12 +51,12 @@
 				</select>
 				</div>
 		</div>
-	
+
 		<div id="right-panel">
 			<div>
 				<b>Choose your final destination:</b>
 				<br />
-				<select id="end">
+				<select id="end" name="end">
 					<option value="Durban, ZA" name="durban">Durban</option>
 					<option value="Johannesberg, ZA" name="johannesberg">Johannesberg</option>
 					<option value="Pretoria, ZA" name="pretoria">Pretoria</option>
@@ -64,9 +64,9 @@
 				</select>
 				<br>
 				<input type="submit" id="submit">
-			</div>			
+			</div>
 		</div>
-		
+
 		<div id = "googleMap">
 			<script>
 				function myMap() {
@@ -77,17 +77,17 @@
 						center: {lat: -29, lng: 23.5}
 					});
 					directionsDisplay.setMap(map);
-					
+
 					document.getElementById('submit').addEventListener('click', function() {
 						calculateAndDisplayRoute(directionsService, directionsDisplay);
 						changeValues();
 					});
 				}
-				
+
 				function changeValues() {
 					document.getElementById('home_name').value = document.getElementById('start').value;
 				}
-				
+
 				function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 					var waypts = [];
 					var checkboxArray = document.getElementById('waypoints');
@@ -99,7 +99,7 @@
 							});
 						}
 					}
-					
+
 					directionsService.route({
 						origin: document.getElementById('start').value,
 						destination: document.getElementById('end').value,
@@ -115,13 +115,13 @@
 								totDist = 0;
 								var location1 = document.getElementById('start').text;
 								var url = '../Show%20Destination/show-destination.html?location='+location1;
-								
+
 								summaryPanel.innerHTML = '';
 								totalDistance.innerHTML = '';
 								for (var i = 0; i < route.legs.length; i++) {
 									var routeSegment = i + 1;
 									summaryPanel.innerHTML += "<a class='startAddress' href='../Show%20Destination/show-destination.html?location=Cape Town'>" + route.legs[i].start_address + "</a>" + "<span class='to'>" + ' to ' + "</span>";
-									summaryPanel.innerHTML += "<a class='endAddress' href='../Show%20Destination/show-destination.html?location=Durban'>" + route.legs[i].end_address + "</a>" + '</br>';	
+									summaryPanel.innerHTML += "<a class='endAddress' href='../Show%20Destination/show-destination.html?location=Durban'>" + route.legs[i].end_address + "</a>" + '</br>';
 									summaryPanel.innerHTML += '<b>Distance:</b> ' + route.legs[i].distance.text + '</br>';
 									summaryPanel.innerHTML += '<b>Duration:</b> ' + route.legs[i].duration.text + '</br></br>';
 								}
@@ -131,7 +131,7 @@
 							}
 						});
 				}
-				
+
 				function computeTotalDistance(result) {
 					var totalDist = 0;
 					var totalTime = 0;
@@ -148,12 +148,12 @@
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjj2DSxrDr9jArPVtf5gcguBo7m6NVAsM&callback=myMap"></script>
 		</div>
 		<!-- GOOGLE MAP END -->
-		
+
 		<!-- TOUR LIST -->
 		<div id = "sa-list">
 		<div class="container">
 			<div id="summaryPanel"></div>
-			
+
 			<div class="summary">
 				<h6>Best of South Africa</h6>
 				<p><b>Total Distance:</b> <div id="totalDistance"></div></p>
@@ -229,7 +229,7 @@
 				</div>
 		</nav>
 		<!-- FOOTER END -->
-		
+
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 		<script>
 			$('start').value(function(){
