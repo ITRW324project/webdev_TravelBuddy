@@ -33,21 +33,22 @@
         <activity
             android:name=".LoginAct"
             android:exported="true" />
-
         <activity
             android:name=".SignUpActivity"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".Search_Activity"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".ResetPass_Activity"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".NewTravelbook_Activity"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".Travelbook_view_activity"
             android:exported="true">
         </activity>
     </application>
