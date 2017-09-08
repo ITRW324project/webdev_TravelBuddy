@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_blue"
+    android:background="@drawable/traintracks_image"
     tools:context="travel_buddyapp.travelbuddyapp.Search_Activity">
 
     <Button
@@ -12,37 +12,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
-        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteX="-1dp"
         android:textColor="#f7f7f9"
         android:background="@null"
-        tools:layout_editor_absoluteY="-2dp" />
+        tools:layout_editor_absoluteY="2dp" />
 
     <Button
         android:id="@+id/Search_button2"
-        android:layout_width="160dp"
-        android:layout_height="49dp"
+        android:layout_width="232dp"
+        android:layout_height="44dp"
         android:text="Search"
-        android:background="#5cb85c"
+        android:background="#4a90e2"
         android:textColor="#f7f7f9"
-        tools:layout_editor_absoluteY="328dp"
-        tools:layout_editor_absoluteX="100dp" />
+        android:layout_marginTop="35dp"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        android:layout_marginLeft="76dp"
+        app:layout_constraintLeft_toLeftOf="@+id/Back_button" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="251dp"
-        android:layout_height="36dp"
-        android:text="Enter destination"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="100dp" />
+        android:layout_width="286dp"
+        android:layout_height="80dp"
+        android:text="Enter your dream destination"
+        android:textSize="35sp"
+        android:textAlignment="center"
+        android:textColor="#f7f7f9"
+        android:layout_marginLeft="49dp"
+        app:layout_constraintLeft_toLeftOf="@+id/Back_button"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="65dp" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="335dp"
+        android:layout_height="45dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text=""
-        tools:layout_editor_absoluteY="164dp"
-        tools:layout_editor_absoluteX="72dp" />
+        android:text="I want to visit..."
+        android:textColor="#b6bdc6"
+        android:background="#f7f7f9"
+        android:layout_marginTop="18dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        android:layout_marginLeft="33dp"
+        app:layout_constraintLeft_toLeftOf="@+id/Back_button" />
+
 </android.support.constraint.ConstraintLayout>
