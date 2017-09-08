@@ -10,8 +10,8 @@
 
     <EditText
         android:id="@+id/Name_editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="298dp"
+        android:layout_height="45dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
@@ -22,36 +22,36 @@
 
     <EditText
         android:id="@+id/Email_editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="298dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        android:layout_marginLeft="45dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/Password_editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="298dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="6dp"
         android:ems="10"
         android:inputType="textPassword"
-        android:layout_marginTop="6dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        android:layout_marginLeft="45dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/ConPassword_editText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="298dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPassword"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        android:layout_marginLeft="45dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView"
@@ -115,16 +115,18 @@
 
     <Button
         android:id="@+id/Sign_Up_button"
-        android:layout_width="291dp"
-        android:layout_height="53dp"
+        android:layout_width="300dp"
+        android:layout_height="57dp"
         android:text="Sign Up"
         android:textSize="20sp"
         android:background="#5cb85c"
         android:textColor="#f7f7f9"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="14dp"
         app:layout_constraintTop_toBottomOf="@+id/ConPassword_editText4"
-        android:layout_marginLeft="33dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginLeft="47dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteY="442dp"
+        tools:layout_editor_absoluteX="47dp" />
 
     <Button
         android:id="@+id/Back_button2"
