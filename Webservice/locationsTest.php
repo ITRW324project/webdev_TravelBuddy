@@ -6,6 +6,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $s_loc_name = $_POST['start'];
     $f_loc_name = $_POST['end'];
     $w_loc_name = $_POST['waypoints']
+    $tb_name = $_POST['newTB'];
+    $u_name = $_POST['user'];
 
     function count($name)
     {
@@ -28,8 +30,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
       return $result_loc;
     }
 
-    /*$sql_query_p = "SELECT Plan_ID FROM Plan WHERE Plan_Name = '".$plan_name."'";
-    $result_plan = mysqli_query($db_travel,$sql_query_p);*/
+    $sql_query = "SELECT User_ID FROM users WHERE user_name = '".$u_name."'";
+    $u_id = mysqli_query($db_travel,$sql_query);
+
+    $sql_query = "SELECT Plan_ID FROM Plan WHERE Plan_Name = '".$tb_name."' AND User_ID = '".$u_id."'";
+    $result_loc = mysqli_query($db_travel,$sql_query);
+    $row = mysqli_fetch_array($result_loc,MYSQLI_ASSOC);
+    $active = $row['active'];
+    $count = mysqli_num_rows($result_loc);
+
+    if($count == 0)
+    {
+      $sql_query = "INSERT INTO Plan (Plan_Name, User_ID) VALUES ('".$tb_name."', '".$u_id."')";
+      mysqli_query($db_travel,$sql_query_loc_w);
+
+      $sql_query = "SELECT Plan_ID FROM Plan WHERE plan_name = '".$tb_name."'";
+      $tb_id = mysqli_query($db_travel,$sql_query);
+    }
+    else
+    {
+      //Response
+    }
 
     $countS = count($s_loc_name);
     $countF = count($f_loc_name);
@@ -44,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $result_loc_f  = addLocation($f_loc_name);
     }
 
-    $sql_query_loc_s = "INSERT INTO Plan_Loc (Plan_ID, Loc_ID, Seq_Value) VALUES ('". ."', '".$result_loc_s."', 'start')";
+    $sql_query_loc_s = "INSERT INTO Plan_Loc (Plan_ID, Loc_ID, Seq_Value) VALUES ('".$tb_id."', '".$result_loc_s."','start')";
     mysqli_query($db_travel,$sql_query_loc_s);
     $sql_query_loc_f = "INSERT INTO Plan_Loc (Plan_ID, Loc_ID, Seq_Value) VALUES ('". ."', '".$result_loc_f."', 'end')";
     mysqli_query($db_travel,$sql_query_loc_f);
@@ -58,7 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             $result_loc_w  = addLocation($selectedOption);
         }
 
-        $sql_query_loc_w = "INSERT INTO Plan_Loc (Plan_ID, Loc_ID, Seq_Value) VALUES ('". ."', '".$result_loc_w."', waypoint')";
+        $sql_query_loc_w = "INSERT INTO Plan_Loc (Plan_ID, Loc_ID, Seq_Value) VALUES ('".$tb_id."', '".$result_loc_w."', waypoint')";
         mysqli_query($db_travel,$sql_query_loc_w);
     }
 }
