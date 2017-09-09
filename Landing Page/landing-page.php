@@ -24,8 +24,8 @@
 		<div class="welcome-banner" style="background-image: url(https://static.pexels.com/photos/41949/earth-earth-at-night-night-lights-41949.jpeg);">
 				<h2>Welcome to </br><span class="logo">Travel Buddy!</span></h2>
 				<h4>What do you want to do?</h4>
-				<button class="btn btn-success btn toggle-travelbook btn-lg">View my tavelbook</button>
-				<a class="btn btn-primary btn-lg" href="../Search Results/search-results.php">Search new destinations</a>
+				<a class="btn btn-success btn-lg" href="../Search Results/search-results.php">Search new destinations</a>
+				<a class="btn btn-primary btn-lg" href="../New Travelbook Options Page/travelbook-options.php">Create a new Travelbook</a>
 		</div>
 		<!-- WELCOME BANNER END -->
 		<!-- PREVIOUS SEARCH -->

@@ -21,9 +21,9 @@
 		<!-- NAVBAR END -->
 		<!-- BANNER -->
 		<div class="gradient-banner" >
-        <h1>Luxury Europe Tour</h1>
-        <p>Take a 4 week tour through Europe.  Explore all the luxuries that Europe has to offer.  The tour will depart from London.  This tour will provide you with all the exlusive attractions that Europe has to offer.  All travels will be done per flight, except for the departure from London to France; you will travel by train.  Information regarding the distance traveled and time traveled will be displayed below.</p>
-    	</div>
+        <h1>Europe</h1>
+        <!--<p>Take a 4 week tour through Europe.  Explore all the luxuries that Europe has to offer.  The tour will depart from London.  This tour will provide you with all the exlusive attractions that Europe has to offer.  All travels will be done per flight, except for the departure from London to France; you will travel by train.  Information regarding the distance traveled and time traveled will be displayed below.</p>
+    	--></div>
 		</div>
 		<!-- BANNER END -->
 		<!-- GOOLE MAP -->
@@ -33,20 +33,31 @@
 				<br />
 				<select id="start">
 					<option value="London, GBR" name="london">London</option>
-					<option value="Los Angeles, CA" name="los angeles">Los Angeles</option>
-					<option value="Seattle, WA" name="seattle">Seattle</option>
 					<option value="Paris, FRA" name="paris">Paris</option>
 					<option value="Venice, ITA" name="venice">Venice</option>
 					<option value="Berlin, DEU" name="berlin">Berlin</option>
-					<option value="Dublin, IRL" name="dublin">Dublin</option>
-					<option value="Stockholm, SWE" name="stockholm">Stockholm</option>
-					
+					<option value="Liverpool, GBR" name="Liverpool">Liverpool</option>
+					<option value="Manchester, GBR" name="Manchester">Manchester</option>
+					<option value="Bristol, GBR" name="Bristol">Bristol</option>
+					<option value="Rome, ITA" name="Rome">Rome</option>
+					<option value="Florence, ITA" name="Florence">Florence</option>
+					<option value="Milan, ITA" name="beaufort-west">Milan</option>
+					<option value="Lyon, FRA" name="Lyon">Lyon</option>
+					<option value="Hamburg, DEU" name="Hamburg">Hamburg</option>	
+					<option value="Madrid, ESP" name="Madrid">Madrid</option>	
+					<option value="Barcelona, ESP" name="Barcelona">Barcelona</option>
+					<option value="Munich, DEU" name="Munich">Munich</option>
+					<option value="Amsterdam, NLD" name="Amsterdam">Amsterdam</option>
+					<option value="Athens, GRE" name="Athens">Athens</option>
 					</select>
 					<br>
 				<b>Waypoints:</b> <br>
 				<i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
 				<select multiple id="waypoints">
-					<option value="Sacramento, CA" name="Sacramento">Sacramento</option>
+					<option value="London, GBR" name="london">London</option>
+					<option value="Paris, FRA" name="paris">Paris</option>
+					<option value="Venice, ITA" name="venice">Venice</option>
+					<option value="Berlin, DEU" name="berlin">Berlin</option>
 					<option value="Liverpool, GBR" name="Liverpool">Liverpool</option>
 					<option value="Manchester, GBR" name="Manchester">Manchester</option>
 					<option value="Bristol, GBR" name="Bristol">Bristol</option>
@@ -55,8 +66,11 @@
 					<option value="Milan, ITA" name="beaufort-west">Milan</option>
 					<option value="Lyon, FRA" name="Lyon">Lyon</option>
 					<option value="Hamburg, DEU" name="Hamburg">Hamburg</option>
-					<option value="Cork, IRL" name="Cork">Cork</option>
-					<option value="Uppsala, SWE" name="Uppsala">Uppsala</option>					
+					<option value="Madrid, ESP" name="Madrid">Madrid</option>	
+					<option value="Barcelona, ESP" name="Barcelona">Barcelona</option>
+					<option value="Munich, DEU" name="Munich">Munich</option>
+					<option value="Amsterdam, NLD" name="Amsterdam">Amsterdam</option>
+					<option value="Athens, GRE" name="Athens">Athens</option>					
 				</select>
 				</div>
 		</div>
@@ -66,13 +80,22 @@
 				<br />
 				<select id="end">
 					<option value="London, GBR" name="london">London</option>
-					<option value="Los Angeles, CA" name="los angeles">Los Angeles</option>
-					<option value="Seattle, WA" name="seattle">Seattle</option>
 					<option value="Paris, FRA" name="paris">Paris</option>
 					<option value="Venice, ITA" name="venice">Venice</option>
 					<option value="Berlin, DEU" name="berlin">Berlin</option>
-					<option value="Dublin, IRL" name="dublin">Dublin</option>
-					<option value="Stockholm, SWE" name="stockholm">Stockholm</option>
+					<option value="Liverpool, GBR" name="Liverpool">Liverpool</option>
+					<option value="Manchester, GBR" name="Manchester">Manchester</option>
+					<option value="Bristol, GBR" name="Bristol">Bristol</option>
+					<option value="Rome, ITA" name="Rome">Rome</option>
+					<option value="Florence, ITA" name="Florence">Florence</option>
+					<option value="Milan, ITA" name="beaufort-west">Milan</option>
+					<option value="Lyon, FRA" name="Lyon">Lyon</option>
+					<option value="Hamburg, DEU" name="Hamburg">Hamburg</option>
+					<option value="Madrid, ESP" name="Madrid">Madrid</option>	
+					<option value="Barcelona, ESP" name="Barcelona">Barcelona</option>
+					<option value="Munich, DEU" name="Munich">Munich</option>
+					<option value="Amsterdam, NLD" name="Amsterdam">Amsterdam</option>
+					<option value="Athens, GRE" name="Athens">Athens</option>
 				</select>
 				<br>
 				<input type="submit" id="submit">
@@ -80,26 +103,26 @@
 			
 		</div>
 		<div id = "googleMap">
-<script>
+			<script>
 				function myMap() {
 					var directionsService = new google.maps.DirectionsService;
 					var directionsDisplay = new google.maps.DirectionsRenderer;
 					var map = new google.maps.Map(document.getElementById('googleMap'), {
-						zoom: 4,
+						zoom: 5,
 						center: {lat: -29, lng: 23.5}
 					});
 					directionsDisplay.setMap(map);
-					
+
 					document.getElementById('submit').addEventListener('click', function() {
 						calculateAndDisplayRoute(directionsService, directionsDisplay);
 						changeValues();
 					});
 				}
-				
+
 				function changeValues() {
 					document.getElementById('home_name').value = document.getElementById('start').value;
 				}
-				
+
 				function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 					var waypts = [];
 					var checkboxArray = document.getElementById('waypoints');
@@ -111,7 +134,7 @@
 							});
 						}
 					}
-					
+
 					directionsService.route({
 						origin: document.getElementById('start').value,
 						destination: document.getElementById('end').value,
@@ -122,78 +145,93 @@
 							if (status === 'OK') {
 								directionsDisplay.setDirections(response);
 								var route = response.routes[0];
-								var homePanelPlace = document.getElementById('home-panel-place');
-								var homePanelDistance = document.getElementById('home-panel-distance');
-								var homePanelDuration = document.getElementById('home-panel-duration');
-								var dest1PanelDistance = document.getElementById('dest1-panel-distance');
+								var summaryPanel = document.getElementById('summaryPanel');
+								var totalDistance = document.getElementById('totalDistance');
+								totDist = 0;
+								var location1 = document.getElementById('start').text;
+								var url = '../Show%20Destination/show-destination.html?location='+location1;
+
 								summaryPanel.innerHTML = '';
+								totalDistance.innerHTML = '';
 								for (var i = 0; i < route.legs.length; i++) {
 									var routeSegment = i + 1;
-									summaryPanel.innerHTML += route.legs[i].start_address;
-									homePanelDistance.innerHTML = '<b>Distance: </b>' + route.legs[i].distance.text;
-									homePanelDuration.innerHTML = '<b>Duration: </b>' + route.legs[i].duration.text;
+									summaryPanel.innerHTML += "<a class='startAddress' href='../Show%20Destination/show-destination.html?location=Cape Town'>" + route.legs[i].start_address + "</a>" + "<span class='to'>" + ' to ' + "</span>";
+									summaryPanel.innerHTML += "<a class='endAddress' href='../Show%20Destination/show-destination.html?location=Durban'>" + route.legs[i].end_address + "</a>" + '</br>';
+									summaryPanel.innerHTML += '<b>Distance:</b> ' + route.legs[i].distance.text + '</br>';
+									summaryPanel.innerHTML += '<b>Duration:</b> ' + route.legs[i].duration.text + '</br></br>';
 								}
+								computeTotalDistance(response);
 							} else {
 								window.alert('Directions request failed due to ' + status);
 							}
 						});
 				}
+
+				function computeTotalDistance(result) {
+					var totalDist = 0;
+					var totalTime = 0;
+					var myroute = result.routes[0];
+					for (i = 0; i < myroute.legs.length; i++) {
+						totalDist += myroute.legs[i].distance.value;
+						totalTime += myroute.legs[i].duration.value;
+					}
+					totalDist = totalDist / 1000.
+					document.getElementById("totalDistance").innerHTML = totalDist.toFixed(2) + " km<br>";
+					document.getElementById("totalDuration").innerHTML = (totalTime/3600).toFixed(0) + " hrs " + ((totalTime % 3600) / 60).toFixed(0) + " mins";
+				}
 			</script>
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjj2DSxrDr9jArPVtf5gcguBo7m6NVAsM&callback=myMap"></script>
 		</div>
 		<!-- GOOGLE MAP END -->
+
 		<!-- TOUR LIST -->
-		<div id = "eu-list">
+		<div id = "sa-list">
 		<div class="container">
-			<div class="list-group">
-			  <a href="#" class="list-group-item home">
-			    HOME
-			  </a>
-			  <div href="#" class="list-group-item list-group-item-action">
-					<p><b>Distance:</b> 13 276.6km</p>
-					<p><b>Leg Travel Duration:</b> 11 Hrs 15 Mins</p>
-				</div>
-				<a href="../Show%20Destination/show-destination.html?location=London" class="list-group-item active">
-			    London
-					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-			  </a>
-				<div href="#" class="list-group-item list-group-item-action">
-					<p><b>Distance:</b> 470.8km</p>
-					<p><b>Leg Travel Duration:</b> 2 Hrs 25 Mins</p>
-				</div>
-				<a href="../Show%20Destination/show-destination.html?location=Paris" class="list-group-item active">
-			    Paris
-					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-			  </a>
-				<div href="#" class="list-group-item list-group-item-action">
-					<p><b>Distance:</b> 1 420.3km</p>
-					<p><b>Leg Travel Duration:</b> 2 Hrs 15 Mins</p>
-				</div>
-				<a href="../Show%20Destination/show-destination.html?location=Rome" class="list-group-item active">
-			    Rome
-					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-			  </a>
-				<div href="#" class="list-group-item list-group-item-action">
-					<p><b>Distance:</b> 1 359.4km</p>
-					<p><b>Leg Travel Duration:</b> 1 Hrs 55 Mins</p>
-				</div>
-			    <a href="../Show%20Destination/show-destination.html?location=Barcelona" class="list-group-item active">
-			    Barcelona
-					<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-			  </a>
-				<div href="#" class="list-group-item list-group-item-action">
-					<p><b>Distance:</b> 11 793.6km</p>
-					<p><b>Leg Travel Duration:</b> 14 Hrs 15 Mins</p>
-				</div>
-				<a href="#" class="list-group-item home">
-			    HOME
-			  </a>
-			</div>
+			<div id="summaryPanel"></div>
+
 			<div class="summary">
-				<h6>Luxury Europe Tour Summary</h6>
-				<p><b>Total Distance:</b> 28 320.7km</p>
-				<p><b>Total Leg Travel Duration:</b> 32 Hrs 5 Mins</p>
-				<a class="btn btn-primary btn mt-1" href="../Landing Page/landing-page.php">Add more destinations</a>
+				<h6>Europe</h6>
+				<p><b>Total Distance:</b> <p id="totalDistance"></p></p>
+				<p><b>Total Leg Travel Duration:</b> <p id="totalDuration"></p></p>
+				<br />
+				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal1">Create new Travelbook</button>
+				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal2">Update Travelbook</button>
+
+				<div class="modal fade" id="myModal1" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h6 class="modal-title">Please provide a name for the new Travelbook</h6>
+							</div>
+							<div class="modal-body">
+							<form action="" method="post" id="new-travelbook-entry">
+								<input type="text" class="form-control" id="-new-travelbook-name">
+							</form>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-submit" data-dismiss="modal">Save</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+      
+					</div>
+				</div>
+				
+				<div class="modal fade" id="myModal2" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h6 class="modal-title">Are you sure you want to update your travelbook?</h6>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-submit" data-dismiss="modal">Yes</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+							</div>
+						</div>
+      
+					</div>
+				</div>
+				
 			</div>
 		</div>
 		</div>

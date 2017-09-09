@@ -21,9 +21,9 @@
 		<!-- NAVBAR END -->
 		<!-- BANNER -->
 		<div class="gradient-banner" >
-        <h1>Best of South Africa</h1>
-        <p>When we say "Best of South Africa", we mean it. Hop on the road and tour through South Africa along the coastline via car travel. Every destination will leave you breathless as you see what the most southern tip of Africa has to offer. Not only the journey will enlighten your senses, the people, places and friendships you will meet and create is something to look forward too. All travel is done by car which can be hired from the airport as you land in this beautiful country. </p>
-    	</div>
+        <h1>South Africa</h1>
+        <!--<p>When we say "Best of South Africa", we mean it. Hop on the road and tour through South Africa along the coastline via car travel. Every destination will leave you breathless as you see what the most southern tip of Africa has to offer. Not only the journey will enlighten your senses, the people, places and friendships you will meet and create is something to look forward too. All travel is done by car which can be hired from the airport as you land in this beautiful country. </p>
+    	--></div>
 		</div>
 		<!-- BANNER END -->
 		<!-- GOOLE MAP -->
@@ -158,6 +158,45 @@
 				<h6>Best of South Africa</h6>
 				<p><b>Total Distance:</b> <div id="totalDistance"></div></p>
 				<p><b>Total Leg Travel Duration:</b> <div id="totalDuration"></div></p>
+				<br />
+				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal1">Create new Travelbook</button>
+				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal2">Update Travelbook</button>
+
+				<div class="modal fade" id="myModal1" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h6 class="modal-title">Please provide a name for the new Travelbook</h6>
+							</div>
+							<div class="modal-body">
+							<form action="" method="post" id="new-travelbook-entry">
+								<input type="text" class="form-control" id="-new-travelbook-name">
+							</form>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-submit" data-dismiss="modal">Save</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+      
+					</div>
+				</div>
+				
+				<div class="modal fade" id="myModal2" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h6 class="modal-title">Are you sure you want to update your travelbook?</h6>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-submit" data-dismiss="modal">Yes</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+							</div>
+						</div>
+      
+					</div>
+				</div>
+				
 			</div>
 		</div>
 		</div>
@@ -165,7 +204,7 @@
 		<!-- SIDEBAR -->
 		<div class="sidebar">
 			<a class="logo logo-small-dark">Travel Buddy</a>
-			<button type="button" class="close toggle-travelbook" aria-label="Close">
+			<button type="button" class="close toggle-modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>
 			<h3>My Travelbook</h3>
