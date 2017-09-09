@@ -42,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     if($count == 0)
     {
       $sql_query = "INSERT INTO Plan (Plan_Name, User_ID) VALUES ('".$tb_name."', '".$u_id."')";
-      mysqli_query($db_travel,$sql_query_loc_w);
+      mysqli_query($db_travel,$sql_query);
 
       $sql_query = "SELECT Plan_ID FROM Plan WHERE plan_name = '".$tb_name."'";
       $tb_id = mysqli_query($db_travel,$sql_query);
@@ -67,14 +67,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
     $sql_query_loc_s = "INSERT INTO Plan_Loc (Plan_ID, Loc_ID, Seq_Value) VALUES ('".$tb_id."', '".$result_loc_s."','start')";
     mysqli_query($db_travel,$sql_query_loc_s);
-    $sql_query_loc_f = "INSERT INTO Plan_Loc (Plan_ID, Loc_ID, Seq_Value) VALUES ('". ."', '".$result_loc_f."', 'end')";
+    $sql_query_loc_f = "INSERT INTO Plan_Loc (Plan_ID, Loc_ID, Seq_Value) VALUES ('".$tb_id."', '".$result_loc_f."', 'end')";
     mysqli_query($db_travel,$sql_query_loc_f);
 
     foreach ($w_loc_name as $selectedOption)
     {
         $countW = count($selectedOption);
 
-        if($count == 0)
+        if($countW == 0)
         {
             $result_loc_w  = addLocation($selectedOption);
         }
