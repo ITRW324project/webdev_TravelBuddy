@@ -170,7 +170,7 @@
 							</div>
 							<div class="modal-body">
 							<form action="" method="post" id="new-travelbook-entry">
-								<input type="text" class="form-control" id="-new-travelbook-name">
+								<input type="text" name="newTB" class="form-control" id="-new-travelbook-name">
 							</form>
 							</div>
 							<div class="modal-footer">
@@ -178,10 +178,10 @@
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 							</div>
 						</div>
-      
+
 					</div>
 				</div>
-				
+
 				<div class="modal fade" id="myModal2" role="dialog">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -193,10 +193,10 @@
 								<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
 							</div>
 						</div>
-      
+
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 		</div>
