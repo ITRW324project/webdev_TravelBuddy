@@ -1,5 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+<script type = "text/javascript">
+function ajax_post(){
+    // Create our XMLHttpRequest object
+    var httpRequest = new XMLHttpRequest();
+    // Create some variables we need to send to our PHP file
+    var url = "http://simeon.ddns.net:8080/signup.php";
+		var firstName = document.getElementById("fName").value;
+		var lastName = document.getElementById("lName").value;
+		var email = document.getElementById("email").value;
+		var number = document.getElementById("number").value;
+    var userName = document.getElementById("uName").value;
+    var pWord = document.getElementById("pWord").value;
+		//var pWord2 = document.getElementById("pWord2").value;
+		var town = document.getElementById("town").value;
+    var vars = "fName="+firstName+"&lName="+lastName+"&email="+email+"&number="+number+"&uName="+userName+"&pWord="+pWord+"&town="+town;
+    httpRequest.open("POST", url, true);
+    // Set content type header information for sending url encoded variables in the request
+    httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    httpRequest.onreadystatechange = function() {
+	    if(httpRequest.readyState == 4 && httpRequest.status == 200) {
+		    var return_data = httpRequest.responseText;
+        if(return_data == 1)
+        {
+          document.getElementById("responce").innerHTML = return_data;
+        }else {
+          document.getElementById("responce").innerHTML = return_data;
+        }
+	    }
+    }
+    // Send the data to PHP now... and wait for response to update the status div
+    httpRequest.send(vars); // Actually execute the request
+}
+</script>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,47 +56,88 @@
 				<div class="card">
 				<p class="logo logo-small-dark">Travel Buddy</p>
 				<h2>Sign up</h2>
-				<p>Please fill in the following details to start your adventure!</p>
-				<form action = "http://simeon.ddns.net:8080/signUptoets.php" method = "get">
+				<p>Please fill in the following details to start your adventure! <span id="responce" </span></p>
 					<div class="form-group">
 						<p>First Name:</p>
-						<input name = "fName" type = "text" class="form-control"></input>
+						<input id = "fName" name = "fName" type = "text" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<p>Last Name:</p>
-						<input name = "lName" type = "text" class="form-control"></input>
+						<input id = "lName" name = "lName" type = "text" class="form-control"></input>
 					</div>
 					<div class="form-group">
-						<p>E-Mail: </p>
-						<input name = "email" type = "email" class="form-control"></input>
+						<p>E-Mail: <span id = "txtEmail" </span> </p>
+						<input id = "email" name = "email" type = "email" class="form-control" onkeyup = "checkEmail(this.value)"></input>
 					</div>
 					<div class="form-group">
-						<p>Contact Number: </p>
-						<input name = "number" type = "int" class="form-control"></input>
+						<p>Contact Number: <span id = "txtNumber" ></span> </p>
+						<input id = "number" name = "number" type = "int" class="form-control" onkeyup = "checkNumber(this.value)"></input>
 					</div>
 					<div class="form-group">
-						<p>Username: </p>
-						<input name = "uName" type = "text" class="form-control"></input>
+						<p>Username: <span id = "txtName"</span> </p>
+						<input id = "uName" name = "uName" type = "text" class="form-control" onkeyup = "checkName(this.value)"></input>
 					</div>
 					<div class="form-group">
 						<p>Password: </p>
-						<input name = "pWord" type = "password" class="form-control"></input>
+						<input id = "pWord" name = "pWord" type = "password" class="form-control"></input>
 					</div>
 					<div class="form-group">
-						<p>Re-enter Password: </p>
-						<input name = "pWord2" type = "password" class="form-control"></input>
+						<p>Re-enter Password: <span id = "txtPword" </span></p>
+						<input id = "pWord2" name = "pWord2" type = "password" class="form-control"></input>
 					</div>
 					<div class="form-group">
-						<p>Where do you stay? </p>
-						<input name = "town" type = "text" class="form-control"></input>
+						<p>Where do you stay?  </p>
+						<input id = "town" name = "town" type = "text" class="form-control"></input>
 					</div>
-					<input type="submit" value="Submit" class="btn btn-primary btn-submit float-right">
+					<input type="Submit" class="btn btn-primary btn-submit float-right" onclick="ajax_post();"></input>
 					<div class = "buttons">
 						<a href = "../home.html">Back</a>&emsp;
 					</div>
-				</form>
 			</div>
 		</div>
+		<script>
+			function checkNumber(number)
+			{
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+								if (this.readyState == 4 && this.status == 200) {
+									document.getElementById("txtNumber").innerHTML = this.responseText;
+								}
+							};
+				xmlhttp.open("POST", "http://simeon.ddns.net:8080/testNumber.php?number=" + number, true);
+				xmlhttp.send();
+			}
+		</script>
+		<script>
+     function checkEmail(email)
+     {
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+								if (this.readyState == 4 && this.status == 200) {
+									document.getElementById("txtEmail").innerHTML = this.responseText;
+								}
+							};
+				xmlhttp.open("POST", "http://simeon.ddns.net:8080/testEmail.php?email=" + email, true);
+				xmlhttp.send();
+			}
+		</script>
+		<script>
+			function checkName(userName) {
+    		if (userName.length == 0) {
+        	document.getElementById("txtName").innerHTML = "";
+        	return;
+    		} else {
+        	var xmlhttp = new XMLHttpRequest();
+        	xmlhttp.onreadystatechange = function() {
+          				if (this.readyState == 4 && this.status == 200) {
+            				document.getElementById("txtName").innerHTML = this.responseText;
+          				}
+        				};
+        	xmlhttp.open("POST", "http://simeon.ddns.net:8080/testName.php?name=" + userName, true);
+        	xmlhttp.send();
+    		}
+			}
+		</script>
 		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>

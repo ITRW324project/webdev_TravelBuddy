@@ -1,0 +1,72 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Travel Buddy</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <link href="../css/styles.css" rel="stylesheet">
+</head>
+<script type = "text/javascript">
+function ajax_post(){
+    // Create our XMLHttpRequest object
+    var httpRequest = new XMLHttpRequest();
+    // Create some variables we need to send to our PHP file
+    var url = "http://simeon.ddns.net:8080/login.php";
+    var uName = document.getElementById("username").value;
+    var pWord = document.getElementById("password").value;
+    var vars = "username="+uName+"&password="+pWord;
+    httpRequest.open("POST", url, true);
+    // Set content type header information for sending url encoded variables in the request
+    httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    httpRequest.onreadystatechange = function() {
+	    if(httpRequest.readyState == 4 && httpRequest.status == 200) {
+		    var return_data = httpRequest.responseText;
+        if(return_data == 1)
+        {
+          document.cookie = "user="+uName+";expires=Fri, 10 Aug 9999 01:00:00 UTC;path=/";
+          location.replace("http://simeon.ddns.net:8085/travelappbuddy/Landing%20Page/landing-page.html");
+        }else {
+          document.getElementById("responce").innerHTML = return_data;
+        }
+	    }
+    }
+    // Send the data to PHP now... and wait for response to update the status div
+    httpRequest.send(vars); // Actually execute the request
+}
+</script>
+</head>
+<body>
+  <nav class="navbar">
+      <a href = "../home.html" class="logo logo-small-light">Travel Buddy</a>
+      <div>
+        <a class="btn btn-outline-secondary btn-sm" href="../Sign Up Page/registration.html">Sign Up</a>
+      </div>
+  </nav>
+  <div class="fullscreen-section">
+    <div class="card">
+    <a href = "../home.html" class="logo logo-small-dark">Travel Buddy</a>
+    <h2>Login</h2>
+    <p>Please enter your username and password. <span id="responce" </span> </p>
+    <div class="form-group">
+      <lable>User name</lable>
+      <input id="username" name="username" type="text" class="form-control"></input>
+    </div>
+    <div class="form-group">
+      <lable>Password</lable>
+      <input id="password" name="password"  type="password" class="form-control"></input>
+    </div>
+    <div class = "buttons">
+      <a href = "../home.html">Back</a>&emsp;
+      <a href = "#" class = "pass">
+      <a href = "#">Forgot your password?</a>
+      <input name="btnSubmit" type="submit" value="Submit" onclick="ajax_post()" class="btn btn-primary btn-submit float-right"></input>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		<script href="../js/close_menu.js"></script>
+</body>
+</html>

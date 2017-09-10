@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<script type = "text/javascript">
+  function getCookie(name)
+  {
+    var re = new RegExp(name + "=([^;]+)");
+    var value = re.exec(document.cookie);
+    return (value != null) ? unescape(value[1]) : null;
+  }
+</script>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,12 +24,17 @@
 				<div>
 					<button class="btn btn-success btn toggle-travelbook">My Travelbook</button>
 					<a class="btn btn-outline-secondary btn-sm" href="../home.php">Logout</a>
+					<script type = "text/javascript">
+						document.write(getCookie("user"));
+					</script>
+					<span name = "user" id = "user"></span>
 				</div>
 		</nav>
 		<!-- NAVBAR END -->
 		<!-- BANNER -->
 		<div class="gradient-banner" >
-        <h1>South Africa</h1>
+        <h1>New Travelbook</h1>
+		<label> <span id = "responce"></span> </label>
         <!--<p>When we say "Best of South Africa", we mean it. Hop on the road and tour through South Africa along the coastline via car travel. Every destination will leave you breathless as you see what the most southern tip of Africa has to offer. Not only the journey will enlighten your senses, the people, places and friendships you will meet and create is something to look forward too. All travel is done by car which can be hired from the airport as you land in this beautiful country. </p>
     	--></div>
 		</div>
@@ -80,12 +93,7 @@
 
 					document.getElementById('submit').addEventListener('click', function() {
 						calculateAndDisplayRoute(directionsService, directionsDisplay);
-						changeValues();
 					});
-				}
-
-				function changeValues() {
-					document.getElementById('home_name').value = document.getElementById('start').value;
 				}
 
 				function calculateAndDisplayRoute(directionsService, directionsDisplay) {
@@ -120,8 +128,8 @@
 								totalDistance.innerHTML = '';
 								for (var i = 0; i < route.legs.length; i++) {
 									var routeSegment = i + 1;
-									summaryPanel.innerHTML += "<a class='startAddress' href='../Show%20Destination/show-destination.html?location=Cape Town'>" + route.legs[i].start_address + "</a>" + "<span class='to'>" + ' to ' + "</span>";
-									summaryPanel.innerHTML += "<a class='endAddress' href='../Show%20Destination/show-destination.html?location=Durban'>" + route.legs[i].end_address + "</a>" + '</br>';
+									summaryPanel.innerHTML += "<a class='startAddress' href='../Show%20Destination/show-destination.html?location=" + route.legs[i].start_address + "'>" + route.legs[i].start_address + "</a>" + "<span class='to'>" + ' to ' + "</span>";
+									summaryPanel.innerHTML += "<a class='endAddress' href='../Show%20Destination/show-destination.html?location="+ route.legs[i].end_address +"'>" + route.legs[i].end_address + "</a>" + '</br>';
 									summaryPanel.innerHTML += '<b>Distance:</b> ' + route.legs[i].distance.text + '</br>';
 									summaryPanel.innerHTML += '<b>Duration:</b> ' + route.legs[i].duration.text + '</br></br>';
 								}
@@ -144,10 +152,102 @@
 					document.getElementById("totalDistance").innerHTML = totalDist.toFixed(2) + " km<br>";
 					document.getElementById("totalDuration").innerHTML = (totalTime/3600).toFixed(0) + " hrs " + ((totalTime % 3600) / 60).toFixed(0) + " mins";
 				}
+				function addMarker(props){
+					var marker = new google.maps.Marker({
+						position:props.coords,
+						map:map,
+						//icon:props.iconImage
+					});
+
+					// Check for customicon
+					if(props.iconImage){
+						// Set icon image
+						marker.setIcon(props.iconImage);
+					}
+
+					// Check content
+					if(props.content){
+						var infoWindow = new google.maps.InfoWindow({
+							content:props.content
+						});
+
+						marker.addListener('click', function(){
+							infoWindow.open(map, marker);
+						});
+					}
+				}
 			</script>
+
+		  <script>
+		    function initMap(){
+		      // Map options
+		      var options = {
+		        zoom:8,
+		        center:{lat : -26.7145, lng : 27.0970}
+		      }
+
+		      // New map
+		      var map = new google.maps.Map(document.getElementById('map'), options);
+
+		      // Listen for click on map
+		      google.maps.event.addListener(map, 'click', function(event){
+		        // Add marker
+		        addMarker({coords:event.latLng});
+		      });
+
+
+		      var markers = [];
+
+		      // Loop through markers
+		      for(var i = 0;i < markers.length;i++){
+		        // Add marker
+		        addMarker(markers[i]);
+		      }
+
+		      // Add Marker Function
+
+		    }
+		  </script>
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjj2DSxrDr9jArPVtf5gcguBo7m6NVAsM&callback=myMap"></script>
 		</div>
 		<!-- GOOGLE MAP END -->
+
+		<!-- REQUESTS START -->
+		<script>
+		function ajax_post(){
+		    // Create our XMLHttpRequest object
+		    var httpRequest = new XMLHttpRequest();
+		    // Create some variables we need to send to our PHP file
+		    var url = "http://simeon.ddns.net:8080/locationsTest.php";
+			var start = document.getElementById("start").value;
+			var waypoints = document.getElementById("waypoints").value;
+			var end = document.getElementById("end").value;
+			var newTB = document.getElementById("newTB").value;
+			var user = document.cookie;
+			
+		    var vars = "start="+start+"&end="+end+"&waypoints="+waypoints+"&newTB="+newTB+"&user="+user;
+		    httpRequest.open("POST", url, true);
+		    // Set content type header information for sending url encoded variables in the request
+		    httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		    // Access the onreadystatechange event for the XMLHttpRequest object
+		    httpRequest.onreadystatechange = function() {
+			    if(httpRequest.readyState == 4 && httpRequest.status == 200) {
+				    var return_data = httpRequest.responseText;
+					document.getElementById("responce").innerHTML = return_data;
+		       /* if(return_data == 1)
+		        {
+		          document.getElementById("responce").innerHTML = return_data;
+		        }else {
+		          document.getElementById("responce").innerHTML = return_data;
+		        }*/
+			    }
+		    }
+		    // Send the data to PHP now... and wait for response to update the status div
+		    httpRequest.send(vars); // Actually execute the request
+		}
+
+		</script>
+		<!-- REQUEST END -->
 
 		<!-- TOUR LIST -->
 		<div id = "sa-list">
@@ -155,12 +255,11 @@
 			<div id="summaryPanel"></div>
 
 			<div class="summary">
-				<h6>Best of South Africa</h6>
+				<h6>My New Travelbook</h6>
 				<p><b>Total Distance:</b> <div id="totalDistance"></div></p>
-				<p><b>Total Leg Travel Duration:</b> <div id="totalDuration"></div></p>
+				<p><b>Total Travel Duration:</b> <div id="totalDuration"></div></p>
 				<br />
-				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal1">Create new Travelbook</button>
-				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal2">Update Travelbook</button>
+				<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal1">Create Travelbook</button>
 
 				<div class="modal fade" id="myModal1" role="dialog">
 					<div class="modal-dialog">
@@ -169,34 +268,18 @@
 								<h6 class="modal-title">Please provide a name for the new Travelbook</h6>
 							</div>
 							<div class="modal-body">
-							<form action="" method="post" id="new-travelbook-entry">
-								<input type="text" name="newTB" class="form-control" id="-new-travelbook-name">
+							<form id="new-travelbook-entry">
+								<input type="text" class="form-control" id="newTB" name ="newTB" >
 							</form>
 							</div>
 							<div class="modal-footer">
-								<button type="submit" class="btn btn-submit" data-dismiss="modal">Save</button>
+								<button type="submit" class="btn btn-submit" data-dismiss="modal" onclick="ajax_post()">Save</button>
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 							</div>
 						</div>
 
 					</div>
 				</div>
-
-				<div class="modal fade" id="myModal2" role="dialog">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h6 class="modal-title">Are you sure you want to update your travelbook?</h6>
-							</div>
-							<div class="modal-footer">
-								<button type="submit" class="btn btn-submit" data-dismiss="modal">Yes</button>
-								<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-							</div>
-						</div>
-
-					</div>
-				</div>
-
 			</div>
 		</div>
 		</div>
@@ -207,54 +290,6 @@
 			<button type="button" class="close toggle-modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>
-			<h3>My Travelbook</h3>
-			<div class="card">
-				<h6 class="sidebar-heading">Luxury Europe Tour</h6>
-				<div class="list-group">
-					<a href="#" class="list-group-item home">
-						HOME
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 13 276.6km</p>
-						<p><b>Leg Travel Duration:</b> 11 Hrs 15 Mins</p>
-					</div>
-					<a href="#" class="list-group-item active">
-						London
-						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 470.8km</p>
-						<p><b>Leg Travel Duration:</b> 2 Hrs 25 Mins</p>
-					</div>
-					<a href="#" class="list-group-item active">
-						Paris
-						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 1 420.3km</p>
-						<p><b>Leg Travel Duration:</b> 2 Hrs 15 Mins</p>
-					</div>
-					<a href="#" class="list-group-item active">
-						Rome
-						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-					</a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b>  1 359.4km</p>
-						<p><b>Leg Travel Duration:</b> 1 Hrs 55 Mins</p>
-					</div>
-					<a href="../Destination Show/destination-show.php" class="list-group-item active">
-			    		Barcelona
-						<button type="button" class="btn btn-danger btn-sm float-right">Delete</button>
-			 	    </a>
-					<div href="#" class="list-group-item list-group-item-action">
-						<p><b>Distance:</b> 11 793.6km</p>
-						<p><b>Leg Travel Duration:</b> 14 Hrs 15 Mins</p>
-					</div>
-					<a href="#" class="list-group-item home">
-						HOME
-					</a>
-				</div>
-			</div>
 		</div>
 		<!-- SIDEBAR END -->
 		<!-- FOOTER -->
