@@ -49,11 +49,12 @@ public class SignUpActivity extends AppCompatActivity {
                       try {
                           JSONObject jsonResponce = new JSONObject(response);
                           boolean success = jsonResponce.getBoolean("success");
+                          String result =jsonResponce.getString("result");
                           if(success)
                           {
                               AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
-                              builder.setMessage("result")
-                                      .setNegativeButton("Retry", null)
+                              builder.setMessage(result)
+                                      .setNegativeButton("Okay", null)
                                       .create()
                                       .show();
 
@@ -62,7 +63,7 @@ public class SignUpActivity extends AppCompatActivity {
                           }else
                           {
                               AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
-                              builder.setMessage("result")
+                              builder.setMessage(result)
                                       .setNegativeButton("Retry", null)
                                       .create()
                                       .show();

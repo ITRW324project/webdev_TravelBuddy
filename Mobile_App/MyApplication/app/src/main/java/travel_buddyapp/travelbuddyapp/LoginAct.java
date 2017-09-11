@@ -39,17 +39,18 @@ public class LoginAct extends AppCompatActivity {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
+                            String result =jsonResponse.getString("result");
                             if (success) {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginAct.this);
-                                builder.setMessage("result")
+                                builder.setMessage(result)
                                         .create()
                                         .show();
 
-                                Intent intent = new Intent(LoginAct.this, Travelbook_view_activity.class);
+                                Intent intent = new Intent(LoginAct.this, WelcomeActivity.class);
                                 LoginAct.this.startActivity(intent);
                             } else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginAct.this);
-                                builder.setMessage("result")
+                                builder.setMessage(result)
                                         .setNegativeButton("Retry", null)
                                         .create()
                                         .show();
