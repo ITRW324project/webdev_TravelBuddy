@@ -22,8 +22,8 @@ public class LoginAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final EditText etUserName = (EditText) findViewById(R.id.etUserName);
-        final EditText etPassword = (EditText) findViewById(R.id.etPassword);
+        final EditText etUserName = (EditText) findViewById(R.id.etUsername_Login);
+        final EditText etPassword = (EditText) findViewById(R.id.etpassword_Login);
 
         final Button bLogin = (Button) findViewById(R.id.bLogin);
 

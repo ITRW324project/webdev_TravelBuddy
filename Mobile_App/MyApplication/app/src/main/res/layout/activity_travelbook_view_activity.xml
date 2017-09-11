@@ -18,13 +18,13 @@
         android:textSize="50sp"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/back_button"
+        app:layout_constraintLeft_toLeftOf="@+id/bBack_ViewTravelbook"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="65dp"
         android:layout_marginLeft="44dp" />
 
     <Button
-        android:id="@+id/back_button"
+        android:id="@+id/bBack_ViewTravelbook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"

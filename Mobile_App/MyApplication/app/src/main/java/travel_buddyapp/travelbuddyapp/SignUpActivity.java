@@ -15,8 +15,6 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.net.ResponseCache;
-
 public class SignUpActivity extends AppCompatActivity {
 
     @Override
@@ -24,14 +22,14 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        final EditText etFirstName = (EditText) findViewById(R.id.etFirstName);
-        final EditText etLastName = (EditText) findViewById(R.id.etLastName);
-        final EditText etUserName = (EditText) findViewById(R.id.etUserName);
-        final EditText etEmail = (EditText) findViewById(R.id.etEmail);
-        final EditText etNumber = (EditText) findViewById(R.id.etNumber);
-        final EditText etPassword = (EditText) findViewById(R.id.etPassword);
-        final EditText etPassword2 = (EditText) findViewById(R.id.etPassword2);
-        final EditText etTown = (EditText) findViewById(R.id.etTown);
+        final EditText etFirstName = (EditText) findViewById(R.id.etFirstName_Signup);
+        final EditText etLastName = (EditText) findViewById(R.id.etLastName_Signup);
+        final EditText etUserName = (EditText) findViewById(R.id.etUsername_Signup);
+        final EditText etEmail = (EditText) findViewById(R.id.etEmail_Signup);
+        final EditText etNumber = (EditText) findViewById(R.id.etNumber_Signup);
+        final EditText etPassword = (EditText) findViewById(R.id.etpassword_Signup);
+        final EditText etPassword2 = (EditText) findViewById(R.id.etpassword2__Signup);
+        final EditText etTown = (EditText) findViewById(R.id.etTown_Signup);
 
         final Button bSignUp = (Button) findViewById(R.id.bSignUp);
 
