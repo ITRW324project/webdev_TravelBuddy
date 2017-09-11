@@ -56,5 +56,6 @@ public class Travelbook_view_activity extends AppCompatActivity {
         }
 
         resultsListview.setAdapter(adapter);
+        init();
     }
 }

@@ -56,5 +56,6 @@ public class TripActivity extends AppCompatActivity {
         }
 
         resultsListview.setAdapter(adapter);
+        init();
     }
 }

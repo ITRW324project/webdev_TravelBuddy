@@ -92,5 +92,6 @@ public class SignUpActivity extends AppCompatActivity {
               queue.add(signupRequest);
           }
         });
+        init();
     }
 }

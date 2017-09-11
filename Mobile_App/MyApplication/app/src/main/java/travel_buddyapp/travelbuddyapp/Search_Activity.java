@@ -39,6 +39,6 @@ public class Search_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_);
         init();
-
+        init2();
     }
 }
