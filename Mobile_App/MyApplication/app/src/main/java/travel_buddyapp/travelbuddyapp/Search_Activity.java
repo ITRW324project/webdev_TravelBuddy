@@ -9,6 +9,7 @@ import android.widget.Button;
 public class Search_Activity extends AppCompatActivity {
 
    public Button but1;
+    public Button but6;
 
     public void init(){
         but1= (Button)findViewById(R.id.bBack_Search);
@@ -17,6 +18,17 @@ public class Search_Activity extends AppCompatActivity {
                     public void onClick(View v){
                 Intent toy = new Intent(Search_Activity.this,WelcomeActivity.class);
                 startActivity(toy);
+            }
+        });
+    }
+
+    public void init2(){
+        but6= (Button)findViewById(R.id.bSearch_Search);
+        but6.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent toy6 = new Intent(Search_Activity.this,WelcomeActivity.class);
+                startActivity(toy6);
             }
         });
     }

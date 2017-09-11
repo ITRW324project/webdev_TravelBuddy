@@ -17,6 +17,19 @@ import org.json.JSONObject;
 
 public class LoginAct extends AppCompatActivity {
 
+    public Button but2;
+
+    public void init(){
+        but2= (Button)findViewById(R.id.bBack_Login);
+        but2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent toy1 = new Intent(LoginAct.this,WelcomeActivity.class);
+                startActivity(toy1);
+            }
+        });
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

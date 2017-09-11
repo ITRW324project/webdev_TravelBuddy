@@ -17,6 +17,19 @@ import org.json.JSONObject;
 
 public class SignUpActivity extends AppCompatActivity {
 
+    public Button but3;
+
+    public void init(){
+        but3= (Button)findViewById(R.id.bBack_Signup);
+        but3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent toy2 = new Intent(SignUpActivity.this,WelcomeActivity.class);
+                startActivity(toy2);
+            }
+        });
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

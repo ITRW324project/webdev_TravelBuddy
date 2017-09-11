@@ -1,7 +1,10 @@
 package travel_buddyapp.travelbuddyapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -13,6 +16,18 @@ import java.util.Map;
 
 public class TripActivity extends AppCompatActivity {
 
+    public Button but7;
+
+    public void init(){
+        but7= (Button)findViewById(R.id.bBack_Trip);
+        but7.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent toy7 = new Intent(TripActivity.this,Travelbook_view_activity.class);
+                startActivity(toy7);
+            }
+        });
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
