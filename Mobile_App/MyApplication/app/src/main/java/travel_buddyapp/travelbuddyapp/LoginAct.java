@@ -60,6 +60,7 @@ public class LoginAct extends AppCompatActivity {
                                         .show();
 
                                 Intent intent = new Intent(LoginAct.this, WelcomeActivity.class);
+                                intent.putExtra("USERNAME", uName);
                                 LoginAct.this.startActivity(intent);
                             } else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginAct.this);

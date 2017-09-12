@@ -22,7 +22,7 @@ public class WelcomeActivity extends AppCompatActivity {
         });
     }
 
-    public void init1(){
+    public void init1(String u_name){
         but5= (Button)findViewById(R.id.Travelbook_Button);
         but5.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -36,7 +36,11 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+
+        //Use username of logged-in user
+        final String USERNAME = getIntent().getStringExtra("USERNAME");
+
         init();
-        init1();
+        init1(USERNAME);
     }
 }
