@@ -34,18 +34,17 @@ public class Travelbook_view_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travelbook_view_activity);
 
-        ListView resultsListview = (ListView) findViewById(R.id.travelbookresults_listview);
+        Intent intent = getIntent();
+        HashMap<String, String> destinationDescription = (HashMap<String, String>)intent.getSerializableExtra("map");
 
-        HashMap<String,String> destinationdescription = new HashMap<>();
-        destinationdescription.put("European Tour","3 Destinations");
-        destinationdescription.put("South Africa Trip","5 Destinations");
+        ListView resultsListview = (ListView) findViewById(R.id.travelbookresults_listview);
 
         List<HashMap<String,String>> listItems = new ArrayList<>();
         SimpleAdapter adapter = new SimpleAdapter(this,listItems, R.layout.travelbook_list,
                 new String[]{"First Line","Second Line"},
                 new int[]{R.id.travelbook_name, R.id.travelbook_description});
 
-        Iterator it = destinationdescription.entrySet().iterator();
+        Iterator it = destinationDescription.entrySet().iterator();
         while(it.hasNext())
         {
             HashMap<String,String> resultsMap = new HashMap<>();

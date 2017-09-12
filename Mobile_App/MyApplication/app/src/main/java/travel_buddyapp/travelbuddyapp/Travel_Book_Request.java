@@ -16,7 +16,7 @@ public class Travel_Book_Request extends StringRequest
     private static final String TB_Request_URL = "http://simeon.ddns.net:8080/getTravelBooks.php";
     private Map<String, String> params;
 
-    public TB_Request(String uName, Response.Listener<String> listener)
+    public Travel_Book_Request(String uName, Response.Listener<String> listener)
     {
         super(Request.Method.POST, TB_Request_URL, listener, null);
         params = new HashMap<>();
