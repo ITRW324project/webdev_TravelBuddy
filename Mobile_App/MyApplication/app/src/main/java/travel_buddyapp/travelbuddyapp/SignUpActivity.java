@@ -52,7 +52,7 @@ public class SignUpActivity extends AppCompatActivity {
         final Button bSignUp = (Button) findViewById(R.id.bSignUp);
 
         bSignUp.setOnClickListener(new View.OnClickListener(){
-          public void onClick(View v){
+          public void onClick(View v) {
               final String fName = etFirstName.getText().toString();
               final String lName = etLastName.getText().toString();
               final String email = etEmail.getText().toString();
@@ -61,15 +61,14 @@ public class SignUpActivity extends AppCompatActivity {
               final String pWord = etPassword.getText().toString();
               final String town = etTown.getText().toString();
 
-              Response.Listener<String> responceListener = new Response.Listener<String>(){
+              Response.Listener<String> responceListener = new Response.Listener<String>() {
                   @Override
                   public void onResponse(String response) {
                       try {
                           JSONObject jsonResponce = new JSONObject(response);
                           boolean success = jsonResponce.getBoolean("success");
-                          String result =jsonResponce.getString("result");
-                          if(success)
-                          {
+                          String result = jsonResponce.getString("result");
+                          if (success) {
                               AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
                               builder.setMessage(result)
                                       .setNegativeButton("Okay", null)
@@ -78,8 +77,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                               Intent intent = new Intent(SignUpActivity.this, LoginAct.class);
                               SignUpActivity.this.startActivity(intent);
-                          }else
-                          {
+                          } else {
                               AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
                               builder.setMessage(result)
                                       .setNegativeButton("Retry", null)
@@ -90,49 +88,48 @@ public class SignUpActivity extends AppCompatActivity {
                           e.printStackTrace();
                       }
                       btnReg.setOnClickListener(new View.OnClickListener() {
-                      @Override
-                      public void onClick(View arg0) {
-                          // TODO Auto-generated method stub
-                          if(etFirstName.getText().toString().length()==0){
-                              etFirstName.setError("First name not entered");
-                              etFirstName.requestFocus();
-                          }
-                          if(etLastName.getText().toString().length()==0){
-                              etLastName.setError("Last name not entered");
-                              etLastName.requestFocus();
+                          @Override
+                          public void onClick(View arg0) {
+                              // TODO Auto-generated method stub
+                              if (etFirstName.getText().toString().length() == 0) {
+                                  etFirstName.setError("First name not entered");
+                                  etFirstName.requestFocus();
+                              }
+                              if (etLastName.getText().toString().length() == 0) {
+                                  etLastName.setError("Last name not entered");
+                                  etLastName.requestFocus();
+                              }
+
+                              if (etUserName.getText().toString().length() == 0) {
+                                  etUserName.setError("Username is Required");
+                                  etUserName.requestFocus();
+                              }
+                              if (etPassword.getText().toString().length() == 0) {
+                                  etPassword.setError("Password not entered");
+                                  etPassword.requestFocus();
+                              }
+                              if (etPassword2.getText().toString().length() == 0) {
+                                  etPassword2.setError("Please confirm password");
+                                  etPassword2.requestFocus();
+                              }
+                              if (!etPassword2.getText().toString().equals(etPassword2.getText().toString())) {
+                                  etPassword2.setError("Password Not matched");
+                                  etPassword2.requestFocus();
+                              }
+
                           }
 
-                          if(etUserName.getText().toString().length()==0){
-                              etUserName.setError("Username is Required");
-                              etUserName.requestFocus();
-                          }
-                          if(etPassword.getText().toString().length()==0){
-                              etPassword.setError("Password not entered");
-                              etPassword.requestFocus();
-                          }
-                          if(etPassword2.getText().toString().length()==0){
-                              etPassword2.setError("Please confirm password");
-                              etPassword2.requestFocus();
-                          }
-                          if(!etPassword2.getText().toString().equals(etPassword2.getText().toString())){
-                              etPassword2.setError("Password Not matched");
-                              etPassword2.requestFocus();
-                          }
+                      });
 
-                          }
 
-                  });
-
+                  }
+              };
               SignupRequest signupRequest = new SignupRequest(fName, lName, email, number, uName, pWord, town, responceListener);
               RequestQueue queue = Volley.newRequestQueue(SignUpActivity.this);
               queue.add(signupRequest);
-
-
           }
-        })
+        });
 
         init();
-    }
-});
     }
 }
