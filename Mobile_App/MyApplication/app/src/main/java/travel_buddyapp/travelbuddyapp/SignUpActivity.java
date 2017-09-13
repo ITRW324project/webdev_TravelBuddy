@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.app.Activity;
+import android.widget.Toast;
+import android.view.Menu;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -16,6 +19,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class SignUpActivity extends AppCompatActivity {
+    Button btnReg;
+    EditText etFirstName,etLastName, etUserName, etPassword, etPassword2, edtEmail;
 
     public Button but3;
 
@@ -84,14 +89,50 @@ public class SignUpActivity extends AppCompatActivity {
                       } catch (JSONException e) {
                           e.printStackTrace();
                       }
-                  }
-              };
+                      btnReg.setOnClickListener(new View.OnClickListener() {
+                      @Override
+                      public void onClick(View arg0) {
+                          // TODO Auto-generated method stub
+                          if(etFirstName.getText().toString().length()==0){
+                              etFirstName.setError("First name not entered");
+                              etFirstName.requestFocus();
+                          }
+                          if(etLastName.getText().toString().length()==0){
+                              etLastName.setError("Last name not entered");
+                              etLastName.requestFocus();
+                          }
+
+                          if(etUserName.getText().toString().length()==0){
+                              etUserName.setError("Username is Required");
+                              etUserName.requestFocus();
+                          }
+                          if(etPassword.getText().toString().length()==0){
+                              etPassword.setError("Password not entered");
+                              etPassword.requestFocus();
+                          }
+                          if(etPassword2.getText().toString().length()==0){
+                              etPassword2.setError("Please confirm password");
+                              etPassword2.requestFocus();
+                          }
+                          if(!etPassword2.getText().toString().equals(etPassword2.getText().toString())){
+                              etPassword2.setError("Password Not matched");
+                              etPassword2.requestFocus();
+                          }
+
+                          }
+
+                  });
 
               SignupRequest signupRequest = new SignupRequest(fName, lName, email, number, uName, pWord, town, responceListener);
               RequestQueue queue = Volley.newRequestQueue(SignUpActivity.this);
               queue.add(signupRequest);
+
+
           }
-        });
+        })
+
         init();
+    }
+});
     }
 }
