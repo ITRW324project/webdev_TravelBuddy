@@ -19,8 +19,8 @@ public class LoginRequest  extends StringRequest {
     {
         super(Request.Method.POST, LOGIN_REQUEST_URL, listener, null);
         params = new HashMap<>();
-        params.put("uName", uName);
-        params.put("pWord", pWord);
+        params.put("username", uName);
+        params.put("password", pWord);
     }
 
     public Map<String, String> getParams(){
