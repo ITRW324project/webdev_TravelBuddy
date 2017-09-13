@@ -6,21 +6,22 @@
     if(!empty($_POST['username']))
     {
       $username = $_POST['username'];
-      $sql_query = "SELECT user_id FROM users WHERE user_username = '".$username."' limit 1";
+      $sql_query = "SELECT user_id FROM users WHERE user_username = '".$username."''";
       $result = mysqli_query($db_travel, $sql_query);
       $value = mysqli_fetch_object($result);
-      $_SESSION['u_id'] = $value->user_id;
+      $_user_id = $value->user_id;
+      $result->free();
 
-      $sql_query = "SELECT Plan_Name FROM Plan WHERE User_ID = '".$_SESSION['u_id']."'";
+      $sql_query = "SELECT Plan_Name FROM Plan WHERE User_ID = '".$user_id"'";
       $result = mysqli_query($db_travel, $sql_query);
       $tbs = array();
       $count = mysqli_num_rows($result);
 
       if($count > 0)
       {
-        while($row = mysqli_fetch_array($result))
+        while($row = $result->fetch_assoc())
         {
-          $tbs[] = $row['tbs'];
+          $tbs[] = $row['Plan_Name'];
         }
 
         $response['result'] = implode(',', $tbs);

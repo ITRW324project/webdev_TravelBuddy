@@ -32,11 +32,14 @@ public class WelcomeActivity extends AppCompatActivity {
         });
     }
 
-    public void init1(final String uName){
+    public void init1(final String userName){
         but5= (Button)findViewById(R.id.Travelbook_Button);
         but5.setOnClickListener(new View.OnClickListener(){
+
             @Override
-            public void onClick(View v){
+           public void onClick(View v){
+
+                final String uName = userName;
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
@@ -50,9 +53,8 @@ public class WelcomeActivity extends AppCompatActivity {
                                 String[] books = result.split(",");
                                 HashMap<String,String> destinationDescription = new HashMap<>();
 
-                                for (int i = 0; i < books.length; i++)
-                                {
-                                    destinationDescription.put(books[0].trim(), String.format("%d Destinations", books.length));
+                                for (String book : books) {
+                                    destinationDescription.put(book.trim(), String.format("%d Destinations", books.length));
                                 }
 
                                 Intent intent = new Intent(WelcomeActivity.this,Travelbook_view_activity.class);
@@ -84,7 +86,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         //Use username of logged-in user
         Intent intent = getIntent();
-        final String USERNAME = getIntent().getStringExtra("USERNAME");
+        final String USERNAME = intent.getStringExtra("USERNAME");
 
         init();
         init1(USERNAME);
