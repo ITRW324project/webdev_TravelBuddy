@@ -39,8 +39,6 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
            public void onClick(View v){
 
-                final String uName = userName;
-
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -59,7 +57,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
                                 Intent intent = new Intent(WelcomeActivity.this,Travelbook_view_activity.class);
                                 intent.putExtra("map", destinationDescription);
-                                intent.putExtra("USERNAME", uName);
+                                intent.putExtra("USERNAME", userName);
                                 WelcomeActivity.this.startActivity(intent);
                             } else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
@@ -73,7 +71,7 @@ public class WelcomeActivity extends AppCompatActivity {
                     }
                 };
 
-                Travel_Book_Request tb_Request = new Travel_Book_Request(uName, responseListener);
+                Travel_Book_Request tb_Request = new Travel_Book_Request(userName, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(WelcomeActivity.this);
                 queue.add(tb_Request);
             }

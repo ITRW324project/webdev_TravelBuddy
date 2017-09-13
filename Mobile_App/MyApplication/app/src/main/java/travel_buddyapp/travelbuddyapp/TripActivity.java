@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -18,12 +21,15 @@ public class TripActivity extends AppCompatActivity {
 
     public Button but7;
 
-    public void init(){
+    public void init(final HashMap<String, String> destDesc, final String uname){
         but7= (Button)findViewById(R.id.bBack_Trip);
+
         but7.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent toy7 = new Intent(TripActivity.this,Travelbook_view_activity.class);
+                toy7.putExtra("map", destDesc);
+                toy7.putExtra("USERNAME", uname);
                 startActivity(toy7);
             }
         });
@@ -32,6 +38,10 @@ public class TripActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trip);
+
+        Intent intent = getIntent();
+        final HashMap<String, String> destinationDescription = (HashMap<String, String>)intent.getSerializableExtra("map");
+        final String USERNAME = intent.getStringExtra("USERNAME");
 
         ListView resultsListview = (ListView) findViewById(R.id.tripresults_listview);
 
@@ -56,6 +66,6 @@ public class TripActivity extends AppCompatActivity {
         }
 
         resultsListview.setAdapter(adapter);
-        init();
+        init(destinationDescription, USERNAME);
     }
 }

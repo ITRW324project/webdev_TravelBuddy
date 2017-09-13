@@ -3,16 +3,9 @@
 
   if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
-    if(!empty($_POST['username']))
-    {
       $username = $_POST['username'];
-      $sql_query = "SELECT user_id FROM users WHERE user_username = '".$username."''";
-      $result = mysqli_query($db_travel, $sql_query);
-      $value = mysqli_fetch_object($result);
-      $_user_id = $value->user_id;
-      $result->free();
 
-      $sql_query = "SELECT Plan_Name FROM Plan WHERE User_ID = '".$user_id"'";
+      $sql_query = "SELECT travelBook_name FROM Travel_Books WHERE user_name = '".$username."'";
       $result = mysqli_query($db_travel, $sql_query);
       $tbs = array();
       $count = mysqli_num_rows($result);
@@ -21,7 +14,7 @@
       {
         while($row = $result->fetch_assoc())
         {
-          $tbs[] = $row['Plan_Name'];
+          $tbs[] = $row['travelBook_name'];
         }
 
         $response['result'] = implode(',', $tbs);
@@ -34,6 +27,7 @@
         $response["success"] = false;
         echo json_encode($response);
       }
-    }
+
+      $result->free();
   }
  ?>
