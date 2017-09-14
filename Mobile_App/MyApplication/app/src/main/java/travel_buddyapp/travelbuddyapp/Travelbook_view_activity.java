@@ -46,15 +46,22 @@ public class Travelbook_view_activity extends AppCompatActivity{
         Intent intent = getIntent();
         final HashMap<String, String> destinationDescription = (HashMap<String, String>)intent.getSerializableExtra("map");
         final String USERNAME = intent.getStringExtra("USERNAME");
+        final String[] books = intent.getStringArrayExtra("books");
 
-        ListView resultsListView = (ListView) findViewById(R.id.travelbookresults_listview);
+        final ListView resultsListView = (ListView) findViewById(R.id.travelbookresults_listview);
 
         resultsListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l)
             {
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
+
+                String value = resultsListView.getItemAtPosition(pos).toString();
+                value = value.substring(1, value.length() - 1);
+                String[] val = value.split("=");
+                String travelName = val[2];
+
+               Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
@@ -83,7 +90,7 @@ public class Travelbook_view_activity extends AppCompatActivity{
                     }
                 };
 
-                LocationsRequest loc_Request = new LocationsRequest(USERNAME, responseListener);
+                LocationsRequest loc_Request = new LocationsRequest(travelName, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(Travelbook_view_activity.this);
                 queue.add(loc_Request);
 

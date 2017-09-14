@@ -3,9 +3,9 @@
 
   if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
-      $username = $_POST['username'];
+      $tbName = $_POST['travelName'];
 
-      $sql_query = "SELECT geolocations FROM Travel_Books WHERE user_name = '".$username."'";
+      $sql_query = "SELECT geolocations FROM Travel_Books WHERE travelBook_name = '".$tbName."'";
       $result = mysqli_query($db_travel, $sql_query);
       $value = mysqli_fetch_object($result);
       $geo = $value->geolocations;
@@ -13,7 +13,6 @@
 
       if($count = 1)
       {
-
         $response['result'] = $geo;
         $response["success"] = true;
         echo json_encode($response);

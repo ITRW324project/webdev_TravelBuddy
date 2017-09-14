@@ -16,11 +16,11 @@ public class LocationsRequest extends StringRequest
     private static final String LOC_REQUEST_URL = "http://simeon.ddns.net:8080/getLocations.php";
     private Map<String, String> params;
 
-    public LocationsRequest(String uName, Response.Listener<String> listener)
+    public LocationsRequest(String tbName, Response.Listener<String> listener)
     {
         super(Request.Method.POST, LOC_REQUEST_URL, listener, null);
         params = new HashMap<>();
-        params.put("username", uName);
+        params.put("travelName", tbName);
     }
 
     public Map<String, String> getParams(){

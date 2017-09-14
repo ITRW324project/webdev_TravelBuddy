@@ -58,6 +58,7 @@ public class WelcomeActivity extends AppCompatActivity {
                                 Intent intent = new Intent(WelcomeActivity.this,Travelbook_view_activity.class);
                                 intent.putExtra("map", destinationDescription);
                                 intent.putExtra("USERNAME", userName);
+                                intent.putExtra("books", books);
                                 WelcomeActivity.this.startActivity(intent);
                             } else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
