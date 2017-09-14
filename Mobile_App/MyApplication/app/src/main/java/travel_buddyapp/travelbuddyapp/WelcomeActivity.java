@@ -21,6 +21,21 @@ public class WelcomeActivity extends AppCompatActivity {
     public Button but4;
     public Button but5;
 
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_welcome);
+
+
+        //Use username of logged-in user
+        Intent intent = getIntent();
+        final String USERNAME = intent.getStringExtra("USERNAME");
+
+        init();
+        init1(USERNAME);
+    }
+
     public void init(){
         but4= (Button)findViewById(R.id.bSearch_Welcome);
         but4.setOnClickListener(new View.OnClickListener(){
@@ -77,17 +92,5 @@ public class WelcomeActivity extends AppCompatActivity {
                 queue.add(tb_Request);
             }
         });
-    }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
-
-        //Use username of logged-in user
-        Intent intent = getIntent();
-        final String USERNAME = intent.getStringExtra("USERNAME");
-
-        init();
-        init1(USERNAME);
     }
 }
