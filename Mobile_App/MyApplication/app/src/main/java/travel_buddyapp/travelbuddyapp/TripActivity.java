@@ -8,9 +8,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -41,14 +38,19 @@ public class TripActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         final HashMap<String, String> destinationDescription = (HashMap<String, String>)intent.getSerializableExtra("map");
+        final String[] locations = intent.getStringArrayExtra("loc");
         final String USERNAME = intent.getStringExtra("USERNAME");
 
         ListView resultsListview = (ListView) findViewById(R.id.tripresults_listview);
 
-        HashMap<String,String> destinationdescription = new HashMap<>();
-        destinationdescription.put("London","Travel Time:  5h16m \nTravel Distance:  210 000km");
+        HashMap<Integer, String> destinationdescription = new HashMap<>();
+        for(int i = 0; i < locations.length; i++)
+        {
+            destinationdescription.put(i+1, "Location: " + locations[i]);
+        }
+        /*destinationdescription.put("London","Travel Time:  5h16m \nTravel Distance:  210 000km");
         destinationdescription.put("Paris","Travel Time:  5h16m \nTravel Distance:  210 000km");
-        destinationdescription.put("Germany","Travel Time:  5h16m \nTravel Distance:  210 000km");
+        destinationdescription.put("Germany","Travel Time:  5h16m \nTravel Distance:  210 000km");*/
 
         List<HashMap<String,String>> listItems = new ArrayList<>();
         SimpleAdapter adapter = new SimpleAdapter(this,listItems, R.layout.trip_list,

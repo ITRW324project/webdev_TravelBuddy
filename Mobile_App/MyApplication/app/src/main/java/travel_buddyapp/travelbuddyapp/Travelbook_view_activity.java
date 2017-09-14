@@ -1,9 +1,19 @@
 package travel_buddyapp.travelbuddyapp;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Criteria;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -17,15 +27,19 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
-public class Travelbook_view_activity extends AppCompatActivity{
+public class Travelbook_view_activity extends AppCompatActivity {
 
     public Button but8;
+    Geocoder geocoder;
+    List<Address> addresses;
 
     public void init(){
         but8= (Button)findViewById(R.id.bBack_ViewTravelbook);
@@ -47,6 +61,8 @@ public class Travelbook_view_activity extends AppCompatActivity{
         final HashMap<String, String> destinationDescription = (HashMap<String, String>)intent.getSerializableExtra("map");
         final String USERNAME = intent.getStringExtra("USERNAME");
         final String[] books = intent.getStringArrayExtra("books");
+
+        geocoder = new Geocoder(this, Locale.getDefault());
 
         final ListView resultsListView = (ListView) findViewById(R.id.travelbookresults_listview);
 
@@ -70,10 +86,40 @@ public class Travelbook_view_activity extends AppCompatActivity{
                             String result =jsonResponse.getString("result");
                             if (success)
                             {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(Travelbook_view_activity.this);
-                                builder.setMessage(result)
-                                        .create()
-                                        .show();
+                                String[] geoLocs = result.split("\\s+");
+                                String[] geos = new String[geoLocs.length/2];
+                                String[] locations = new String[geos.length];
+
+                                for(int i = 0, j = 0; i < geoLocs.length/2; i++, j+=2)
+                                {
+                                    geos[i] = geoLocs[j] + " " + geoLocs[j+1];
+                                }
+
+                                for (int i = 0; i < locations.length; i++)
+                                {
+                                    String[] latLng = geos[i].split(",");
+                                    Double lat = Double.parseDouble(latLng[0]);
+                                    Double lng = Double.parseDouble(latLng[1]);
+                                    try {
+                                        addresses = geocoder.getFromLocation(lat, lng, 1);
+
+                                        String address = addresses.get(0).getAddressLine(0);
+                                        String city = addresses.get(0).getLocality();
+                                        String area = addresses.get(0).getAdminArea();
+                                        String country = addresses.get(0).getCountryName();
+
+                                        locations[i] = address + ", " +city+", "+area+", "+country;
+
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+
+                                Intent intent = new Intent(Travelbook_view_activity.this, TripActivity.class);
+                                intent.putExtra("map", destinationDescription);
+                                intent.putExtra("loc", locations);
+                                intent.putExtra("USERNAME", USERNAME);
+                                startActivity(intent);
                             }
                             else
                             {
@@ -93,11 +139,6 @@ public class Travelbook_view_activity extends AppCompatActivity{
                 LocationsRequest loc_Request = new LocationsRequest(travelName, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(Travelbook_view_activity.this);
                 queue.add(loc_Request);
-
-                /*Intent intent = new Intent(Travelbook_view_activity.this, TripActivity.class);
-                intent.putExtra("map", destinationDescription);
-                intent.putExtra("USERNAME", USERNAME);
-                startActivity(intent);*/
             }
         });
 
