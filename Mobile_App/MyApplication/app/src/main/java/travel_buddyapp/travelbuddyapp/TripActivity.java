@@ -39,6 +39,7 @@ public class TripActivity extends AppCompatActivity {
         Intent intent = getIntent();
         final HashMap<String, String> destinationDescription = (HashMap<String, String>)intent.getSerializableExtra("map");
         final String[] locations = intent.getStringArrayExtra("loc");
+        final String[] geoLocations = intent.getStringArrayExtra("geos");
         final String USERNAME = intent.getStringExtra("USERNAME");
 
         ListView resultsListview = (ListView) findViewById(R.id.tripresults_listview);

@@ -118,6 +118,7 @@ public class Travelbook_view_activity extends AppCompatActivity {
                                 Intent intent = new Intent(Travelbook_view_activity.this, TripActivity.class);
                                 intent.putExtra("map", destinationDescription);
                                 intent.putExtra("loc", locations);
+                                intent.putExtra("geos", geos);
                                 intent.putExtra("USERNAME", USERNAME);
                                 startActivity(intent);
                             }
