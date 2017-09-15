@@ -15,6 +15,7 @@ public class Show_Destination_Activity extends AppCompatActivity {
     public ImageButton accomodation;
     public ImageButton attractions;
     public ImageButton restuarants;
+    public Button but10;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,18 @@ public class Show_Destination_Activity extends AppCompatActivity {
         accoInit();
         attrInit();
         restInit();
+        init();
+    }
+
+    public void init(){
+        but10= (Button)findViewById(R.id.gallery);
+        but10.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent toy10 = new Intent(Show_Destination_Activity.this,Gallery_Activity.class);
+                startActivity(toy10);
+            }
+        });
     }
 
     public void accoInit()
