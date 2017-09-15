@@ -17,6 +17,8 @@ import java.util.Map;
 public class TripActivity extends AppCompatActivity {
 
     public Button but7;
+    public Button but8;
+
 
     public void init(final HashMap<String, String> destDesc, final String uname){
         but7= (Button)findViewById(R.id.bBack_Trip);
@@ -31,6 +33,19 @@ public class TripActivity extends AppCompatActivity {
             }
         });
     }
+    public void init1(final String[] geolocation, final String uname){
+    but8= (Button)findViewById(R.id.bviewmap_Trip);
+
+        but8.setOnClickListener(new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            Intent toy7 = new Intent(TripActivity.this,ViewMap_Activity.class);
+            toy7.putExtra("geolocation", geolocation);
+            toy7.putExtra("USERNAME", uname);
+            startActivity(toy7);
+        }
+    });}
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,5 +85,6 @@ public class TripActivity extends AppCompatActivity {
 
         resultsListview.setAdapter(adapter);
         init(destinationDescription, USERNAME);
+        init1(geoLocations,USERNAME);
     }
 }
