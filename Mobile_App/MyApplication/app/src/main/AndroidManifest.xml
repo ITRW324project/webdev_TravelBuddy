@@ -81,6 +81,9 @@
             android:label="@string/title_activity_search__destination_" />
         <activity android:name=".Show_Destination_Activity"
             android:exported="true"></activity>
+
+        <activity android:name=".ViewMap_Activity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>
