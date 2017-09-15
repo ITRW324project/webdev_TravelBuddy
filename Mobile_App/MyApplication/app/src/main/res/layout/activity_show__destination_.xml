@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="travel_buddyapp.travelbuddyapp.Show_Destination_Activity"
-    android:background="@drawable/gradient_green">
+    android:background="@drawable/gradient_blue2">
 
     <Button
         android:id="@+id/bBack_Destination"
@@ -24,7 +24,7 @@
         app:srcCompat="@drawable/paris_map"
         tools:layout_editor_absoluteX="-10dp"
         app:layout_constraintTop_toTopOf="@+id/button3"
-        android:layout_marginTop="-41dp" />
+        android:layout_marginTop="-7dp" />
 
     <Button
         android:id="@+id/button2"
@@ -52,47 +52,46 @@
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="@+id/bBack_Destination" />
 
+    <ImageButton
+        android:id="@+id/attractions"
+        android:layout_width="300px"
+        android:layout_height="300px"
+        app:srcCompat="@drawable/attractions2"
+        android:layout_marginLeft="28dp"
+        app:layout_constraintLeft_toLeftOf="@+id/bBack_Destination"
+        app:layout_constraintBottom_toBottomOf="@+id/gallery"
+        android:layout_marginBottom="62dp" />
+
+    <ImageButton
+        android:id="@+id/restaurants"
+        android:layout_width="300px"
+        android:layout_height="300px"
+        app:srcCompat="@drawable/restaurant2"
+        android:layout_marginLeft="156dp"
+        app:layout_constraintLeft_toLeftOf="@+id/bBack_Destination"
+        app:layout_constraintBottom_toBottomOf="@+id/gallery"
+        android:layout_marginBottom="61dp" />
+
+    <ImageButton
+        android:id="@+id/accomodation"
+        android:layout_width="300px"
+        android:layout_height="300px"
+        app:srcCompat="@drawable/accommodation"
+        android:layout_marginLeft="282dp"
+        app:layout_constraintLeft_toLeftOf="@+id/bBack_Destination"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="79dp" />
+
     <Button
         android:id="@+id/gallery"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:background="#4a90e2"
+        android:layout_width="379dp"
+        android:layout_height="53dp"
         android:text="Gallery"
-        android:layout_marginTop="272dp"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        android:layout_marginLeft="63dp"
-        app:layout_constraintLeft_toLeftOf="@+id/bBack_Destination" />
-
-    <Button
-        android:id="@+id/accomodation"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:background="#4a90e2"
-        android:text="Accomodation"
-        android:layout_marginTop="11dp"
-        app:layout_constraintTop_toBottomOf="@+id/gallery"
-        android:layout_marginLeft="63dp"
-        app:layout_constraintLeft_toLeftOf="@+id/bBack_Destination" />
-
-    <Button
-        android:id="@+id/restuarants"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:background="#4a90e2"
-        android:text="Restuarants"
-        android:layout_marginLeft="63dp"
+        android:background="#5cb85c"
+        android:layout_marginLeft="24dp"
         app:layout_constraintLeft_toLeftOf="@+id/bBack_Destination"
-        android:layout_marginTop="11dp"
-        app:layout_constraintTop_toBottomOf="@+id/attractions" />
-
-    <Button
-        android:id="@+id/attractions"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:background="#4a90e2"
-        android:text="Attractions"
-        android:layout_marginLeft="63dp"
-        app:layout_constraintLeft_toLeftOf="@+id/bBack_Destination"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/accomodation" />
+
+
 </android.support.constraint.ConstraintLayout>
