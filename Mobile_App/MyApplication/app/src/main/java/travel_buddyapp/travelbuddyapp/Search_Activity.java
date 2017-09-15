@@ -14,6 +14,7 @@ import java.util.List;
 public class Search_Activity extends AppCompatActivity{
 
     public Button but1;
+    public Button search;
 
     public void init(){
         but1= (Button)findViewById(R.id.bBack_Search);
@@ -26,11 +27,24 @@ public class Search_Activity extends AppCompatActivity{
         });
     }
 
+    public void initSearch(){
+        search= (Button)findViewById(R.id.bSearch_Search);
+        search.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent toy = new Intent(Search_Activity.this,Show_Destination_Activity.class);
+                startActivity(toy);
+            }
+        });
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_);
         init();
+        initSearch();
     }
 }
 
