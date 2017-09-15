@@ -60,7 +60,6 @@ public class Travelbook_view_activity extends AppCompatActivity {
         Intent intent = getIntent();
         final HashMap<String, String> destinationDescription = (HashMap<String, String>)intent.getSerializableExtra("map");
         final String USERNAME = intent.getStringExtra("USERNAME");
-        final String[] books = intent.getStringArrayExtra("books");
 
         geocoder = new Geocoder(this, Locale.getDefault());
 

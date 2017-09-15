@@ -64,9 +64,6 @@ public class TripActivity extends AppCompatActivity {
         {
             destinationdescription.put(i+1, "Location: " + locations[i]);
         }
-        /*destinationdescription.put("London","Travel Time:  5h16m \nTravel Distance:  210 000km");
-        destinationdescription.put("Paris","Travel Time:  5h16m \nTravel Distance:  210 000km");
-        destinationdescription.put("Germany","Travel Time:  5h16m \nTravel Distance:  210 000km");*/
 
         List<HashMap<String,String>> listItems = new ArrayList<>();
         SimpleAdapter adapter = new SimpleAdapter(this,listItems, R.layout.trip_list,

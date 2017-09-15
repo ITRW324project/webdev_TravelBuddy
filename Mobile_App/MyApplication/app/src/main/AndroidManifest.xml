@@ -60,6 +60,9 @@
         <activity
             android:name=".ForgotPasswordActivity"
             android:exported="true" />
+        <activity
+            android:name=".MapsActivity"
+            android:exported="true" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -70,7 +73,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyC7_wVVEM7dUHUEjYPTG4Cj2wLv_QkWJVo" />
 
         <activity
             android:name=".SearchMapsActivity"
@@ -82,7 +85,17 @@
         <activity
             android:name=".Show_Destination_Activity"
             android:exported="true" />
+<<<<<<< HEAD
         <activity android:name=".Gallery_Activity"></activity>
+=======
+        <activity
+            android:name=".ViewMap_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".MapActivity"
+            android:label="@string/title_activity_map"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+>>>>>>> mobile_development
     </application>
 
 </manifest>
