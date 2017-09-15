@@ -34,7 +34,7 @@ public class ViewMap_Activity extends FragmentActivity implements OnMapReadyCall
         Intent intent = getIntent();
          final String[] geolocations = intent.getStringArrayExtra("geolocation");
         final String USERNAME = intent.getStringExtra("USERNAME");
-
+        float zoomLevel = 16.0f;
         String[][] geolocation = new String[geolocations.length][2];
         double[] lat = new double[geolocation.length];
         double[] lon = new double[geolocation.length];
@@ -81,7 +81,8 @@ public class ViewMap_Activity extends FragmentActivity implements OnMapReadyCall
         }
         LatLng pretoria = new LatLng(-26.245167, 28.015680);
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(pretoria));
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pretoria, zoomLevel));
     }
 }
 
