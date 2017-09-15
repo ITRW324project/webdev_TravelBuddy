@@ -1,7 +1,6 @@
 package travel_buddyapp.travelbuddyapp;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,13 +39,7 @@ public class LoginAct extends AppCompatActivity {
         final EditText etPassword = (EditText) findViewById(R.id.etpassword_Login);
 
         final Button bLogin = (Button) findViewById(R.id.bLogin);
-        final Button bForgotPasword = (Button) findViewById(R.id.forgot_password_button);
 
-        bForgotPasword.setOnClickListener((new View.OnClickListener() {
-            public void onClick(View v){Uri uri = Uri.parse("http://simeon.ddns.net:8085/travelappbuddy/Forgot%20Password/forgot-password.html");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);}
-        }));
         bLogin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
