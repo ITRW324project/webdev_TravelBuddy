@@ -17,4 +17,5 @@
     </string>
     <string name="title_activity_search_maps">Map</string>
     <string name="title_activity_search__destination_">Map</string>
+    <string name="title_activity_map">MapActivity</string>
 </resources>
