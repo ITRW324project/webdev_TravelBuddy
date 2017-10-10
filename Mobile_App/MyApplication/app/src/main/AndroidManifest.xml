@@ -89,9 +89,7 @@
         <activity
             android:name=".Show_Destination_Activity"
             android:exported="true" />
-<<<<<<< HEAD
         <activity android:name=".Gallery_Activity"></activity>
-=======
         <activity
             android:name=".ViewMap_Activity"
             android:exported="true" />
@@ -99,7 +97,6 @@
             android:name=".MapActivity"
             android:label="@string/title_activity_map"
             android:theme="@style/AppTheme.NoActionBar"></activity>
->>>>>>> mobile_development
     </application>
 
 </manifest>

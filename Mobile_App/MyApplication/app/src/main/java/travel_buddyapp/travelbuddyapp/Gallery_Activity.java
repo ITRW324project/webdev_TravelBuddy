@@ -18,7 +18,7 @@ public class Gallery_Activity extends AppCompatActivity {
             public void onClick(View v){
                 Intent toy11 = new Intent(Gallery_Activity.this,Show_Destination_Activity.class);
                 startActivity(toy11);
-            });
+            };
         });
     }
 
