@@ -74,7 +74,7 @@ public class Travelbook_view_activity extends AppCompatActivity {
                 String value = resultsListView.getItemAtPosition(pos).toString();
                 value = value.substring(1, value.length() - 1);
                 String[] val = value.split("=");
-                String travelName = val[2];
+                final String travelName = val[2];
 
                Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
@@ -87,14 +87,15 @@ public class Travelbook_view_activity extends AppCompatActivity {
                             {
                                 String[] geoLocs = result.split("\\s+");
                                 String[] geos = new String[geoLocs.length/2];
-                                String[] locations = new String[geos.length];
+                                String[] locationsLocal = new String[geos.length];
+                                String[] locationsGlobal = new String[geos.length];
 
                                 for(int i = 0, j = 0; i < geoLocs.length/2; i++, j+=2)
                                 {
                                     geos[i] = geoLocs[j] + " " + geoLocs[j+1];
                                 }
 
-                                for (int i = 0; i < locations.length; i++)
+                                for (int i = 0; i < locationsLocal.length; i++)
                                 {
                                     String[] latLng = geos[i].split(",");
                                     Double lat = Double.parseDouble(latLng[0]);
@@ -102,12 +103,13 @@ public class Travelbook_view_activity extends AppCompatActivity {
                                     try {
                                         addresses = geocoder.getFromLocation(lat, lng, 1);
 
-                                        String address = addresses.get(0).getAddressLine(0);
+                                        String address = addresses.get(0).getSubThoroughfare() + " " + addresses.get(0).getThoroughfare();
                                         String city = addresses.get(0).getLocality();
                                         String area = addresses.get(0).getAdminArea();
-                                        String country = addresses.get(0).getCountryName();
+                                        String country = addresses.get(0).getCountryCode();
 
-                                        locations[i] = address + ", " +city+", "+area+", "+country;
+                                        locationsLocal[i] = address + ", " + city;
+                                        locationsGlobal[i] = area+", "+country;
 
                                     } catch (IOException e) {
                                         e.printStackTrace();
@@ -116,7 +118,9 @@ public class Travelbook_view_activity extends AppCompatActivity {
 
                                 Intent intent = new Intent(Travelbook_view_activity.this, TripActivity.class);
                                 intent.putExtra("map", destinationDescription);
-                                intent.putExtra("loc", locations);
+                                intent.putExtra("locLocal", locationsLocal);
+                                intent.putExtra("locGlobal", locationsGlobal);
+                                intent.putExtra("tN", travelName);
                                 intent.putExtra("geos", geos);
                                 intent.putExtra("USERNAME", USERNAME);
                                 startActivity(intent);
