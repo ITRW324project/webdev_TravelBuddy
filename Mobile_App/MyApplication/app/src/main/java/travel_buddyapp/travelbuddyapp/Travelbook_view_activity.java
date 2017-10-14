@@ -46,7 +46,7 @@ public class Travelbook_view_activity extends AppCompatActivity {
         but8.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent toy8 = new Intent(Travelbook_view_activity.this,NewTravelbook_Activity.class);
+                Intent toy8 = new Intent(Travelbook_view_activity.this,WelcomeActivity.class);
                 startActivity(toy8);
             }
         });

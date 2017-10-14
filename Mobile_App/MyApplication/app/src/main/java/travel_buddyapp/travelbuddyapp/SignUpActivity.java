@@ -29,7 +29,7 @@ public class SignUpActivity extends AppCompatActivity {
         but3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent toy2 = new Intent(SignUpActivity.this,WelcomeActivity.class);
+                Intent toy2 = new Intent(SignUpActivity.this,MainActivity.class);
                 startActivity(toy2);
             }
         });

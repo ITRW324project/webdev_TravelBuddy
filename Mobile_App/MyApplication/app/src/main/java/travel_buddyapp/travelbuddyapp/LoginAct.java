@@ -24,7 +24,7 @@ public class LoginAct extends AppCompatActivity {
         but2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent toy1 = new Intent(LoginAct.this,WelcomeActivity.class);
+                Intent toy1 = new Intent(LoginAct.this,MainActivity.class);
                 startActivity(toy1);
             }
         });
