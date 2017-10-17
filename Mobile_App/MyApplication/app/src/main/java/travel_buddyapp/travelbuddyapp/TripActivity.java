@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -53,16 +54,21 @@ public class TripActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         final HashMap<String, String> destinationDescription = (HashMap<String, String>)intent.getSerializableExtra("map");
-        final String[] locations = intent.getStringArrayExtra("loc");
+        final String[] locationLocal = intent.getStringArrayExtra("locLocal");
+        final String[] locationGlobal = intent.getStringArrayExtra("locGlobal");
+        final String travelName = intent.getStringExtra("tN");
         final String[] geoLocations = intent.getStringArrayExtra("geos");
         final String USERNAME = intent.getStringExtra("USERNAME");
 
+        final TextView textViewToChange = (TextView) findViewById(R.id.Trip_text);
+        textViewToChange.setText(travelName);
+
         ListView resultsListview = (ListView) findViewById(R.id.tripresults_listview);
 
-        HashMap<Integer, String> destinationdescription = new HashMap<>();
-        for(int i = 0; i < locations.length; i++)
+        HashMap<String, String> destinationdescription = new HashMap<>();
+        for(int i = 0; i < locationLocal.length; i++)
         {
-            destinationdescription.put(i+1, "Location: " + locations[i]);
+            destinationdescription.put(locationLocal[i], locationGlobal[i]);
         }
 
         List<HashMap<String,String>> listItems = new ArrayList<>();

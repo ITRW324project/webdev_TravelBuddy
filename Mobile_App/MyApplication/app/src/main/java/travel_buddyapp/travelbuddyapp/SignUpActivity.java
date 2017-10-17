@@ -29,7 +29,7 @@ public class SignUpActivity extends AppCompatActivity {
         but3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent toy2 = new Intent(SignUpActivity.this,WelcomeActivity.class);
+                Intent toy2 = new Intent(SignUpActivity.this,MainActivity.class);
                 startActivity(toy2);
             }
         });
@@ -61,6 +61,34 @@ public class SignUpActivity extends AppCompatActivity {
               final String pWord = etPassword.getText().toString();
               final String town = etTown.getText().toString();
 
+
+                // TODO Auto-generated method stub
+                if (etFirstName.getText().toString().length() == 0) {
+                    etFirstName.setError("First name not entered");
+                    etFirstName.requestFocus();
+                }
+                if (etLastName.getText().toString().length() == 0) {
+                    etLastName.setError("Last name not entered");
+                    etLastName.requestFocus();
+                }
+
+                if (etUserName.getText().toString().length() == 0) {
+                    etUserName.setError("Username is Required");
+                    etUserName.requestFocus();
+                }
+                if (etPassword.getText().toString().length() == 0) {
+                    etPassword.setError("Password not entered");
+                    etPassword.requestFocus();
+                }
+                if (etPassword2.getText().toString().length() == 0) {
+                    etPassword2.setError("Please confirm password");
+                    etPassword2.requestFocus();
+                }
+                if (!etPassword2.getText().toString().equals(etPassword2.getText().toString())) {
+                    etPassword2.setError("Password Not matched");
+                    etPassword2.requestFocus();
+                }
+
               Response.Listener<String> responceListener = new Response.Listener<String>() {
                   @Override
                   public void onResponse(String response) {
@@ -87,40 +115,6 @@ public class SignUpActivity extends AppCompatActivity {
                       } catch (JSONException e) {
                           e.printStackTrace();
                       }
-                      btnReg.setOnClickListener(new View.OnClickListener() {
-                          @Override
-                          public void onClick(View arg0) {
-                              // TODO Auto-generated method stub
-                              if (etFirstName.getText().toString().length() == 0) {
-                                  etFirstName.setError("First name not entered");
-                                  etFirstName.requestFocus();
-                              }
-                              if (etLastName.getText().toString().length() == 0) {
-                                  etLastName.setError("Last name not entered");
-                                  etLastName.requestFocus();
-                              }
-
-                              if (etUserName.getText().toString().length() == 0) {
-                                  etUserName.setError("Username is Required");
-                                  etUserName.requestFocus();
-                              }
-                              if (etPassword.getText().toString().length() == 0) {
-                                  etPassword.setError("Password not entered");
-                                  etPassword.requestFocus();
-                              }
-                              if (etPassword2.getText().toString().length() == 0) {
-                                  etPassword2.setError("Please confirm password");
-                                  etPassword2.requestFocus();
-                              }
-                              if (!etPassword2.getText().toString().equals(etPassword2.getText().toString())) {
-                                  etPassword2.setError("Password Not matched");
-                                  etPassword2.requestFocus();
-                              }
-
-                          }
-
-                      });
-
 
                   }
               };
