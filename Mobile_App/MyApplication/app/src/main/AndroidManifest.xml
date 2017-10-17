@@ -87,9 +87,7 @@
         <activity
             android:name=".Show_Destination_Activity"
             android:exported="true" />
-<<<<<<< HEAD
-        <activity android:name=".Gallery_Activity"></activity>
-=======
+        <activity android:name=".Gallery_Activity" />
         <activity
             android:name=".ViewMap_Activity"
             android:exported="true" />
