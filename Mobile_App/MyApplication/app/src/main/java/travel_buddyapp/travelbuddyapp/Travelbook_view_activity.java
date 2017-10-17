@@ -41,13 +41,14 @@ public class Travelbook_view_activity extends AppCompatActivity {
     Geocoder geocoder;
     List<Address> addresses;
 
-    public void init(){
+    public void init(final String USERNAME){
         but8= (Button)findViewById(R.id.bBack_ViewTravelbook);
         but8.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent toy8 = new Intent(Travelbook_view_activity.this,WelcomeActivity.class);
-                startActivity(toy8);
+                Intent intent = new Intent(Travelbook_view_activity.this,WelcomeActivity.class);
+                intent.putExtra("USERNAME", USERNAME);;
+                startActivity(intent);
             }
         });
     }
@@ -162,6 +163,6 @@ public class Travelbook_view_activity extends AppCompatActivity {
         }
 
         resultsListView.setAdapter(adapter);
-        init();
+        init(USERNAME);
     }
 }

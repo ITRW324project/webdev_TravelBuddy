@@ -5,29 +5,66 @@
   {
       $username = $_POST['username'];
 
-      $sql_query = "SELECT travelBook_name FROM Travel_Books WHERE user_name = '".$username."'";
-      $result = mysqli_query($db_travel, $sql_query);
-      $tbs = array();
-      $count = mysqli_num_rows($result);
-
-      if($count > 0)
+      if($username != null)
       {
-        while($row = $result->fetch_assoc())
+        $sql_query = "SELECT travelBook_name, Description FROM Travel_Books WHERE user_name = '".$username."'";
+        $result = mysqli_query($db_travel, $sql_query);
+        $tbs = array();
+        $desc = array();
+        $count = mysqli_num_rows($result);
+
+        if($count > 0)
         {
-          $tbs[] = $row['travelBook_name'];
+          while($row = $result->fetch_assoc())
+          {
+            $tbs[] = $row['travelBook_name'];
+            $desc[] = $row['Description'];
+          }
+
+          $response['result'] = implode(',', $tbs);
+          $response['description'] = implode(';', $desc);
+          $response["success"] = true;
+          echo json_encode($response);
+        }
+        else
+        {
+          $response['result'] = "No travelbooks found for user!";
+          $response["success"] = false;
+          echo json_encode($response);
         }
 
-        $response['result'] = implode(',', $tbs);
-        $response["success"] = true;
-        echo json_encode($response);
+        $result->free();
       }
       else
       {
-        $response['result'] = "No travelbooks found for user!";
-        $response["success"] = false;
-        echo json_encode($response);
+        $sql_query = "SELECT travelBook_name, Description FROM Travel_Books";
+        $result = mysqli_query($db_travel, $sql_query);
+        $tbs = array();
+        $desc = array();
+        $count = mysqli_num_rows($result);
+
+        if($count > 0)
+        {
+          while($row = $result->fetch_assoc())
+          {
+            $tbs[] = $row['travelBook_name'];
+            $desc[] = $row['Description'];
+          }
+
+          $response['result'] = implode(',', $tbs);
+          $response['description'] = implode(';', $desc);
+          $response["success"] = true;
+          echo json_encode($response);
+        }
+        else
+        {
+          $response['result'] = "No travelbooks found for user!";
+          $response["success"] = false;
+          echo json_encode($response);
+        }
+
+        $result->free();
       }
 
-      $result->free();
   }
  ?>

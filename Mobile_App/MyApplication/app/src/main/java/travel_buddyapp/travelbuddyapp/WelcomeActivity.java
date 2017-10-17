@@ -34,6 +34,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         init();
         init1(USERNAME);
+        init2(USERNAME);
     }
 
     public void init(){
@@ -52,7 +53,7 @@ public class WelcomeActivity extends AppCompatActivity {
         but5.setOnClickListener(new View.OnClickListener(){
 
             @Override
-           public void onClick(View v){
+            public void onClick(View v){
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
@@ -61,13 +62,18 @@ public class WelcomeActivity extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
                             String result =jsonResponse.getString("result");
+                            String desc =jsonResponse.getString("description");
                             if (success) {
 
                                 String[] books = result.split(",");
+                                String[] description = desc.split(";");
                                 HashMap<String,String> destinationDescription = new HashMap<>();
 
+                                int i = 0;
+
                                 for (String book : books) {
-                                    destinationDescription.put(book.trim(), String.format("%d Destinations", books.length));
+                                    destinationDescription.put(book.trim(), description[i]);
+                                    i++;
                                 }
 
                                 Intent intent = new Intent(WelcomeActivity.this,Travelbook_view_activity.class);
@@ -88,6 +94,58 @@ public class WelcomeActivity extends AppCompatActivity {
                 };
 
                 Travel_Book_Request tb_Request = new Travel_Book_Request(userName, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(WelcomeActivity.this);
+                queue.add(tb_Request);
+            }
+        });
+    }
+
+    public void init2(final String userName){
+        but5= (Button)findViewById(R.id.bAllTravelBooks);
+        but5.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v){
+
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("success");
+                            String result =jsonResponse.getString("result");
+                            String name =jsonResponse.getString("names");
+                            if (success) {
+
+                                String[] books = result.split(",");
+                                String[] names = name.split(";");
+                                HashMap<String,String> destinationDescription = new HashMap<>();
+
+                                int i = 0;
+
+                                for (String book : books) {
+                                    destinationDescription.put(book.trim(), names[i]);
+                                    i++;
+                                }
+
+                                Intent intent = new Intent(WelcomeActivity.this,Travelbook_view_activity.class);
+                                intent.putExtra("map", destinationDescription);
+                                intent.putExtra("USERNAME", userName);
+                                intent.putExtra("books", books);
+                                WelcomeActivity.this.startActivity(intent);
+                            } else {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
+                                builder.setMessage(result)
+                                        .create()
+                                        .show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+
+                All_TBs_request tb_Request = new All_TBs_request(responseListener);
                 RequestQueue queue = Volley.newRequestQueue(WelcomeActivity.this);
                 queue.add(tb_Request);
             }
