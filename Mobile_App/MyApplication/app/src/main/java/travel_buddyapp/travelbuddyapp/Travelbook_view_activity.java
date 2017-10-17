@@ -19,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -61,6 +62,10 @@ public class Travelbook_view_activity extends AppCompatActivity {
         Intent intent = getIntent();
         final HashMap<String, String> destinationDescription = (HashMap<String, String>)intent.getSerializableExtra("map");
         final String USERNAME = intent.getStringExtra("USERNAME");
+        final String heading = intent.getStringExtra("Heading");
+
+        final TextView textViewToChange = (TextView) findViewById(R.id.Travelbook_text);
+        textViewToChange.setText(heading);
 
         geocoder = new Geocoder(this, Locale.getDefault());
 

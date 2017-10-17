@@ -79,6 +79,7 @@ public class WelcomeActivity extends AppCompatActivity {
                                 Intent intent = new Intent(WelcomeActivity.this,Travelbook_view_activity.class);
                                 intent.putExtra("map", destinationDescription);
                                 intent.putExtra("USERNAME", userName);
+                                intent.putExtra("Heading", "My TravelBooks");
                                 intent.putExtra("books", books);
                                 WelcomeActivity.this.startActivity(intent);
                             } else {
@@ -131,6 +132,7 @@ public class WelcomeActivity extends AppCompatActivity {
                                 Intent intent = new Intent(WelcomeActivity.this,Travelbook_view_activity.class);
                                 intent.putExtra("map", destinationDescription);
                                 intent.putExtra("USERNAME", userName);
+                                intent.putExtra("Heading", "All TravelBooks");
                                 intent.putExtra("books", books);
                                 WelcomeActivity.this.startActivity(intent);
                             } else {

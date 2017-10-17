@@ -11,17 +11,22 @@
         android:id="@+id/Travelbook_text"
         android:layout_width="296dp"
         android:layout_height="65dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="32dp"
+        android:autoText="true"
         android:text="Travel Books"
         android:textAlignment="center"
         android:textColor="#f7f7f9"
         android:textColorLink="@android:color/black"
-        android:textSize="50sp"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/bBack_ViewTravelbook"
+        android:textSize="40sp"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="65dp"
-        android:layout_marginLeft="44dp" />
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <Button
         android:id="@+id/bBack_ViewTravelbook"
@@ -41,19 +46,26 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ListView
-        android:id="@+id/travelbookresults_listview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="155dp"
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="500dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="17dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1"
-        >
-    </ListView>
+        app:layout_constraintTop_toBottomOf="@+id/Travelbook_text"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ListView
+            android:id="@+id/travelbookresults_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
