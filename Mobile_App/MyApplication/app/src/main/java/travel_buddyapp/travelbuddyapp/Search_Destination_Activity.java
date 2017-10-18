@@ -68,7 +68,7 @@ private  AppCompatActivity aC = new AppCompatActivity();
         }
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-
+        placeAutoComplete = (PlaceAutocompleteFragment) getFragmentManager().findFragmentById(R.id.place_autocomplete);
         placeAutoComplete.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
