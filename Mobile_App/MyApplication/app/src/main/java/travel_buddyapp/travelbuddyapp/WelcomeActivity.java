@@ -42,7 +42,7 @@ public class WelcomeActivity extends AppCompatActivity {
         but4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent toy4 = new Intent(WelcomeActivity.this,Search_Activity.class);
+                Intent toy4 = new Intent(WelcomeActivity.this,Search_Destination_Activity.class);
                 startActivity(toy4);
             }
         });
