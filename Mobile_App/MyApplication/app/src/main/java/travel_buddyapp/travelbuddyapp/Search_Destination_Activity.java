@@ -1,5 +1,7 @@
 package travel_buddyapp.travelbuddyapp;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -8,15 +10,12 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.location.places.PlaceLikelihood;
@@ -36,25 +35,21 @@ public class Search_Destination_Activity extends FragmentActivity implements OnM
 private  AppCompatActivity aC = new AppCompatActivity();
 
     private GoogleMap mMap;
+    MarkerOptions currentMarkerOpts = null;
+    float zoomLevel = 16.0f;
     PlaceAutocompleteFragment placeAutoComplete;
+
     private GoogleApiClient mGoogleApiClient;
-
-
 
     private static final String LOG_TAG = "PlacesAPIActivity";
     private static final int GOOGLE_API_CLIENT_ID = 0;
     private static final int PERMISSION_REQUEST_CODE = 100;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search__destination_);
+
         mGoogleApiClient = new GoogleApiClient.Builder(Search_Destination_Activity.this)
                 .addApi(Places.PLACE_DETECTION_API)
                 .enableAutoManage(this, GOOGLE_API_CLIENT_ID, this)
@@ -72,6 +67,28 @@ private  AppCompatActivity aC = new AppCompatActivity();
 
         }
 
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+
+        placeAutoComplete.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(Place place) {
+
+                Log.d("Maps", "Place selected: " + place.getName());
+                mMap.clear();
+                LatLng selectedPlace = place.getLatLng();
+                mMap.addMarker(new MarkerOptions().position(selectedPlace).title((String) place.getName()));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(selectedPlace,zoomLevel));
+            }
+
+            @Override
+            public void onError(Status status) {
+                Log.d("Maps", "An error occurred: " + status);
+            }
+        });
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
     @Override
@@ -99,7 +116,7 @@ private  AppCompatActivity aC = new AppCompatActivity();
     }
 
     private void callPlaceDetectionApi() throws SecurityException {
-        PendingResult<PlaceLikelihoodBuffer> result = Places.PlaceDetectionApi
+        final PendingResult<PlaceLikelihoodBuffer> result = Places.PlaceDetectionApi
                 .getCurrentPlace(mGoogleApiClient, null);
         result.setResultCallback(new ResultCallback<PlaceLikelihoodBuffer>() {
             @Override
@@ -110,60 +127,17 @@ private  AppCompatActivity aC = new AppCompatActivity();
                             placeLikelihood.getPlace().getName(),
                             placeLikelihood.getLikelihood()));
                 }
+
                 likelyPlaces.release();
             }
         });
-
-
-
-
-
-
-
-
-
-
-
-
-       // super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_search__destination_);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        placeAutoComplete = (PlaceAutocompleteFragment) getFragmentManager().findFragmentById(R.id.place_autocomplete);
-        placeAutoComplete.setOnPlaceSelectedListener(new PlaceSelectionListener() {
-            @Override
-            public void onPlaceSelected(Place place) {
-
-                Log.d("Maps", "Place selected: " + place.getName());
-            }
-
-            @Override
-            public void onError(Status status) {
-                Log.d("Maps", "An error occurred: " + status);
-            }
-        });
-
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        /*mMap = googleMap;
-
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
+        mMap = googleMap;
+        PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
+                getFragmentManager().findFragmentById(R.id.place_autocomplete);
     }
 
 }
