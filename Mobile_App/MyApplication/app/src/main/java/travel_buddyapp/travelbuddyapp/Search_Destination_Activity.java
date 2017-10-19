@@ -1,11 +1,8 @@
 package travel_buddyapp.travelbuddyapp;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.support.v4.app.ActivityCompat;
@@ -19,8 +16,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.location.places.AddPlaceRequest;
-import com.google.android.gms.location.places.GeoDataApi;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.PendingResult;
@@ -36,11 +31,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import java.util.Locale;
 
-import java.util.Collections;
 
-
-public class Search_Destination_Activity extends FragmentActivity implements OnMapReadyCallback/*, GoogleApiClient.OnConnectionFailedListener*/ {
+public class Search_Destination_Activity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener{
 private  AppCompatActivity aC = new AppCompatActivity();
 
     private GoogleMap mMap;
@@ -49,23 +43,23 @@ private  AppCompatActivity aC = new AppCompatActivity();
     PlaceAutocompleteFragment placeAutoComplete;
 
     private GoogleApiClient mGoogleApiClient;
-    public GeoDataApi mGeoDataClient;
 
     private static final String LOG_TAG = "PlacesAPIActivity";
     private static final int GOOGLE_API_CLIENT_ID = 0;
     private static final int PERMISSION_REQUEST_CODE = 100;
 
-    String placeSearched;
+
     public ImageButton accomodation;
     public ImageButton attractions;
     public ImageButton restuarants;
+    Float lat,lng;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search__destination_);
 
-       /* mGoogleApiClient = new GoogleApiClient.Builder(Search_Destination_Activity.this)
+       mGoogleApiClient = new GoogleApiClient.Builder(Search_Destination_Activity.this)
                 .addApi(Places.PLACE_DETECTION_API)
                 .enableAutoManage(this, GOOGLE_API_CLIENT_ID, this)
                 .build();
@@ -80,7 +74,7 @@ private  AppCompatActivity aC = new AppCompatActivity();
                 callPlaceDetectionApi();
             }
 
-        }*/
+        }
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         placeAutoComplete = (PlaceAutocompleteFragment) getFragmentManager().findFragmentById(R.id.place_autocomplete);
@@ -90,16 +84,11 @@ private  AppCompatActivity aC = new AppCompatActivity();
 
                 Log.d("Maps", "Place selected: " + place.getName() + place.getLatLng());
                 mMap.clear();
-                LatLng selectedPlace = place.getLatLng();
-                placeSearched = remove(place.getLatLng().toString());
-                Log.d("Maps", "Place selected: " + remove(place.getLatLng().toString()));
 
+                LatLng selectedPlace = place.getLatLng();
                 mMap.addMarker(new MarkerOptions().position(selectedPlace).title((String) place.getName()));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(selectedPlace,zoomLevel));
-
-                accoInit(remove(place.getLatLng().toString()));
-                attrInit();
-                //restInit();
+                remove(place.getLatLng().toString());
             }
 
             @Override
@@ -112,29 +101,32 @@ private  AppCompatActivity aC = new AppCompatActivity();
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-
+        accoInit();
+        attrInit();
+        restInit();
 
     }
 
-    public String remove(String place)
+    public void remove(String place)
     {
         String getPlace = place;
-        String new1 = getPlace.replaceAll("lat/lng", "");
+        String new1 = getPlace.replaceAll("lat/lng:", "");
         String new2 = new1.replaceAll("[\\\\[\\\\](){}]","");
 
-        return new2;
+        String[] separated = new2.split(",");
+        lat = Float.parseFloat( separated[0]);
+        lng = Float.parseFloat( separated[1]);
     }
 
-    public void accoInit(String place1)
+    public void accoInit()
     {
-        final String p = place1;
         accomodation = (ImageButton)findViewById(R.id.accomodation);
         accomodation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //String p = placeSearched;
-                Log.d("Maps", "Place selected as string: " + p );
-                Uri gmmIntentUri = Uri.parse("geo:" + p + "?q=accommodation");
+                Log.d("Maps", "Place selected as string: lat " + lat + "---lng " + lng);
+                String location = String.format(Locale.ENGLISH,"geo:%f,%f",lat,lng);
+                Uri gmmIntentUri = Uri.parse(location + "?q=accommodation");
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
                 startActivity(mapIntent);
@@ -148,9 +140,8 @@ private  AppCompatActivity aC = new AppCompatActivity();
         attractions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //String b = "48.864716,2.349014";
-                String p = placeSearched;
-                Uri gmmIntentUri = Uri.parse("geo:" + p + "?q=attractions");
+                String location = String.format(Locale.ENGLISH,"geo:%f,%f",lat,lng);
+                Uri gmmIntentUri = Uri.parse(location + "?q=attractions");
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
                 startActivity(mapIntent);
@@ -158,13 +149,14 @@ private  AppCompatActivity aC = new AppCompatActivity();
         });
     }
 
-   /* public void restInit()
+   public void restInit()
     {
         restuarants = (ImageButton)findViewById(R.id.restaurants);
         restuarants.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri gmmIntentUri = Uri.parse("geo:48.864716,2.349014?q=restaurants");
+                String location = String.format(Locale.ENGLISH,"geo:%f,%f",lat,lng);
+                Uri gmmIntentUri = Uri.parse(location + "?q=restaurants");
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
                 startActivity(mapIntent);
@@ -212,7 +204,7 @@ private  AppCompatActivity aC = new AppCompatActivity();
                 likelyPlaces.release();
             }
         });
-    }*/
+    }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {

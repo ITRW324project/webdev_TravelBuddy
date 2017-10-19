@@ -48,9 +48,6 @@
             android:name=".SignUpActivity"
             android:exported="true" />
         <activity
-            android:name=".Search_Activity"
-            android:exported="true" />
-        <activity
             android:name=".ResetPass_Activity"
             android:exported="true" />
         <activity
@@ -82,16 +79,9 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".SearchMapsActivity"
-            android:label="@string/title_activity_search_maps" />
-        <activity
             android:name=".Search_Destination_Activity"
             android:exported="true"
             android:label="@string/title_activity_search__destination_" />
-        <activity
-            android:name=".Show_Destination_Activity"
-            android:exported="true" />
-        <activity android:name=".Gallery_Activity" />
         <activity
             android:name=".ViewMap_Activity"
             android:exported="true" />
