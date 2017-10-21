@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class Travel_Book_Request extends StringRequest
 {
-    private static final String TB_REQUEST_URL = "http://simeon.ddns.net:8080/getTravelBooks.php";
+    private static final String TB_REQUEST_URL = "http://travelbuddy.ddns.net/getTravelBooks.php";
     private Map<String, String> params;
 
     public Travel_Book_Request(String uName, Response.Listener<String> listener)

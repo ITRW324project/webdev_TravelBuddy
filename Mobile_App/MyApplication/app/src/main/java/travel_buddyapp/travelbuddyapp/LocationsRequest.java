@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class LocationsRequest extends StringRequest
 {
-    private static final String LOC_REQUEST_URL = "http://simeon.ddns.net:8080/getLocations.php";
+    private static final String LOC_REQUEST_URL = "http://travelbuddy.ddns.net/getLocations.php";
     private Map<String, String> params;
 
     public LocationsRequest(String tbName, Response.Listener<String> listener)
